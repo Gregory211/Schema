@@ -16,6 +16,9 @@ namespace Sirena
         public FareremarkQueryParams Params { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 25. Параметры запроса fareremark Условия применения тарифов 
+    /// </summary>
     public sealed class FareremarkQueryParams
     {
         /// <summary>
@@ -44,6 +47,9 @@ namespace Sirena
         public FareremarkAnswerParams AnswerParams { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 26. Параметры секции request_params
+    /// </summary>
     public sealed class FareremarkRequestParams
     {
         /// <summary>

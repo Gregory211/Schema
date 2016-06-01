@@ -17,6 +17,9 @@ namespace Sirena
         public FaresQueryParams Params { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 22. Параметры запроса Справка по тарифам (fares)
+    /// </summary>
     public sealed class FaresQueryParams
     {
         /// <summary>
@@ -118,6 +121,9 @@ namespace Sirena
         public FaresRequestParams RequestParams { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 23. Параметры секции request_params
+    /// </summary>
     public sealed class FaresRequestParams
     {
         /// <summary>

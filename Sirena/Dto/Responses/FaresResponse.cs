@@ -61,6 +61,7 @@ namespace Sirena
         public FaresAnswerBody Body { get; set; }
     }
 
+    
     public sealed class FaresAnswerBody
     {
         /// <summary>
@@ -156,6 +157,9 @@ namespace Sirena
         public Info Info { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 24. Структура элемента Ответ на запрос Справка по тарифам (fares)
+    /// </summary>
     public sealed class Fare
     {
         /// <summary>

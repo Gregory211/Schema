@@ -37,9 +37,9 @@ namespace Sirena
     }
 
     /// <summary>
+    /// Таблица 16. Параметры
     /// Наличие мест (availability) 
     /// Запрос используется для получения наличия мест на направлении.
-    /// Таблица 16. Параметры
     /// </summary>
     public sealed class AvailabilityQueryParamas
     {
@@ -280,7 +280,7 @@ namespace Sirena
     }
 
     /// <summary>
-    /// Joint types for a flight.
+    /// Таблица 19. Описание элемента joint_type
     /// </summary>
     public enum JointType
     {
