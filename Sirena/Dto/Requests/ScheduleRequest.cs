@@ -20,8 +20,16 @@ namespace Sirena
         public ScheduleQueryParams Params { get; set; }
     }
 
+    /// <summary>
+    /// Расписание(schedule)
+    /// Запрос используется для получения расписания на дату или период дат.
+    /// Таблица 12. Параметры запроса schedule
+    /// </summary>
     public sealed class ScheduleQueryParams
     {
+        /// <summary>
+        /// Код города или порта отправления
+        /// </summary>
         [XmlElement("departure")]
         public String Departure { get; set; }
 
@@ -148,6 +156,9 @@ namespace Sirena
         public ScheduleAnswerParams AnswerParams { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 13. Дополнительные параметры для запроса расписания
+    /// </summary>
     public sealed class ScheduleRequestParams
     {
         /// <summary>
@@ -158,6 +169,9 @@ namespace Sirena
         public Boolean OnlyM2Joints { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 14. Параметры ответа на запрос расписания
+    /// </summary>
     public sealed class ScheduleAnswerParams
     {
         /// <summary>

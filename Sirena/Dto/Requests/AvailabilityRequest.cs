@@ -36,6 +36,11 @@ namespace Sirena
         public AvailabilityQueryParamas Params { get; set; }
     }
 
+    /// <summary>
+    /// Наличие мест (availability) 
+    /// Запрос используется для получения наличия мест на направлении.
+    /// Таблица 16. Параметры
+    /// </summary>
     public sealed class AvailabilityQueryParamas
     {
         /// <summary>
@@ -125,6 +130,19 @@ namespace Sirena
         public List<String> SubClasses { get; set; }
 
         /// <summary>
+        /// Признак вывода только прямых рейсов
+        /// </summary>
+        [XmlElement("direct")]
+        public bool Direct { get; set; }
+
+        /// <summary>
+        /// Правило отображения стыковочных рейсов
+        /// </summary>
+        [XmlElement("connections")]
+        public bool Connections { get; set; }
+
+
+        /// <summary>
         /// Gets or sets the minimal departure time.
         /// </summary>
         /// <remarks>
@@ -195,6 +213,9 @@ namespace Sirena
         public AvailabilityAnswerParams AnswerParams { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 17. Параметры ответа на запрос наличия мест
+    /// </summary>
     public sealed class AvailabilityAnswerParams
     {
         /// <summary>
@@ -228,6 +249,9 @@ namespace Sirena
         public Boolean ShowEt { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 18. Параметры секции request_params
+    /// </summary>
     public sealed class AvailabilityRequestParams
     {
         /// <summary>
@@ -241,6 +265,18 @@ namespace Sirena
         /// </summary>
         [XmlElement("check_tch_restrictions")]
         public Boolean CheckTchRestrictions { get; set; }
+
+        /// <summary>
+        /// Признак обязательного учета ограничений на продажу по картотекам ДАР/ДАГ
+        /// </summary>
+        [XmlElement("use_dag")]
+        public Boolean UseDag { get; set; }
+
+        /// <summary>
+        /// Признак обязательного учета ограничений на продажу по картотеке ИАК
+        /// </summary>
+        [XmlElement("use_iak")]
+        public Boolean UseIak { get; set; }
     }
 
     /// <summary>

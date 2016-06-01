@@ -172,6 +172,9 @@ namespace Sirena
         public List<AvailabilityFlight> FlightSegments { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 20. Структура элемента flight
+    /// </summary>
     public sealed class AvailabilityFlight
     {
         /// <summary>
@@ -179,6 +182,12 @@ namespace Sirena
         /// </summary>
         [XmlElement("company")]
         public String Company { get; set; }
+
+        /// <summary>
+        /// Код оперирующего перевозчика для рейсов код-шер
+        /// </summary>
+        [XmlElement("operating_company")]
+        public String OperatingCompany { get; set; }
 
         /// <summary>
         /// Gets flight number.
@@ -452,6 +461,9 @@ namespace Sirena
         public Int32 FirstAvailable { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 21. Структура элемента subclass
+    /// </summary>
     public sealed class AvailabilityFlightSubClass
     {
         /// <summary>

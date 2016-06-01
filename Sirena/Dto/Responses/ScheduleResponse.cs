@@ -60,6 +60,11 @@ namespace Sirena
         public ScheduleAnswerBody Body { get; set; }
     }
 
+    /// <summary>
+    /// Ответ состоит из элементов flight и flights. 
+    /// Маршруты, состоящие из одного сегмента, передаются в элементе flight. 
+    /// Стыковочные маршруты передаются в элементе flights, cодержащем элементы flight. 
+    /// </summary>
     public sealed class ScheduleAnswerBody
     {
         /// <summary>
@@ -146,6 +151,9 @@ namespace Sirena
         public ScheduleFlight[] FlightSegments { get; set; }
     }
 
+    /// <summary>
+    /// Таблица 15. Структура элемента flight
+    /// </summary>
     public sealed class ScheduleFlight
     {
         /// <summary>
@@ -153,6 +161,12 @@ namespace Sirena
         /// </summary>
         [XmlElement("company")]
         public String Company { get; set; }
+
+        /// <summary>
+        /// Код оперирующего перевозчика для рейсов код-шер
+        /// </summary>
+        [XmlElement("operating_company")]
+        public String OperatingCompany { get; set; }
 
         /// <summary>
         /// Gets flight number.
