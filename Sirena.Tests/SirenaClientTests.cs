@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using Sirena.Helpers;
 
 namespace Sirena.Tests
 {
@@ -34,9 +35,8 @@ namespace Sirena.Tests
 
         [Test]
         public async Task AvailabilityRequest()
-        {                     
-           
-            var result = await _client.SendRequestAsync(new AvailabilityRequest()
+        {
+            var request = new AvailabilityRequest()
             {
                 Query =
                     new AvailabilityQuery()
@@ -46,10 +46,16 @@ namespace Sirena.Tests
                             {
                                 Departure = "МОВ",
                                 Arrival = "XБP",
-                                AnswerParams = new AvailabilityAnswerParams() { ShowFlightTime = true }
+                                AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true }
                             }
                     }
-            });
+            };
+
+
+            var result = _client.SendRequestAsync(request).Result;
+
+            //var rawRequest = SerializationHelper.Serialize(request);
+            //var result = await _client.SendRequestAsync(rawRequest);
 
             Assert.NotNull(result);
         }
