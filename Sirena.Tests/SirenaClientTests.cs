@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Sirena.Tests
@@ -6,23 +7,46 @@ namespace Sirena.Tests
     [TestFixture]
     public class SirenaClientTests
     {
-        [Test]
-        public void ConnectTest()
+        private SirenaClient _client;
+
+        [TestFixtureSetUp]
+        public void Init()
         {
             var clientSettings = new SirenaClientSettings()
             {
                 UserId = 922,
-                Host = "193.104.87.251",
-                Port = 34323,
+                Host = "193.106.94.28",
+                Port = 8888,
                 PublicRsaKey = new RSAParameters()
 
             };
 
-            SirenaClient client = new SirenaClient(clientSettings);
+            _client = new SirenaClient(clientSettings);
 
-            client.Connect();
+            _client.Connect();
+        }
 
-            Assert.IsTrue(client.IsConnected);
+        [Test]
+        public async Task ConnectTest()
+        {                     
+            Assert.IsTrue(_client.IsConnected);
+
+            var result = await _client.SendRequestAsync(new AvailabilityRequest()
+            {
+                Query =
+                    new AvailabilityQuery()
+                    {
+                        Params =
+                            new AvailabilityQueryParamas()
+                            {
+                                Departure = "МОВ",
+                                Arrival = "XБP",
+                                AnswerParams = new AvailabilityAnswerParams() { ShowFlightTime = true }
+                            }
+                    }
+            });
+
+            Assert.NotNull(result);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-
+using System.Runtime.Serialization;
 using Sirena.Helpers;
 
 namespace Sirena
@@ -9,6 +9,7 @@ namespace Sirena
     /// <summary>
     /// Represents the Sirena availability response.
     /// </summary>
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class AvailabilityResponse : DtoResponse
     {
@@ -18,7 +19,7 @@ namespace Sirena
         [XmlElement("answer")]
         public AvailabilityAnswer Answer { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class AvailabilityAnswer
     {
         /// <summary>
@@ -64,7 +65,7 @@ namespace Sirena
         [XmlElement("availability")]
         public AvailabilityAnswerBody Body { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class AvailabilityAnswerBody
     {
         /// <summary>
@@ -162,7 +163,7 @@ namespace Sirena
             }
         }
     }
-
+    [DataContract, Serializable]
     public sealed class AvailabilitySegmentedFlight
     {
         /// <summary>
@@ -175,6 +176,7 @@ namespace Sirena
     /// <summary>
     /// Таблица 20. Структура элемента flight
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityFlight
     {
         /// <summary>
@@ -371,7 +373,7 @@ namespace Sirena
             }
         }
     }
-
+    [DataContract, Serializable]
     public sealed class AvailabilityFlightTime
     {
         /// <summary>
@@ -430,7 +432,7 @@ namespace Sirena
         [XmlIgnore]
         public TimeSpan? Time { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class AvailabilityFlightClassInfo
     {
         /// <summary>
@@ -464,6 +466,7 @@ namespace Sirena
     /// <summary>
     /// Таблица 21. Структура элемента subclass
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityFlightSubClass
     {
         /// <summary>

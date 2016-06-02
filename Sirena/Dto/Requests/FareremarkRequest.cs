@@ -1,17 +1,22 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+// OK
 namespace Sirena
 {
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class FareremarkRequest : DtoRequest
     {
+        [DataMember]
         [XmlElement("query")]
         public FareremarkQuery Query { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class FareremarkQuery
     {
+        [DataMember]
         [XmlElement("fareremark")]
         public FareremarkQueryParams Params { get; set; }
     }
@@ -19,6 +24,7 @@ namespace Sirena
     /// <summary>
     /// Таблица 25. Параметры запроса fareremark Условия применения тарифов 
     /// </summary>
+    [DataContract, Serializable]
     public sealed class FareremarkQueryParams
     {
         /// <summary>
@@ -27,6 +33,7 @@ namespace Sirena
         /// <remarks>
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("company")]
         public String Company { get; set; }
 
@@ -37,12 +44,15 @@ namespace Sirena
         /// <remarks>
         /// The string must contain 5 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("code")]
         public String FareName { get; set; }
 
+        [DataMember]
         [XmlElement("request_params")]
         public FareremarkRequestParams RequestParams { get; set; }
 
+        [DataMember]
         [XmlElement("answer_params")]
         public FareremarkAnswerParams AnswerParams { get; set; }
     }
@@ -50,6 +60,7 @@ namespace Sirena
     /// <summary>
     /// Таблица 26. Параметры секции request_params
     /// </summary>
+    [DataContract, Serializable]
     public sealed class FareremarkRequestParams
     {
         /// <summary>
@@ -58,18 +69,22 @@ namespace Sirena
         /// <remarks>
         /// Uses only for new UTPs.
         /// </remarks>
+        [DataMember]
         [XmlElement("cat_16")]
         public Boolean CatSixteen { get; set; }
 
         /// <summary>
         /// Gets or sets the UPT parameters gotten from a fare response.
         /// </summary>
+        [DataMember]
         [XmlElement("upt")]
         public FaresUpt Upt { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class FareremarkAnswerParams
     {
+        [DataMember]
         [XmlElement("lang")]
         public String Language { get; set; }
     }

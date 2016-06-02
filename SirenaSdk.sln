@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirena.Tests", "Sirena.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenaTravelProxyGateWcf", "SirenaTravelProxyGateWcf\SirenaTravelProxyGateWcf.csproj", "{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenaServiceSelfhost", "SirenaServiceSelfhost\SirenaServiceSelfhost.csproj", "{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

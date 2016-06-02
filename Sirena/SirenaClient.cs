@@ -278,8 +278,8 @@ namespace Sirena
         public async Task ConnectAsync()
         {
             await AcquireConnectionAsync();
-            await RequestPublicKeyAsync();
-            await HandshakeAsync();
+          //  await RequestPublicKeyAsync();
+          //  await HandshakeAsync();
         }
 
         private async Task AcquireConnectionAsync()

@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+// OK
 namespace Sirena
 {
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class ScheduleRequest : DtoRequest
     {
+        [DataMember]
         [XmlElement("query")]
         public ScheduleQuery Query { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class ScheduleQuery
     {
+        [DataMember]
         [XmlElement("schedule")]
         public ScheduleQueryParams Params { get; set; }
     }
@@ -25,17 +27,21 @@ namespace Sirena
     /// Запрос используется для получения расписания на дату или период дат.
     /// Таблица 12. Параметры запроса schedule
     /// </summary>
+    [DataContract, Serializable]
     public sealed class ScheduleQueryParams
     {
         /// <summary>
         /// Код города или порта отправления
         /// </summary>
+        [DataMember]
         [XmlElement("departure")]
         public String Departure { get; set; }
 
+        [DataMember]
         [XmlElement("arrival")]
         public String Arrival { get; set; }
 
+        [DataMember]
         [XmlElement("company")]
         public String Company { get; set; }
 
@@ -52,6 +58,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
+        [DataMember]
         [XmlElement("date")]
         public String ProxyDate
         {
@@ -78,6 +85,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
+        [DataMember]
         [XmlElement("date2")]
         public String ProxyEndDate
         {
@@ -104,6 +112,7 @@ namespace Sirena
         /// <summary>
         /// USE TimeFrom instead.
         /// </summary>
+        [DataMember]
         [XmlElement("time_from")]
         public String ProxyTimeFrom
         {
@@ -130,6 +139,7 @@ namespace Sirena
         /// <summary>
         /// USE TimeTill instead.
         /// </summary>
+        [DataMember]
         [XmlElement("time_till")]
         public String ProxyTimeTill
         {
@@ -146,12 +156,15 @@ namespace Sirena
         /// <summary>
         /// Gets or sets the flag to search only direct flights.
         /// </summary>
+        [DataMember]
         [XmlElement("direct")]
         public Boolean OnlyDirect { get; set; }
 
+        [DataMember]
         [XmlElement("request_params")]
         public ScheduleRequestParams RequestParams { get; set; }
 
+        [DataMember]
         [XmlElement("answer_params")]
         public ScheduleAnswerParams AnswerParams { get; set; }
     }
@@ -159,12 +172,14 @@ namespace Sirena
     /// <summary>
     /// Таблица 13. Дополнительные параметры для запроса расписания
     /// </summary>
+    [DataContract, Serializable]
     public sealed class ScheduleRequestParams
     {
         /// <summary>
         /// Gets or sets the flag to show connected flights
         /// for a single company.
         /// </summary>
+        [DataMember]
         [XmlElement("only_m2_joints")]
         public Boolean OnlyM2Joints { get; set; }
     }
@@ -172,29 +187,34 @@ namespace Sirena
     /// <summary>
     /// Таблица 14. Параметры ответа на запрос расписания
     /// </summary>
+    [DataContract, Serializable]
     public sealed class ScheduleAnswerParams
     {
         /// <summary>
         /// Gets or sets the marker to show the flight time info.
         /// </summary>
+        [DataMember]
         [XmlElement("show_flighttime")]
         public Boolean ShowFlightTime { get; set; }
 
         /// <summary>
         /// Gets or sets the full date (dd.MM.yyyy) format in answers.
         /// </summary>
+        [DataMember]
         [XmlElement("full_date")]
         public Boolean FullDate { get; set; }
 
         /// <summary>
         /// Gets or sets the marker to show a city or an airport in the response.
         /// </summary>
+        [DataMember]
         [XmlElement("mark_cityport")]
         public Boolean MarkCityPort { get; set; }
 
         /// <summary>
         /// Gets or sets the availability for issueing an e-ticket.
         /// </summary>
+        [DataMember]
         [XmlElement("show_et")]
         public Boolean ShowEt { get; set; }
     }

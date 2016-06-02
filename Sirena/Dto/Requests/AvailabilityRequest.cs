@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+// OK
 namespace Sirena
 {
     /// <summary>
     /// Represents the Sirena availability request.
     /// </summary>
-    [XmlRoot("sirena")]
+    [DataContract, Serializable]
+    [XmlRoot("sirena")]    
     public sealed class AvailabilityRequest : DtoRequest
     {
         /// <summary>
@@ -16,6 +19,7 @@ namespace Sirena
         /// <remarks>
         /// Required.
         /// </remarks>
+        [DataMember]
         [XmlElement("query")]
         public AvailabilityQuery Query { get; set; }
     }
@@ -24,6 +28,7 @@ namespace Sirena
     /// Represents the query data that used in
     /// the Sirena availability request.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityQuery
     {
         /// <summary>
@@ -32,6 +37,7 @@ namespace Sirena
         /// <remarks>
         /// Required.
         /// </remarks>
+        [DataMember]
         [XmlElement("availability")]
         public AvailabilityQueryParamas Params { get; set; }
     }
@@ -41,6 +47,7 @@ namespace Sirena
     /// Наличие мест (availability) 
     /// Запрос используется для получения наличия мест на направлении.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityQueryParamas
     {
         /// <summary>
@@ -50,6 +57,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("departure")]
         public String Departure { get; set; }
 
@@ -60,6 +68,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("arrival")]
         public String Arrival { get; set; }
 
@@ -96,6 +105,7 @@ namespace Sirena
         /// Optional.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("company")]
         public String Company { get; set; }
 
@@ -106,6 +116,7 @@ namespace Sirena
         /// Optional.
         /// The string contain 5 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("flight")]
         public String FlightNumber { get; set; }
 
@@ -116,6 +127,7 @@ namespace Sirena
         /// Optional.
         /// The string must contain 1 letter.
         /// </remarks>
+        [DataMember]
         [XmlElement("baseclass")]
         public String BaseClass { get; set; }
 
@@ -126,18 +138,21 @@ namespace Sirena
         /// Optional.
         /// The string must contain 1 letter.
         /// </remarks>
+        [DataMember]
         [XmlElement("subclass")]
         public List<String> SubClasses { get; set; }
 
         /// <summary>
         /// Признак вывода только прямых рейсов
         /// </summary>
+        [DataMember]
         [XmlElement("direct")]
         public bool Direct { get; set; }
 
         /// <summary>
         /// Правило отображения стыковочных рейсов
         /// </summary>
+        [DataMember]
         [XmlElement("connections")]
         public bool Connections { get; set; }
 
@@ -155,6 +170,7 @@ namespace Sirena
         /// <summary>
         /// USE TimeFrom instead.
         /// </summary>
+        [DataMember]
         [XmlElement("time_from")]
         public String ProxyTimeFrom
         {
@@ -181,6 +197,7 @@ namespace Sirena
         /// <summary>
         /// USE TimeTill instead.
         /// </summary>
+        [DataMember]
         [XmlElement("time_till")]
         public String ProxyTimeTill
         {
@@ -200,6 +217,7 @@ namespace Sirena
         /// <remarks>
         /// Optional.
         /// </remarks>
+        [DataMember]
         [XmlElement("request_params")]
         public AvailabilityRequestParams RequestParams { get; set; }
 
@@ -209,6 +227,7 @@ namespace Sirena
         /// <remarks>
         /// Optional.
         /// </remarks>
+        [DataMember]
         [XmlElement("answer_params")]
         public AvailabilityAnswerParams AnswerParams { get; set; }
     }
@@ -216,35 +235,41 @@ namespace Sirena
     /// <summary>
     /// Таблица 17. Параметры ответа на запрос наличия мест
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityAnswerParams
     {
         /// <summary>
         /// Gets or sets the marker to show the flight time info.
         /// </summary>
+        [DataMember]
         [XmlElement("show_flighttime")]
         public Boolean ShowFlightTime { get; set; }
 
         /// <summary>
         /// Gets or sets the marker tos show the base class for all flight subclasses.
         /// </summary>
+        [DataMember]
         [XmlElement("show_baseclass")]
         public Boolean ShowBaseClass { get; set; }
 
         /// <summary>
         /// Gets or sets the date of when getting available places.
         /// </summary>
+        [DataMember]
         [XmlElement("return_date")]
         public Boolean ReturnDate { get; set; }
 
         /// <summary>
         /// Gets or sets the marker to show a city or an airport in the response.
         /// </summary>
+        [DataMember]
         [XmlElement("mark_cityport")]
         public Boolean MarkCityPort { get; set; }
 
         /// <summary>
         /// Gets or sets the availability for issueing an e-ticket.
         /// </summary>
+        [DataMember]
         [XmlElement("show_et")]
         public Boolean ShowEt { get; set; }
     }
@@ -252,29 +277,34 @@ namespace Sirena
     /// <summary>
     /// Таблица 18. Параметры секции request_params
     /// </summary>
+    [DataContract, Serializable]
     public sealed class AvailabilityRequestParams
     {
         /// <summary>
         /// Gets or sets the joint type for a flight.
         /// </summary>
+        [DataMember]
         [XmlElement("joint_type")]
         public JointType JointType { get; set; }
 
         /// <summary>
         /// Gets or sets restriction in a Tch selling session.
         /// </summary>
+        [DataMember]
         [XmlElement("check_tch_restrictions")]
         public Boolean CheckTchRestrictions { get; set; }
 
         /// <summary>
         /// Признак обязательного учета ограничений на продажу по картотекам ДАР/ДАГ
         /// </summary>
+        [DataMember]
         [XmlElement("use_dag")]
         public Boolean UseDag { get; set; }
 
         /// <summary>
         /// Признак обязательного учета ограничений на продажу по картотеке ИАК
         /// </summary>
+        [DataMember]
         [XmlElement("use_iak")]
         public Boolean UseIak { get; set; }
     }
@@ -282,35 +312,41 @@ namespace Sirena
     /// <summary>
     /// Таблица 19. Описание элемента joint_type
     /// </summary>
+    [DataContract, Serializable]
     public enum JointType
     {
         /// <summary>
         /// All joints.
         /// </summary>
+        [DataMember]
         [XmlEnum("jtAll")]
         All,
 
         /// <summary>
         /// No joints.
         /// </summary>
+        [DataMember]
         [XmlEnum("jtNone")]
         None,
 
         /// <summary>
         /// All joints for the current avia company.
         /// </summary>
+        [DataMember]
         [XmlEnum("jtAwk")]
         Awk,
 
         /// <summary>
         /// All joints according to the M2 contract.
         /// </summary>
+        [DataMember]
         [XmlEnum("jtM2")]
         M2,
 
         /// <summary>
         /// Joints by direct(interline) contracts.
         /// </summary>
+        [DataMember]
         [XmlEnum("jtInterline")]
         Interline,
     }

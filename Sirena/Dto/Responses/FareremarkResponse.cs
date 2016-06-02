@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Sirena
 {
+    [DataContract, Serializable()]
     [XmlRoot("sirena")]
     public sealed class FareremarkResponse : DtoResponse
     {
@@ -10,6 +12,7 @@ namespace Sirena
         public FareremarkAnswer Answer { get; set; }
     }
 
+    [DataContract, Serializable()]
     public sealed class FareremarkAnswer
     {
         /// <summary>
@@ -53,6 +56,7 @@ namespace Sirena
         public FareremarkAnswerBody Body { get; set; }
     }
 
+    [DataContract, Serializable()]
     public sealed class FareremarkAnswerBody
     {
         [XmlElement("remark")]
@@ -71,6 +75,7 @@ namespace Sirena
         public Info Info { get; set; }
     }
 
+    [DataContract, Serializable()]
     public sealed class FareremarkRemark
     {
         [XmlIgnore]
