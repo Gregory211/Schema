@@ -16,6 +16,7 @@ namespace Sirena
         /// <summary>
         /// Gets the answer object.
         /// </summary>
+        [DataMember]
         [XmlElement("answer")]
         public AvailabilityAnswer Answer { get; set; }
     }
@@ -25,12 +26,14 @@ namespace Sirena
         /// <summary>
         /// Gets the pult name.
         /// </summary>
+        [DataMember]
         [XmlAttribute("pult")]
         public String Pult { get; set; }
 
         /// <summary>
         /// Gets the message id.
         /// </summary>
+        [DataMember]
         [XmlAttribute("msgid")]
         public String MessageId { get; set; }
 
@@ -43,6 +46,7 @@ namespace Sirena
         /// <summary>
         /// USE Time instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("time")]
         public String ProxyTime
         {
@@ -62,6 +66,7 @@ namespace Sirena
         /// <summary>
         /// Gets the answer body.
         /// </summary>
+        [DataMember]
         [XmlElement("availability")]
         public AvailabilityAnswerBody Body { get; set; }
     }
@@ -71,18 +76,21 @@ namespace Sirena
         /// <summary>
         /// Gets the departure city.
         /// </summary>
+        [DataMember]
         [XmlAttribute("departure")]
         public String Departure { get; set; }
 
         /// <summary>
         /// Gets the arrival city.
         /// </summary>
+        [DataMember]
         [XmlAttribute("arrival")]
         public String Arrival { get; set; }
 
         /// <summary>
         /// Gets the flight class.
         /// </summary>
+        [DataMember]
         [XmlAttribute("class")]
         public String Class { get; set; }
 
@@ -114,24 +122,28 @@ namespace Sirena
         /// <summary>
         /// Gets the multi segment flights.
         /// </summary>
+        [DataMember]
         [XmlElement("flights")]
         public List<AvailabilitySegmentedFlight> MultiSegmentFlights { get; set; }
 
         /// <summary>
         /// Gets the single segment flights.
         /// </summary>
+        [DataMember]
         [XmlElement("flight")]
         public AvailabilityFlight[] Flights { get; set; }
 
         /// <summary>
         /// Gets the response error.
         /// </summary>
+        [DataMember]
         [XmlElement("error")]
         public Error Error { get; set; }
 
         /// <summary>
         /// Gets the additional info about the response.
         /// </summary>
+        [DataMember]
         [XmlElement("info")]
         public Info Info { get; set; }
 
@@ -147,6 +159,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("date")]
         public String ProxyDate
         {
@@ -169,6 +182,7 @@ namespace Sirena
         /// <summary>
         /// Gets the flight segments.
         /// </summary>
+        [DataMember]
         [XmlElement("flight")]
         public List<AvailabilityFlight> FlightSegments { get; set; }
     }
@@ -182,72 +196,84 @@ namespace Sirena
         /// <summary>
         /// Gets the air company name.
         /// </summary>
+        [DataMember]
         [XmlElement("company")]
         public String Company { get; set; }
 
         /// <summary>
         /// Код оперирующего перевозчика для рейсов код-шер
         /// </summary>
+        [DataMember]
         [XmlElement("operating_company")]
         public String OperatingCompany { get; set; }
 
         /// <summary>
         /// Gets flight number.
         /// </summary>
+        [DataMember]
         [XmlElement("num")]
         public String FlightNumber { get; set; }
 
         /// <summary>
         /// Gets the departure city.
         /// </summary>
+        [DataMember]
         [XmlElement("origin")]
         public String Original { get; set; }
 
         /// <summary>
         /// Gets the departure city terminal.
         /// </summary>
+        [DataMember]
         [XmlElement("orig_term")]
         public String OriginalTerminal { get; set; }
 
         /// <summary>
         /// Gets the destination city.
         /// </summary>
+        [DataMember]
         [XmlElement("destination")]
         public String Destination { get; set; }
 
         /// <summary>
         /// Gets the destination city terminal.
         /// </summary>
+        [DataMember]
         [XmlElement("dest_term")]
         public String DestinationTerminal { get; set; }
 
         /// <summary>
         /// Gets the departure time.
         /// </summary>
+        [DataMember]
         [XmlElement("depttime")]
         public AvailabilityFlightTime DepartureTime { get; set; }
 
         /// <summary>
         /// Gets the arrival time.
         /// </summary>
+        [DataMember]
         [XmlElement("arrvtime")]
         public AvailabilityFlightTime ArrivalTime { get; set; }
 
         /// <summary>
         /// Gets the airplane code.
         /// </summary>
+        [DataMember]
         [XmlElement("airplane")]
         public String Airplane { get; set; }
 
         /// <summary>
         /// Gets intermediate stops count during the flight.
         /// </summary>
+        [DataMember]
         [XmlIgnore]
         public Int32? IntermediateStops { get; set; }
 
         /// <summary>
         /// USE IntermediateStops instead.
         /// </summary>
+        [DataMember]
         [XmlElement("ilc")]
         public String ProxyIntermediateStops
         {
@@ -277,6 +303,7 @@ namespace Sirena
         /// <summary>
         /// USE Delay instead.
         /// </summary>
+        [DataMember]
         [XmlElement("delay")]
         public String ProxyDelay
         {
@@ -305,18 +332,21 @@ namespace Sirena
         /// "M" or "Ц" - ЦОУ????
         /// "G" or "Г" - closed by depth.
         /// </remarks>
+        [DataMember]
         [XmlElement("status")]
         public String Status { get; set; }
 
         /// <summary>
         /// Gets the flight subclasses.
         /// </summary>
+        [DataMember]
         [XmlElement("subclass")]
         public List<AvailabilityFlightSubClass> SubClasses { get; set; }
 
         /// <summary>
         /// Gets the flight summary.
         /// </summary>
+        [DataMember]
         [XmlElement("summary")]
         public AvailabilityFlightClassInfo ClassInfo { get; set; }
 
@@ -332,6 +362,7 @@ namespace Sirena
         /// <summary>
         /// USE FlightTime instead.
         /// </summary>
+        [DataMember]
         [XmlElement("flightTime")]
         public String ProxyFlightTime
         {
@@ -357,6 +388,7 @@ namespace Sirena
         /// <summary>
         /// USE IsEticketPossible instead.
         /// </summary>
+        [DataMember]
         [XmlElement("et_possible")]
         public String ProxyIsETicketPossible
         {

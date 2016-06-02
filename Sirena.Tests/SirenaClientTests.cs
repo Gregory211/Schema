@@ -27,10 +27,15 @@ namespace Sirena.Tests
         }
 
         [Test]
-        public async Task ConnectTest()
-        {                     
+        public void ConnectTest()
+        {
             Assert.IsTrue(_client.IsConnected);
+        }
 
+        [Test]
+        public async Task AvailabilityRequest()
+        {                     
+           
             var result = await _client.SendRequestAsync(new AvailabilityRequest()
             {
                 Query =
