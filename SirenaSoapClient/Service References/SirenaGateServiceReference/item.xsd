@@ -308,6 +308,7 @@
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Direct" type="xs:boolean" />
       <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeFrom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeTill" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:AvailabilityRequestParams" />

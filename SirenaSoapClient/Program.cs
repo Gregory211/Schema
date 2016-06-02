@@ -19,6 +19,7 @@ namespace SirenaSoapClient
                 Query =
                     new AvailabilityQuery()
                     {
+
                         Params =
                             new AvailabilityQueryParamas()
                             {
@@ -26,7 +27,7 @@ namespace SirenaSoapClient
                                 Arrival = "RIX",
                                 AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
                                 Connections = "only ",
-                                ProxyTimeFrom                              =  ""
+                                ProxyDate = DateTime.Now.ToString("dd.MM.yy")
                             }
                     }
             };
@@ -48,7 +49,7 @@ namespace SirenaSoapClient
                 Console.WriteLine("Error");
                 Console.WriteLine(exc);
             }
-                                  
+
             Console.Read();
         }
     }

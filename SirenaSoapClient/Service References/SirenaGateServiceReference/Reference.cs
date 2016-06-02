@@ -675,6 +675,9 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         private string FlightNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProxyDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProxyTimeFromField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -796,6 +799,19 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
                     this.RaisePropertyChanged("FlightNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProxyDate {
+            get {
+                return this.ProxyDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProxyDateField, value) != true)) {
+                    this.ProxyDateField = value;
+                    this.RaisePropertyChanged("ProxyDate");
                 }
             }
         }

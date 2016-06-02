@@ -85,6 +85,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
+        [DataMember]
         [XmlElement("date")]
         public String ProxyDate 
         {
@@ -94,7 +95,8 @@ namespace Sirena
             }
             set
             {
-                Date = DateTime.ParseExact(value, "dd.MM.yy", null);
+                if(value != null)
+                    Date = DateTime.ParseExact(value, "dd.MM.yy", null);
             }
         }
 

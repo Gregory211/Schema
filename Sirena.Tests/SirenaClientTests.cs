@@ -49,7 +49,38 @@ namespace Sirena.Tests
                                 Departure = "МОВ",
                                 Arrival = "ХБР",
                                 AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
-                                Connections = "only "
+                                Connections = "only ", ProxyDate = "02.06.16"
+                            }
+                    }
+            };
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+
+        [Test]
+        public async Task ScheduleRequest()
+        {
+            var request = new ScheduleRequest()
+            {
+                Query =
+                    new ScheduleQuery()
+                    {
+                        Params =
+                            new ScheduleQueryParams()
+                            {
+                                Departure = "МОВ",
+                                Arrival = "ХБР",
+                                ProxyDate = "02.06.16",
+                                AnswerParams = new ScheduleAnswerParams()
+                                {
+                                    FullDate = true,
+                                    ShowEt = true,
+                                    MarkCityPort = true,
+                                    ShowFlightTime = true
+                                }
                             }
                     }
             };
