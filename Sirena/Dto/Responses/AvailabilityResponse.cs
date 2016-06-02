@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Sirena.Helpers;
-
+// OK
 namespace Sirena
 {
     /// <summary>
@@ -420,6 +420,7 @@ namespace Sirena
         /// <summary>
         /// USE DayShift instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("dayshift")]
         public String ProxyDayShift
         {
@@ -439,6 +440,7 @@ namespace Sirena
         /// <summary>
         /// USE Time instead.
         /// </summary>
+        [DataMember]
         [XmlText]
         public String ProxyTime
         {
@@ -473,6 +475,7 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
+        [DataMember]
         [XmlAttribute("econom")]
         public Int32 EconomyAvailable { get; set; }
 
@@ -482,6 +485,7 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
+        [DataMember]
         [XmlAttribute("business")]
         public Int32 BussinessAvailable { get; set; }
 
@@ -491,6 +495,7 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
+        [DataMember]
         [XmlAttribute("first")]
         public Int32 FirstAvailable { get; set; }
     }
@@ -504,12 +509,14 @@ namespace Sirena
         /// <summary>
         /// Gets the subclass name.
         /// </summary>
+        [DataMember]
         [XmlText]
         public String Text { get; set; }
 
         /// <summary>
         /// Gets the base class name.
         /// </summary>
+        [DataMember]
         [XmlAttribute("baseclass")]
         public String BaseClass { get; set; }
 
@@ -522,6 +529,7 @@ namespace Sirena
         /// -2 - seat by request
         /// -3 - ability to put in the wait list.
         /// </remarks>
+        [DataMember]
         [XmlAttribute("count")]
         public Int32 Count { get; set; }
     }

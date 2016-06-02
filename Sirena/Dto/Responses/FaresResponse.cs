@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -8,25 +9,26 @@ namespace Sirena
     /// <summary>
     /// Represents the Sirena fares response.
     /// </summary>
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class FaresResponse : DtoResponse
     {
-        [XmlElement("answer")]
+        [DataMember][XmlElement("answer")]
         public FaresAnswer Answer { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class FaresAnswer
     {
         /// <summary>
         /// Gets the pult name.
         /// </summary>
-        [XmlAttribute("pult")]
+        [DataMember][XmlAttribute("pult")]
         public String Pult { get; set; }
 
         /// <summary>
         /// Gets the message id.
         /// </summary>
-        [XmlAttribute("msgid")]
+        [DataMember][XmlAttribute("msgid")]
         public String MessageId { get; set; }
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace Sirena
         /// <summary>
         /// USE Time instead.
         /// </summary>
-        [XmlAttribute("time")]
+        [DataMember][XmlAttribute("time")]
         public String ProxyTime
         {
             get
@@ -57,23 +59,22 @@ namespace Sirena
         /// <summary>
         /// Gets the fares.
         /// </summary>
-        [XmlElement("fares")]
+        [DataMember][XmlElement("fares")]
         public FaresAnswerBody Body { get; set; }
     }
-
-    
+    [DataContract, Serializable]
     public sealed class FaresAnswerBody
     {
         /// <summary>
         /// Gets the departure city.
         /// </summary>
-        [XmlAttribute("departure")]
+        [DataMember][XmlAttribute("departure")]
         public String Departure { get; set; }
 
         /// <summary>
         /// Gets the arrival city.
         /// </summary>
-        [XmlAttribute("arrival")]
+        [DataMember][XmlAttribute("arrival")]
         public String Arrival { get; set; }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Sirena
         /// <summary>
         /// USE DepartureTime instead.
         /// </summary>
-        [XmlAttribute("deptdate")]
+        [DataMember][XmlAttribute("deptdate")]
         public String ProxyDepartureTime
         {
             get
@@ -110,7 +111,7 @@ namespace Sirena
         /// <summary>
         /// USE BookDate instead.
         /// </summary>
-        [XmlAttribute("bookdate")]
+        [DataMember][XmlAttribute("bookdate")]
         public String ProxyBookDate
         {
             get
@@ -129,49 +130,49 @@ namespace Sirena
         /// <summary>
         /// Gets the company name.
         /// </summary>
-        [XmlAttribute("company")]
+        [DataMember][XmlAttribute("company")]
         public String Company { get; set; }
 
         /// <summary>
         /// Gets the passenger category.
         /// </summary>
-        [XmlAttribute("passenger")]
+        [DataMember][XmlAttribute("passenger")]
         public String PassengerCategory { get; set; }
 
         /// <summary>
         /// Gets the fares.
         /// </summary>
-        [XmlElement("fare")]
+        [DataMember][XmlElement("fare")]
         public Fare[] Fares { get; set; }
 
         /// <summary>
         /// Gets the response error.
         /// </summary>
-        [XmlElement("error")]
+        [DataMember][XmlElement("error")]
         public Error Error { get; set; }
 
         /// <summary>
         /// Gets the additional info about the response.
         /// </summary>
-        [XmlElement("info")]
+        [DataMember][XmlElement("info")]
         public Info Info { get; set; }
     }
-
     /// <summary>
     /// Таблица 24. Структура элемента Ответ на запрос Справка по тарифам (fares)
     /// </summary>
+    [DataContract, Serializable]
     public sealed class Fare
     {
         /// <summary>
         /// Gets the fares name.
         /// </summary>
-        [XmlAttribute("name")]
+        [DataMember][XmlAttribute("name")]
         public String Name { get; set; }
 
         /// <summary>
         /// Gets the fare subclasses.
         /// </summary>
-        [XmlElement("subclass")]
+        [DataMember][XmlElement("subclass")]
         public String[] SubClasses { get; set; }
 
         /// <summary>
@@ -187,43 +188,43 @@ namespace Sirena
         /// С - throughout
         /// В - round throughout
         /// </remarks>
-        [XmlElement("direction")]
+        [DataMember][XmlElement("direction")]
         public String Direction { get; set; }
 
         /// <summary>
         /// Gets the flight cost in the specified currencies.
         /// </summary>
-        [XmlElement("rate")]
+        [DataMember][XmlElement("rate")]
         public FaresCurrencyRate[] CurrencyRates { get; set; }
 
         /// <summary>
         /// Gets the company name.
         /// </summary>
-        [XmlElement("company")]
+        [DataMember][XmlElement("company")]
         public String Company { get; set; }
 
         /// <summary>
         /// Gets the flight number.
         /// </summary>
-        [XmlElement("num")]
+        [DataMember][XmlElement("num")]
         public String FlightNumber { get; set; }
 
         /// <summary>
         /// Gets the UPT code.
         /// </summary>
-        [XmlElement("remark")]
+        [DataMember][XmlElement("remark")]
         public String Remark { get; set; }
 
         /// <summary>
         /// Gets the passenger categories.
         /// </summary>
-        [XmlElement("category")]
+        [DataMember][XmlElement("category")]
         public String[] PassengerCategories { get; set; }
 
         /// <summary>
         /// Gets the code for the route fare.
         /// </summary>
-        [XmlElement("route")]
+        [DataMember][XmlElement("route")]
         public String RouteCode { get; set; }
 
         /// <summary>
@@ -235,7 +236,7 @@ namespace Sirena
         /// <summary>
         /// USE ExpirationDate instead.
         /// </summary>
-        [XmlElement("validto")]
+        [DataMember][XmlElement("validto")]
         public String ProxyExpirationDate 
         {
             get
@@ -254,28 +255,28 @@ namespace Sirena
         /// <summary>
         /// Gets the minimum stay.
         /// </summary>
-        [XmlElement("minstay")]
+        [DataMember][XmlElement("minstay")]
         public String MinimumStay { get; set; }
 
         /// <summary>
         /// Gets the maximum stay.
         /// </summary>
-        [XmlElement("maxstay")]
+        [DataMember][XmlElement("maxstay")]
         public String MaximumStay { get; set; }
 
         /// <summary>
         /// Gets the UPT parameters for getting the additional fare info.
         /// </summary>
-        [XmlElement("upt")]
+        [DataMember][XmlElement("upt")]
         public FaresUpt Upt { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class FaresCurrencyRate
     {
         /// <summary>
         /// Gets the currency name in Cyrillic.
         /// </summary>
-        [XmlAttribute("currency")]
+        [DataMember][XmlAttribute("currency")]
         public String Currency { get; set; }
 
         /// <summary>
@@ -302,9 +303,10 @@ namespace Sirena
         [XmlText]
         public String ProxyValue { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class FaresUpt
     {
+        [DataMember]
         [XmlAnyElement]
         public XElement[] CustomElements { get; set; }
     }

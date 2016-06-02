@@ -1,68 +1,79 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+//OK
 namespace Sirena
 {
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class KeyInfoResponse : DtoResponse
     {
-        [XmlElement("answer")]
+        [DataMember][XmlElement("answer")]
         public KeyAnswer Answer { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class KeyAnswer
     {
-        [XmlAttribute("pult")]
+        [DataMember][XmlAttribute("pult")]
         public String Pult { get; set; }
 
-        [XmlElement("key_info")]
+        [DataMember][XmlElement("key_info")]
         public KeyAnswerBody Body { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class KeyAnswerBody
     {
-        [XmlElement("key_manager")]
+        [DataMember][XmlElement("key_manager")]
         public KeyManager KeyManager { get; set; }
 
-        [XmlElement("error")]
+        [DataMember][XmlElement("error")]
         public Error Error { get; set; }
 
         /// <summary>
         /// Gets the additional info about the response.
         /// </summary>
-        [XmlElement("info")]
+        [DataMember][XmlElement("info")]
         public Info Info { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class KeyManager
     {
-        [XmlElement("key")]
+        [DataMember][XmlElement("key")]
         public KeyDigest KeyDigest { get; set; }
 
-        [XmlElement("expiration")]
+        [DataMember][XmlElement("expiration")]
         public String Expiration { get; set; }
 
-        [XmlElement("unconfirmed")]
+        [DataMember][XmlElement("unconfirmed")]
         public String Unconfirmed { get; set; }
 
-        [XmlElement("server_public_key")]
+        [DataMember][XmlElement("server_public_key")]
         public String ServerPublicKey { get; set; }
     }
 
+    [DataContract, Serializable]
     public sealed class KeyDigest
     {
-        [XmlAttribute("state")]
+        [DataMember][XmlAttribute("state")]
         public KeyState KeyState { get; set; }
 
+        [DataMember]
         [XmlText]
         public String Text { get; set; }
     }
 
+    [DataContract, Serializable]
     public enum KeyState
     {
+        [EnumMember]
         [XmlEnum("current")]
         Current,
 
+        [EnumMember]
         [XmlEnum("future")]
         Future,
     }

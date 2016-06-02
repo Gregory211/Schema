@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+//OK
 namespace Sirena
 {
     /// <summary>
     /// Represents the Sirena key info request.
     /// </summary>
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class KeyInfoRequest : DtoRequest
     {
-        [XmlElement("query")]
+        [DataMember][XmlElement("query")]
         public KeyInfoQuery Query { get; set; }
 
         public KeyInfoRequest() 
@@ -17,10 +20,10 @@ namespace Sirena
             Query = new KeyInfoQuery();
         }
     }
-
+    [DataContract, Serializable]
     public sealed class KeyInfoQuery
     {
-        [XmlElement("key_info")]
+        [DataMember][XmlElement("key_info")]
         public KeyInfoQueryParams Params { get; set; }
 
         public KeyInfoQuery()
@@ -28,10 +31,10 @@ namespace Sirena
             Params = new KeyInfoQueryParams();
         }
     }
-
+    [DataContract, Serializable]
     public sealed class KeyInfoQueryParams
     {
-        [XmlElement("answer_params")]
+        [DataMember][XmlElement("answer_params")]
         public KeyInfoAnswerParams AnswerParams { get; set; }
 
         public KeyInfoQueryParams()
@@ -39,10 +42,10 @@ namespace Sirena
             AnswerParams = new KeyInfoAnswerParams();
         }
     }
-
+    [DataContract, Serializable]
     public sealed class KeyInfoAnswerParams
     {
-        [XmlElement("lang")]
+        [DataMember][XmlElement("lang")]
         public String LanguageParams { get; set; }
 
         public KeyInfoAnswerParams()

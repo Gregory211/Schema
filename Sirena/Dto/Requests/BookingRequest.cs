@@ -2,14 +2,16 @@
 using System.Globalization;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-
+using System.Runtime.Serialization;
 using Sirena.Helpers;
 
+// OK
 namespace Sirena
 {
     /// <summary>
     /// Represents the Sirena booking request.
     /// </summary>
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class BookingRequest : DtoRequest
     {
@@ -19,6 +21,7 @@ namespace Sirena
         /// <remarks>
         /// Required.
         /// </remarks>
+        [DataMember]
         [XmlElement("query")]
         public BookingQuery Query { get; set; }
     }
@@ -27,6 +30,7 @@ namespace Sirena
     /// Represents the query data that used in
     /// the Sirena booking request.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingQuery
     {
         /// <summary>
@@ -35,6 +39,7 @@ namespace Sirena
         /// <remarks>
         /// Required.
         /// </remarks>
+        [DataMember]
         [XmlElement("booking")]
         public BookingQueryParams Params { get; set; }
     }
@@ -43,23 +48,27 @@ namespace Sirena
     /// Represents the query params that used in
     /// the Sirena booking request.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingQueryParams
     {
         /// <summary>
         /// Gets or sets the flight segments.
         /// </summary>
+        [DataMember]
         [XmlElement("segment")]
         public List<BookingRequestSegment> Segments { get; set; }
 
         /// <summary>
         /// Gets or sets the passengers info.
         /// </summary>
+        [DataMember]
         [XmlElement("passenger")]
         public List<BookingRequestPassenger> Passengers { get; set; }
 
         /// <summary>
         /// Gets or sets the general contacts info.
         /// </summary>
+        [DataMember]
         [XmlElement("contacts")]
         public BookingRequestContacts Contacts { get; set; }
 
@@ -69,6 +78,7 @@ namespace Sirena
         /// <remarks>
         /// Optional.
         /// </remarks>
+        [DataMember]
         [XmlElement("answer_params")]
         public BookingAnswerParams AnswerParams { get; set; }
 
@@ -78,6 +88,7 @@ namespace Sirena
         /// <remarks>
         /// Optional.
         /// </remarks>
+        [DataMember]
         [XmlElement("request_params")]
         public BookingRequestParams RequestParams { get; set; }
     }
@@ -85,23 +96,27 @@ namespace Sirena
     /// <summary>
     /// Represents the booking asnwer params.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingAnswerParams
     {
         /// <summary>
         /// Gets or sets the flag to show the airplane type.
         /// </summary>
+        [DataMember]
         [XmlElement("show_tts")]
         public Boolean ShowTts { get; set; }
 
         /// <summary>
         /// Gets or sets the flag to show the Upt info.
         /// </summary>
+        [DataMember]
         [XmlElement("show_upt_rec")]
         public Boolean ShowUptRecord { get; set; }
 
         /// <summary>
         /// Gets or sets the flag to show remarks about passengers.
         /// </summary>
+        [DataMember]
         [XmlElement("add_remarks")]
         public Boolean AddRemarks { get; set; }
     }
@@ -109,17 +124,20 @@ namespace Sirena
     /// <summary>
     /// Represents the booking request params.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingRequestParams
     {
         /// <summary>
         /// Gets or sets the language used in the response.
         /// </summary>
+        [DataMember]
         [XmlElement("lang")]
         public String Language { get; set; }
 
         /// <summary>
         /// Gets or sets the ticket series to estimate the fare.
         /// </summary>
+        [DataMember]
         [XmlElement("tick_ser")]
         public String TicketSeries { get; set; }
 
@@ -129,6 +147,7 @@ namespace Sirena
         /// <remarks>
         /// The value should contain 5 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("parcel_agency")]
         public String ParcelAgency { get; set; }
     }
@@ -136,6 +155,7 @@ namespace Sirena
     /// <summary>
     /// Represents the booking request segment info.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingRequestSegment
     {
         /// <summary>
@@ -147,6 +167,7 @@ namespace Sirena
         /// <summary>
         /// USE Id instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("id")]
         public String ProxyId
         {
@@ -170,6 +191,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("company")]
         public String Company { get; set; }
 
@@ -180,6 +202,7 @@ namespace Sirena
         /// Required.
         /// The string contain 5 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("num")]
         public String FlightNumber { get; set; }
 
@@ -190,6 +213,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("departure")]
         public String Departure { get; set; }
 
@@ -200,6 +224,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 3 letters.
         /// </remarks>
+        [DataMember]
         [XmlElement("arrival")]
         public String Arrival { get; set; }
 
@@ -216,6 +241,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
+        [DataMember]
         [XmlElement("date")]
         public String ProxyDate
         {
@@ -232,6 +258,7 @@ namespace Sirena
         /// <summary>
         /// Gets or sets the airplane.
         /// </summary>
+        [DataMember]
         [XmlElement("airplane")]
         public String Airplane { get; set; }
 
@@ -242,6 +269,7 @@ namespace Sirena
         /// Required.
         /// The string must contain 1 letter.
         /// </remarks>
+        [DataMember]
         [XmlElement("subclass")]
         public String SubClass { get; set; }
     }
@@ -249,6 +277,7 @@ namespace Sirena
     /// <summary>
     /// Represents the booking request passenger info.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingRequestPassenger
     {
         /// <summary>
@@ -260,6 +289,7 @@ namespace Sirena
         /// <summary>
         /// USE Id instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("id")]
         public String ProxyId
         {
@@ -285,6 +315,7 @@ namespace Sirena
         /// <summary>
         /// USE IsLeader instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("lead_pass")]
         public String ProxyIsLeader
         {
@@ -304,19 +335,20 @@ namespace Sirena
         /// <summary>
         /// Gets the passenger surname.
         /// </summary>
+        [DataMember]
         [XmlElement("surname")]
         public String Surname { get; set; }
 
         /// <summary>
         /// Gets the passenger name.
         /// </summary>
-        [XmlElement("name")]
+        [DataMember][XmlElement("name")]
         public String Name { get; set; }
 
         /// <summary>
         /// Gets the passenger category.
         /// </summary>
-        [XmlElement("category")]
+        [DataMember][XmlElement("category")]
         public String Category { get; set; }
 
         /// <summary>
@@ -328,7 +360,8 @@ namespace Sirena
         /// <summary>
         /// USE Sex instead.
         /// </summary>
-        [XmlElement("sex")]
+
+        [DataMember][XmlElement("sex")]
         public String ProxySexType
         {
             get
@@ -350,6 +383,7 @@ namespace Sirena
         /// <summary>
         /// USE BirthDate instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("age")]
         public String ProxyBirthDate
         {
@@ -382,12 +416,14 @@ namespace Sirena
         /// "PS" - russian passport.
         /// "NP" - foreign passport.
         /// </remarks>
+        [DataMember]
         [XmlElement("doccode")]
         public String DocumentType { get; set; }
 
         /// <summary>
         /// Gets or sets the document number.
         /// </summary>
+        [DataMember]
         [XmlElement("doc")]
         public String DocumentNumber { get; set; }
 
@@ -404,6 +440,7 @@ namespace Sirena
         /// <summary>
         /// USE DocumentExpirationDate instead.
         /// </summary>
+        [DataMember]
         [XmlElement("pspexpire")]
         public String ProxyDocumentExpirationDate
         {
@@ -423,19 +460,20 @@ namespace Sirena
         /// <summary>
         /// Gets or sets the passenger nationality.
         /// </summary>
+        [DataMember]
         [XmlElement("nationality")]
         public String Nationality { get; set; }
 
         /// <summary>
         /// Gets or sets the discount document type.
         /// </summary>
-        [XmlElement("doccode_disc")]
+        [DataMember][XmlElement("doccode_disc")]
         public String DiscountDocumentType { get; set; }
 
         /// <summary>
         /// Gets or sets the discount document number.
         /// </summary>
-        [XmlElement("doc_disc")]
+        [DataMember][XmlElement("doc_disc")]
         public String DiscountDocumentNumber { get; set; }
 
         /// <summary>
@@ -451,7 +489,7 @@ namespace Sirena
         /// <summary>
         /// USE DiscountDocumentExpirationDate instead.
         /// </summary>
-        [XmlElement("pspexpire_disc")]
+        [DataMember][XmlElement("pspexpire_disc")]
         public String ProxyDiscountDocumentExpirationDate
         {
             get
@@ -470,19 +508,20 @@ namespace Sirena
         /// <summary>
         /// Gets or sets the passenger phones.
         /// </summary>
-        [XmlElement("phone")]
+        [DataMember][XmlElement("phone")]
         public List<BookingContact> Phones { get; set; }
 
         /// <summary>
         /// Gets or sets the passenger contacts.
         /// </summary>
-        [XmlElement("contact")]
+        [DataMember][XmlElement("contact")]
         public List<BookingContact> Contacts { get; set; }
     }
 
     /// <summary>
     /// Represents the booking contact info.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingContact
     {
         /// <summary>
@@ -523,29 +562,33 @@ namespace Sirena
     /// <summary>
     /// Represents the booking request common contacts info.
     /// </summary>
+    [DataContract, Serializable]
     public sealed class BookingRequestContacts
     {
         /// <summary>
         /// Gets or sets the phone.
         /// </summary>
-        [XmlElement("phone")]
+        [DataMember][XmlElement("phone")]
         public BookingContact Phone { get; set; }
 
         /// <summary>
         /// Gets or sets the email.
         /// </summary>
-        [XmlElement("email")]
+        [DataMember][XmlElement("email")]
         public String Email { get; set; }
     }
 
     /// <summary>
     /// Passenger genders.
     /// </summary>
+    [DataContract]
     public enum BookingPassengerSex
     {
+        [EnumMember]
         [XmlEnum("female")]
         Female,
 
+        [EnumMember]
         [XmlEnum("male")]
         Male,
     }
@@ -553,26 +596,34 @@ namespace Sirena
     /// <summary>
     /// Contains contact types.
     /// </summary>
+    [DataContract]
     public enum BookingContactType
     {
+        [EnumMember]
         [XmlEnum("agency")]
         Agency,
 
+        [EnumMember]
         [XmlEnum("mobile")]
         Mobile,
 
+        [EnumMember]
         [XmlEnum("home")]
         Home,
 
+        [EnumMember]
         [XmlEnum("work")]
         Work,
 
+        [EnumMember]
         [XmlEnum("fax")]
         Fax,
 
+        [EnumMember]
         [XmlEnum("hotel")]
         Hotel,
 
+        [EnumMember]
         [XmlEnum("email")]
         Email,
     }

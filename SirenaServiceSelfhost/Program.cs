@@ -17,6 +17,9 @@ namespace SirenaServiceSelfhost
                 ServiceHost askpService = new ServiceHost(typeof(SirenaGateService));
 
                 askpService.Open();
+
+                Console.WriteLine("SirenaGateService started:\n" + askpService.BaseAddresses.FirstOrDefault());
+                Console.Read();
             }
             catch (Exception exc)
             {

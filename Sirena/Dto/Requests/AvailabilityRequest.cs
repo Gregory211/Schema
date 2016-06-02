@@ -154,7 +154,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("connections")]
-        public bool Connections { get; set; }
+        public string Connections { get; set; }
 
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("time_from")]
-        public String ProxyTimeFrom
+        public string ProxyTimeFrom
         {
             get
             {
@@ -180,7 +180,8 @@ namespace Sirena
             }
             set
             {
-                TimeFrom = TimeSpan.ParseExact(value, "hhmm", null);
+                if(value != null)
+                    TimeFrom = TimeSpan.ParseExact(value, "hhmm", null);
             }
         }
 
@@ -199,7 +200,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("time_till")]
-        public String ProxyTimeTill
+        public string ProxyTimeTill
         {
             get
             {
@@ -207,7 +208,8 @@ namespace Sirena
             }
             set
             {
-                TimeTill = TimeSpan.ParseExact(value, "hhmm", null);
+                if (value != null)
+                    TimeTill = TimeSpan.ParseExact(value, "hhmm", null);
             }
         }
 
@@ -318,35 +320,35 @@ namespace Sirena
         /// <summary>
         /// All joints.
         /// </summary>
-        [DataMember]
+        [EnumMember]
         [XmlEnum("jtAll")]
         All,
 
         /// <summary>
         /// No joints.
         /// </summary>
-        [DataMember]
+        [EnumMember]
         [XmlEnum("jtNone")]
         None,
 
         /// <summary>
         /// All joints for the current avia company.
         /// </summary>
-        [DataMember]
+        [EnumMember]
         [XmlEnum("jtAwk")]
         Awk,
 
         /// <summary>
         /// All joints according to the M2 contract.
         /// </summary>
-        [DataMember]
+        [EnumMember]
         [XmlEnum("jtM2")]
         M2,
 
         /// <summary>
         /// Joints by direct(interline) contracts.
         /// </summary>
-        [DataMember]
+        [EnumMember]
         [XmlEnum("jtInterline")]
         Interline,
     }

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SirenaGateService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sirena" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Xml.Linq" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISirenaGateService_SendStringRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendStringRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendStringRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendStringRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_StringRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:StringRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_StringRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StringRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_KeyInfoRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeyInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_KeyInfoRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeyInfoRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendKeyInfoRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendKeyInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendKeyInfoRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendKeyInfoRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_ScheduleRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_ScheduleRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendScheduleRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendScheduleRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendScheduleRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendScheduleRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_AvailabilityRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AvailabilityRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_AvailabilityRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AvailabilityRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendAvailabilityRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAvailabilityRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendAvailabilityRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAvailabilityRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_FaresRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:FaresRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_FaresRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FaresRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendFaresRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFaresRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendFaresRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFaresRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_FareremarkRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:FareremarkRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_FareremarkRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FareremarkRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendFareremarkRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFareremarkRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendFareremarkRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFareremarkRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISirenaGateService">
+    <wsdl:operation name="SendStringRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendStringRequest" message="tns:ISirenaGateService_SendStringRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendStringRequestResponse" message="tns:ISirenaGateService_SendStringRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StringRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/StringRequest" message="tns:ISirenaGateService_StringRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/StringRequestResponse" message="tns:ISirenaGateService_StringRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeyInfoRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/KeyInfoRequest" message="tns:ISirenaGateService_KeyInfoRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/KeyInfoRequestResponse" message="tns:ISirenaGateService_KeyInfoRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendKeyInfoRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendKeyInfoRequest" message="tns:ISirenaGateService_SendKeyInfoRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendKeyInfoRequestResponse" message="tns:ISirenaGateService_SendKeyInfoRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/ScheduleRequest" message="tns:ISirenaGateService_ScheduleRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/ScheduleRequestResponse" message="tns:ISirenaGateService_ScheduleRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendScheduleRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendScheduleRequest" message="tns:ISirenaGateService_SendScheduleRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendScheduleRequestResponse" message="tns:ISirenaGateService_SendScheduleRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AvailabilityRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/AvailabilityRequest" message="tns:ISirenaGateService_AvailabilityRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/AvailabilityRequestResponse" message="tns:ISirenaGateService_AvailabilityRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAvailabilityRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendAvailabilityRequest" message="tns:ISirenaGateService_SendAvailabilityRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendAvailabilityRequestResponse" message="tns:ISirenaGateService_SendAvailabilityRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FaresRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/FaresRequest" message="tns:ISirenaGateService_FaresRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/FaresRequestResponse" message="tns:ISirenaGateService_FaresRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFaresRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendFaresRequest" message="tns:ISirenaGateService_SendFaresRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendFaresRequestResponse" message="tns:ISirenaGateService_SendFaresRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FareremarkRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/FareremarkRequest" message="tns:ISirenaGateService_FareremarkRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/FareremarkRequestResponse" message="tns:ISirenaGateService_FareremarkRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFareremarkRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendFareremarkRequest" message="tns:ISirenaGateService_SendFareremarkRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendFareremarkRequestResponse" message="tns:ISirenaGateService_SendFareremarkRequest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISirenaGateService" type="tns:ISirenaGateService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendStringRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendStringRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/StringRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeyInfoRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/KeyInfoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendKeyInfoRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendKeyInfoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/ScheduleRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendScheduleRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendScheduleRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailabilityRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/AvailabilityRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAvailabilityRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendAvailabilityRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FaresRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/FaresRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFaresRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendFaresRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FareremarkRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/FareremarkRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFareremarkRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendFareremarkRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SirenaGateService">
+    <wsdl:port name="BasicHttpBinding_ISirenaGateService" binding="tns:BasicHttpBinding_ISirenaGateService">
+      <soap:address location="http://localhost:8833/SirenaGateService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

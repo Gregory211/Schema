@@ -1,5 +1,8 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.Threading.Tasks;
+using Sirena;
 
 namespace SirenaTravelProxyGateWcf
 {
@@ -8,34 +11,39 @@ namespace SirenaTravelProxyGateWcf
     public interface ISirenaGateService
     {
         [OperationContract]
-        string GetData(int value);
+        string SendStringRequest(string data, ConnectionMode connectionMode = ConnectionMode.Plain);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        Task<string> StringRequestAsync(string data, ConnectionMode connectionMode = ConnectionMode.Plain);
 
-        // TODO: Add your service operations here
-    }
+        [OperationContract]
+        Task<KeyInfoResponse> KeyInfoRequestAsync(KeyInfoRequest keyInfoRequest);
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "SirenaTravelProxyGateWcf.ContractType".
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract]
+        KeyInfoResponse SendKeyInfoRequest(KeyInfoRequest keyInfoRequest);
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        [OperationContract]
+        Task<ScheduleResponse> ScheduleRequestAsync(ScheduleRequest scheduleRequest);
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        ScheduleResponse SendScheduleRequest(ScheduleRequest scheduleRequest);
+
+        [OperationContract]
+        Task<AvailabilityResponse> AvailabilityRequestAsync(AvailabilityRequest availabilityRequest);
+
+        [OperationContract]
+        AvailabilityResponse SendAvailabilityRequest(AvailabilityRequest availabilityRequest);
+
+        [OperationContract]
+        Task<FaresResponse> FaresRequestAsync(FaresRequest faresRequest);
+
+        [OperationContract]
+        FaresResponse SendFaresRequest(FaresRequest faresRequest);
+
+        [OperationContract]
+        Task<FareremarkResponse> FareremarkRequestAsync(FareremarkRequest fareremarkRequest);
+
+        [OperationContract]
+        FareremarkResponse SendFareremarkRequest(FareremarkRequest fareremarkRequest);
     }
 }

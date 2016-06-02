@@ -5,6 +5,9 @@ using Sirena.Helpers;
 
 namespace Sirena.Tests
 {
+    /// <summary>
+    /// Интеграционные тесты для шлюза Sirena Travel
+    /// </summary>
     [TestFixture]
     public class SirenaClientTests
     {
@@ -17,9 +20,8 @@ namespace Sirena.Tests
             {
                 UserId = 922,
                 Host = "193.106.94.28",
-                Port = 8888,
+                Port = 8080,
                 PublicRsaKey = new RSAParameters()
-
             };
 
             _client = new SirenaClient(clientSettings);
@@ -45,19 +47,17 @@ namespace Sirena.Tests
                             new AvailabilityQueryParamas()
                             {
                                 Departure = "МОВ",
-                                Arrival = "XБP",
-                                AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true }
+                                Arrival = "ХБР",
+                                AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
+                                Connections = "only "
                             }
                     }
             };
 
+            var result = await _client.SendRequestAsync(request);
 
-            var result = _client.SendRequestAsync(request).Result;
-
-            //var rawRequest = SerializationHelper.Serialize(request);
-            //var result = await _client.SendRequestAsync(rawRequest);
-
-            Assert.NotNull(result);
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
         }
     }
 }

@@ -1,37 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+// OK
 namespace Sirena
 {
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class FaresRequest : DtoRequest
     {
-        [XmlElement("query")]
+        [DataMember][XmlElement("query")]
         public FaresQuery Query { get; set;}
     }
-
+    [DataContract, Serializable]
     public sealed class FaresQuery
     {
-        [XmlElement("fares")]
+        [DataMember][XmlElement("fares")]
         public FaresQueryParams Params { get; set; }
     }
-
     /// <summary>
     /// Таблица 22. Параметры запроса Справка по тарифам (fares)
     /// </summary>
+    [DataContract, Serializable]
     public sealed class FaresQueryParams
     {
         /// <summary>
         /// Gets or sets the departure city.
         /// </summary>
-        [XmlElement("departure")]
+        [DataMember][XmlElement("departure")]
         public String Departure { get; set; }
 
         /// <summary>
         /// Gets or sets the arrival city.
         /// </summary>
-        [XmlElement("arrival")]
+        [DataMember][XmlElement("arrival")]
         public String Arrival { get; set; }
 
         /// <summary>
@@ -43,7 +46,7 @@ namespace Sirena
         /// <summary>
         /// USE DepartureTime instead.
         /// </summary>
-        [XmlElement("deptdate")]
+        [DataMember][XmlElement("deptdate")]
         public String ProxyDepartureTime
         {
             get
@@ -68,7 +71,7 @@ namespace Sirena
         /// <summary>
         /// USE BookDate instead.
         /// </summary>
-        [XmlElement("bookdate")]
+        [DataMember][XmlElement("bookdate")]
         public String ProxyBookDate
         {
             get
@@ -87,55 +90,55 @@ namespace Sirena
         /// <summary>
         /// Gets or sets the company name.
         /// </summary>
-        [XmlElement("company")]
+        [DataMember][XmlElement("company")]
         public String Company { get; set; }
 
         /// <summary>
         /// Gets or sets the flight number.
         /// </summary>
-        [XmlElement("flight")]
+        [DataMember][XmlElement("flight")]
         public String FlightNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the flight subclasses.
         /// </summary>
-        [XmlElement("subclass")]
+        [DataMember][XmlElement("subclass")]
         public List<String> SubClasses { get; set; }
 
         /// <summary>
         /// Gets or sets the flight base class.
         /// </summary>
-        [XmlElement("baseclass")]
+        [DataMember][XmlElement("baseclass")]
         public String BaseClass { get; set; }
 
         /// <summary>
         /// Gets or sets the passenger category.
         /// </summary>
-        [XmlElement("passenger")]
+        [DataMember][XmlElement("passenger")]
         public String PassengerCategory { get; set; }
 
         /// <summary>
         /// Gets or sets the request params.
         /// </summary>
-        [XmlElement("request_params")]
+        [DataMember][XmlElement("request_params")]
         public FaresRequestParams RequestParams { get; set; }
     }
-
     /// <summary>
     /// Таблица 23. Параметры секции request_params
     /// </summary>
+    [DataContract, Serializable]
     public sealed class FaresRequestParams
     {
         /// <summary>
         /// Gets or sets the ticket series.
         /// </summary>
-        [XmlElement("tick_ser")]
+        [DataMember][XmlElement("tick_ser")]
         public String TicketSeries { get; set; }
 
         /// <summary>
         /// Gets or sets the flag to show special fares.
         /// </summary>
-        [XmlElement("tripflag")]
+        [DataMember][XmlElement("tripflag")]
         public Boolean TripFlag { get; set; }
     }
 }

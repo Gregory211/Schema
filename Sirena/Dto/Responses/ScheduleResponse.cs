@@ -1,31 +1,34 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+//OK
 namespace Sirena
 {
+    [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class ScheduleResponse : DtoResponse
     {
         /// <summary>
         /// Gets the response answer.
         /// </summary>
-        [XmlElement("answer")]
+        [DataMember][XmlElement("answer")]
         public ScheduleAsnwer Answer { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class ScheduleAsnwer
     {
         /// <summary>
         /// Gets the pult name.
         /// </summary>
-        [XmlAttribute("pult")]
+        [DataMember][XmlAttribute("pult")]
         public String Pult { get; set; }
 
         /// <summary>
         /// Gets the message id.
         /// </summary>
-        [XmlAttribute("msgid")]
+        [DataMember][XmlAttribute("msgid")]
         public String MessageId { get; set; }
 
         /// <summary>
@@ -37,7 +40,7 @@ namespace Sirena
         /// <summary>
         /// USE Time instead.
         /// </summary>
-        [XmlAttribute("time")]
+        [DataMember][XmlAttribute("time")]
         public String ProxyTime
         {
             get
@@ -56,7 +59,7 @@ namespace Sirena
         /// <summary>
         /// Gets the answer body.
         /// </summary>
-        [XmlElement("schedule")]
+        [DataMember][XmlElement("schedule")]
         public ScheduleAnswerBody Body { get; set; }
     }
 
@@ -65,18 +68,20 @@ namespace Sirena
     /// Маршруты, состоящие из одного сегмента, передаются в элементе flight. 
     /// Стыковочные маршруты передаются в элементе flights, cодержащем элементы flight. 
     /// </summary>
+
+    [DataContract, Serializable]
     public sealed class ScheduleAnswerBody
     {
         /// <summary>
         /// Gets the departure city.
         /// </summary>
-        [XmlAttribute("departure")]
+        [DataMember][XmlAttribute("departure")]
         public String Departure { get; set; }
 
         /// <summary>
         /// Gets the arrival city.
         /// </summary>
-        [XmlAttribute("arrival")]
+        [DataMember][XmlAttribute("arrival")]
         public String Arrival { get; set; }
 
         /// <summary>
@@ -91,7 +96,7 @@ namespace Sirena
         /// <summary>
         /// USE Date instead.
         /// </summary>
-        [XmlAttribute("date")]
+        [DataMember][XmlAttribute("date")]
         public String ProxyDate
         {
             get
@@ -120,112 +125,113 @@ namespace Sirena
         /// <summary>
         /// Gets the response error.
         /// </summary>
-        [XmlElement("error")]
+        [DataMember][XmlElement("error")]
         public Error Error { get; set; }
 
         /// <summary>
         /// Gets the additional info about the response.
         /// </summary>
-        [XmlElement("info")]
+        [DataMember][XmlElement("info")]
         public Info Info { get; set; }
 
         /// <summary>
         /// Gets the single segment flights.
         /// </summary>
-        [XmlElement("flight")]
+        [DataMember][XmlElement("flight")]
         public ScheduleFlight[] Flights { get; set; }
 
         /// <summary>
         /// Gets the multi segment flights.
         /// </summary>
-        [XmlElement("flights")]
+        [DataMember][XmlElement("flights")]
         public ScheduleSegmentedFlight[] MultiSegmentFlights { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class ScheduleSegmentedFlight
     {
         /// <summary>
         /// Gets the flight segments.
         /// </summary>
-        [XmlElement("flight")]
+        [DataMember][XmlElement("flight")]
         public ScheduleFlight[] FlightSegments { get; set; }
     }
 
     /// <summary>
     /// Таблица 15. Структура элемента flight
     /// </summary>
+    [DataContract, Serializable]
     public sealed class ScheduleFlight
     {
         /// <summary>
         /// Gets the air company name.
         /// </summary>
-        [XmlElement("company")]
+        [DataMember][XmlElement("company")]
         public String Company { get; set; }
 
         /// <summary>
         /// Код оперирующего перевозчика для рейсов код-шер
         /// </summary>
-        [XmlElement("operating_company")]
+        [DataMember][XmlElement("operating_company")]
         public String OperatingCompany { get; set; }
 
         /// <summary>
         /// Gets flight number.
         /// </summary>
-        [XmlElement("num")]
+        [DataMember][XmlElement("num")]
         public String FlightNumber { get; set; }
 
         /// <summary>
         /// Gets the departure city.
         /// </summary>
-        [XmlElement("origin")]
+        [DataMember][XmlElement("origin")]
         public String Original { get; set; }
 
         /// <summary>
         /// Gets the departure city terminal.
         /// </summary>
-        [XmlElement("orig_term")]
+        [DataMember][XmlElement("orig_term")]
         public String OriginalTerminal { get; set; }
 
         /// <summary>
         /// Gets the destination city.
         /// </summary>
-        [XmlElement("destination")]
+        [DataMember][XmlElement("destination")]
         public String Destination { get; set; }
 
         /// <summary>
         /// Gets the destination city terminal.
         /// </summary>
-        [XmlElement("dest_term")]
+        [DataMember][XmlElement("dest_term")]
         public String DestinationTerminal { get; set; }
 
         /// <summary>
         /// Gets the departure time.
         /// </summary>
-        [XmlElement("depttime")]
+        [DataMember][XmlElement("depttime")]
         public ScheduleFlightTime DepartureTime { get; set; }
 
         /// <summary>
         /// Gets the arrival time.
         /// </summary>
-        [XmlElement("arrvtime")]
+        [DataMember][XmlElement("arrvtime")]
         public ScheduleFlightTime ArrivalTime { get; set; }
 
         /// <summary>
         /// Gets the period info for the schedule.
         /// </summary>
-        [XmlElement("period")]
+        [DataMember][XmlElement("period")]
         public ScheduleFlightPeriod Period { get; set; }
 
         /// <summary>
         /// Gets the airplane code.
         /// </summary>
-        [XmlElement("airplane")]
+        [DataMember][XmlElement("airplane")]
         public String Airplane { get; set; }
 
         /// <summary>
         /// Gets the flight summary.
         /// </summary>
-        [XmlElement("classes")]
+        [DataMember][XmlElement("classes")]
         public ScheduleFlightClassInfo ClassInfo { get; set; }
 
         /// <summary>
@@ -240,7 +246,7 @@ namespace Sirena
         /// <summary>
         /// USE FlightTime instead.
         /// </summary>
-        [XmlElement("flightTime")]
+        [DataMember][XmlElement("flightTime")]
         public String ProxyFlightTime
         {
             get
@@ -265,7 +271,7 @@ namespace Sirena
         /// <summary>
         /// USE IsEticketPossible instead.
         /// </summary>
-        [XmlElement("et_possible")]
+        [DataMember][XmlElement("et_possible")]
         public String ProxyIsETicketPossible
         {
             get
@@ -281,7 +287,7 @@ namespace Sirena
             }
         }
     }
-
+    [DataContract, Serializable]
     public sealed class ScheduleFlightPeriod
     {
         /// <summary>
@@ -293,7 +299,7 @@ namespace Sirena
         /// <summary>
         /// USE BeginDate instead.
         /// </summary>
-        [XmlAttribute("begin")]
+        [DataMember][XmlAttribute("begin")]
         public String ProxyBeginDate
         {
             get
@@ -325,7 +331,7 @@ namespace Sirena
         /// <summary>
         /// USE EndDate instead.
         /// </summary>
-        [XmlAttribute("end")]
+        [DataMember][XmlAttribute("end")]
         public String ProxyEndDate
         {
             get
@@ -351,10 +357,10 @@ namespace Sirena
         /// <summary>
         /// Gets the week days.
         /// </summary>
-        [XmlAttribute("days")]
+        [DataMember][XmlAttribute("days")]
         public String Days { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class ScheduleFlightClassInfo
     {
         /// <summary>
@@ -363,7 +369,7 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
-        [XmlAttribute("econom")]
+        [DataMember][XmlAttribute("econom")]
         public Int32 EconomyAvailable { get; set; }
 
         /// <summary>
@@ -372,7 +378,7 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
-        [XmlAttribute("business")]
+        [DataMember][XmlAttribute("business")]
         public Int32 BussinessAvailable { get; set; }
 
         /// <summary>
@@ -381,10 +387,10 @@ namespace Sirena
         /// <remarks>
         /// 1 is available.
         /// </remarks>
-        [XmlAttribute("first")]
+        [DataMember][XmlAttribute("first")]
         public Int32 FirstAvailable { get; set; }
     }
-
+    [DataContract, Serializable]
     public sealed class ScheduleFlightTime
     {
         /// <summary>
@@ -399,7 +405,7 @@ namespace Sirena
         /// <summary>
         /// USE DayShift instead.
         /// </summary>
-        [XmlAttribute("dayshift")]
+        [DataMember][XmlAttribute("dayshift")]
         public String ProxyDayShift
         {
             get

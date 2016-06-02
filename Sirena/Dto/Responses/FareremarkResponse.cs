@@ -2,12 +2,14 @@
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+//OK
 namespace Sirena
 {
     [DataContract, Serializable()]
     [XmlRoot("sirena")]
     public sealed class FareremarkResponse : DtoResponse
     {
+        [DataMember]
         [XmlElement("answer")]
         public FareremarkAnswer Answer { get; set; }
     }
@@ -18,12 +20,14 @@ namespace Sirena
         /// <summary>
         /// Gets the pult name.
         /// </summary>
+        [DataMember]
         [XmlAttribute("pult")]
         public String Pult { get; set; }
 
         /// <summary>
         /// Gets the message id.
         /// </summary>
+        [DataMember]
         [XmlAttribute("msgid")]
         public String MessageId { get; set; }
 
@@ -36,6 +40,7 @@ namespace Sirena
         /// <summary>
         /// USE Time instead.
         /// </summary>
+        [DataMember]
         [XmlAttribute("time")]
         public String ProxyTime
         {
@@ -52,6 +57,7 @@ namespace Sirena
             }
         }
 
+        [DataMember]
         [XmlElement("fareremark")]
         public FareremarkAnswerBody Body { get; set; }
     }
@@ -59,18 +65,21 @@ namespace Sirena
     [DataContract, Serializable()]
     public sealed class FareremarkAnswerBody
     {
+        [DataMember]
         [XmlElement("remark")]
         public FareremarkRemark Remark { get; set; }
 
         /// <summary>
         /// Gets the response error.
         /// </summary>
+        [DataMember]
         [XmlElement("error")]
         public Error Error { get; set; }
 
         /// <summary>
         /// Gets the additional info about the response.
         /// </summary>
+        [DataMember]
         [XmlElement("info")]
         public Info Info { get; set; }
     }
@@ -81,6 +90,7 @@ namespace Sirena
         [XmlIgnore]
         public Boolean NewFare { get; set; }
 
+        [DataMember]
         [XmlAttribute("new_fare")]
         public String ProxyNewFare
         {
@@ -94,6 +104,7 @@ namespace Sirena
             }
         }
 
+        [DataMember]
         [XmlText]
         public String Text { get; set; }
     }
