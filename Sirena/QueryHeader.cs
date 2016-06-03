@@ -115,7 +115,7 @@ namespace Sirena
         {
             if (headerData.Length != QueryHeader.HeaderSize)
             {
-                throw new ArgumentException($"header size must be {HeaderSize}");
+                throw new ArgumentException("header size must be " + HeaderSize);
             }
 
             Array.Copy(headerData, _headerData, _headerData.Length);
