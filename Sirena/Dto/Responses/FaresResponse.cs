@@ -13,12 +13,14 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class FaresResponse : DtoResponse
     {
+        public FaresResponse() { }
         [DataMember][XmlElement("answer")]
         public FaresAnswer Answer { get; set; }
     }
     [DataContract, Serializable]
     public sealed class FaresAnswer
     {
+        public FaresAnswer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
@@ -65,6 +67,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FaresAnswerBody
     {
+        public FaresAnswerBody() { }
         /// <summary>
         /// Gets the departure city.
         /// </summary>
@@ -163,6 +166,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class Fare
     {
+        public Fare() { }
         /// <summary>
         /// Gets the fares name.
         /// </summary>
@@ -273,6 +277,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FaresCurrencyRate
     {
+        public FaresCurrencyRate() { }
         /// <summary>
         /// Gets the currency name in Cyrillic.
         /// </summary>
@@ -306,6 +311,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FaresUpt
     {
+        public FaresUpt() { }
         [DataMember]
         [XmlAnyElement]
         public XElement[] CustomElements { get; set; }

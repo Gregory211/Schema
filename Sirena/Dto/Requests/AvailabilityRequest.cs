@@ -13,6 +13,7 @@ namespace Sirena
     [XmlRoot("sirena")]    
     public sealed class AvailabilityRequest : DtoRequest
     {
+        public AvailabilityRequest(): base() { }
         /// <summary>
         /// Gets or sets the query data.
         /// </summary>
@@ -31,6 +32,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityQuery
     {
+        public AvailabilityQuery() { }
         /// <summary>
         /// Gets or sets the query params.
         /// </summary>
@@ -50,6 +52,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityQueryParamas
     {
+        public AvailabilityQueryParamas() { }
         /// <summary>
         /// Gets or sets the departure city or airport.
         /// </summary>
@@ -242,6 +245,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityAnswerParams
     {
+        public AvailabilityAnswerParams() { }
         /// <summary>
         /// Gets or sets the marker to show the flight time info.
         /// </summary>
@@ -284,6 +288,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityRequestParams
     {
+        public AvailabilityRequestParams() { }
         /// <summary>
         /// Gets or sets the joint type for a flight.
         /// </summary>

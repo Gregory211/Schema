@@ -9,12 +9,14 @@ namespace Sirena
 {
     public sealed class Info
     {
+        public Info() { }
         [XmlElement("warning")]
         public Warning[] Warnings { get; set; }
     }
 
     public sealed class Warning
     {
+        public Warning() { }
         [XmlAttribute("level")]
         public String Level { get; set; }
 

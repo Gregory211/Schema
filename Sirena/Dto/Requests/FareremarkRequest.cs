@@ -9,6 +9,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class FareremarkRequest : DtoRequest
     {
+        public FareremarkRequest() { }
         [DataMember]
         [XmlElement("query")]
         public FareremarkQuery Query { get; set; }
@@ -16,6 +17,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FareremarkQuery
     {
+        public FareremarkQuery() { }
         [DataMember]
         [XmlElement("fareremark")]
         public FareremarkQueryParams Params { get; set; }
@@ -27,6 +29,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FareremarkQueryParams
     {
+        public FareremarkQueryParams() { }
         /// <summary>
         /// Gets or sets the company code.
         /// </summary>
@@ -63,6 +66,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FareremarkRequestParams
     {
+        public FareremarkRequestParams() { }
         /// <summary>
         /// Gets or sets the sixteenth category for UTP.
         /// </summary>
@@ -84,6 +88,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FareremarkAnswerParams
     {
+        public FareremarkAnswerParams() { }
         [DataMember]
         [XmlElement("lang")]
         public String Language { get; set; }

@@ -9,6 +9,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class FareremarkResponse : DtoResponse
     {
+        public FareremarkResponse():base() { }
         [DataMember]
         [XmlElement("answer")]
         public FareremarkAnswer Answer { get; set; }
@@ -17,6 +18,7 @@ namespace Sirena
     [DataContract, Serializable()]
     public sealed class FareremarkAnswer
     {
+        public FareremarkAnswer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
@@ -65,6 +67,7 @@ namespace Sirena
     [DataContract, Serializable()]
     public sealed class FareremarkAnswerBody
     {
+        public FareremarkAnswerBody() { }
         [DataMember]
         [XmlElement("remark")]
         public FareremarkRemark Remark { get; set; }
@@ -87,6 +90,7 @@ namespace Sirena
     [DataContract, Serializable()]
     public sealed class FareremarkRemark
     {
+        public FareremarkRemark() { }
         [XmlIgnore]
         public Boolean NewFare { get; set; }
 

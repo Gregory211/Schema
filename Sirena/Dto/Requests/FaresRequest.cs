@@ -10,12 +10,14 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class FaresRequest : DtoRequest
     {
+        public FaresRequest() { }
         [DataMember][XmlElement("query")]
         public FaresQuery Query { get; set;}
     }
     [DataContract, Serializable]
     public sealed class FaresQuery
     {
+        public FaresQuery() { }
         [DataMember][XmlElement("fares")]
         public FaresQueryParams Params { get; set; }
     }
@@ -25,6 +27,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FaresQueryParams
     {
+        public FaresQueryParams() { }
         /// <summary>
         /// Gets or sets the departure city.
         /// </summary>
@@ -129,6 +132,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class FaresRequestParams
     {
+        public FaresRequestParams() { }
         /// <summary>
         /// Gets or sets the ticket series.
         /// </summary>

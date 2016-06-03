@@ -10,7 +10,9 @@ namespace Sirena
     [DataContract, Serializable]
     [XmlRoot("sirena")]
     public sealed class BookingResponse : DtoResponse
-    {
+    { 
+    
+        public BookingResponse():base() { }
         [DataMember][XmlElement("answer")]
         public BookingAnswer Answer { get; set; }
     }
@@ -20,7 +22,7 @@ namespace Sirena
     /// </summary>
     [DataContract, Serializable]
     public sealed class BookingAnswer
-    {
+    {   public BookingAnswer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
@@ -64,6 +66,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingAnswerBody
     {
+        public BookingAnswerBody() { }
         [DataMember][XmlAttribute("regnum")]
         public String RegistrationNumber { get; set; }
 
@@ -110,6 +113,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPassengerNameRecord
     {
+        public BookingPassengerNameRecord() { }
         [DataMember][XmlElement("regnum")]
         public String RegistrationNumber { get; set; }
 
@@ -159,6 +163,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingResponseContacts
     {
+        public BookingResponseContacts() { }
         [DataMember][XmlElement("email")]
         public String[] Emails { get; set; }
 
@@ -168,6 +173,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingResponsePassenger
     {
+        public BookingResponsePassenger() { }
         [XmlIgnore]
         public Int32? Id { get; set; }
 
@@ -397,6 +403,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingResponsePassengerContacts
     {
+        public BookingResponsePassengerContacts() { }
         [DataMember][XmlElement("phone")]
         public BookingContact[] Phones { get; set; }
 
@@ -413,6 +420,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingResponseSegment
     {
+        public BookingResponseSegment() { }
         [XmlIgnore]
         public Int32? Id { get; set; }
 
@@ -486,6 +494,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingResponseSegmentPoint
     {
+        public BookingResponseSegmentPoint() { }
         [DataMember][XmlElement("city")]
         public String City { get; set; }
 
@@ -534,6 +543,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPrices
     {
+        public BookingPrices() { }
         [DataMember][XmlAttribute("tick_ser")]
         public String TicketSeries { get; set; }
 
@@ -553,6 +563,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPrice
     {
+        public BookingPrice() { }
         [XmlIgnore]
         public Int32? SegmentId { get; set; }
 
@@ -608,6 +619,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPriceFare
     {
+        public BookingPriceFare() { }
         /// <summary>
         /// Gets the fare expiration date.
         /// </summary>
@@ -652,6 +664,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPriceTax
     {
+        public BookingPriceTax() { }
         /// <summary>
         /// Gets the tax owner.
         /// </summary>
@@ -696,6 +709,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingCurrencyValue
     {
+        public BookingCurrencyValue() { }
         /// <summary>
         /// Gets the currency type.
         /// </summary>
@@ -715,6 +729,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingPriceCode
     {
+        public BookingPriceCode() { }
         /// <summary>
         /// Gets the base code.
         /// </summary>
@@ -734,6 +749,7 @@ namespace Sirena
     [DataContract, Serializable]
     public enum BookingTaxOwner
     {
+        
         /// <summary>
         /// Tax owner is aircompany.
         /// </summary>

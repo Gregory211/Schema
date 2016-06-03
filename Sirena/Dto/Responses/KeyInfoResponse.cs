@@ -9,6 +9,10 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class KeyInfoResponse : DtoResponse
     {
+        public KeyInfoResponse() : base()
+        {
+        }
+
         [DataMember][XmlElement("answer")]
         public KeyAnswer Answer { get; set; }
     }
@@ -16,6 +20,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class KeyAnswer
     {
+        public KeyAnswer() { }
         [DataMember][XmlAttribute("pult")]
         public String Pult { get; set; }
 
@@ -26,6 +31,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class KeyAnswerBody
     {
+        public KeyAnswerBody() { }
         [DataMember][XmlElement("key_manager")]
         public KeyManager KeyManager { get; set; }
 
@@ -42,6 +48,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class KeyManager
     {
+        public KeyManager() { }
         [DataMember][XmlElement("key")]
         public KeyDigest KeyDigest { get; set; }
 
@@ -58,6 +65,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class KeyDigest
     {
+        public KeyDigest() { }
         [DataMember][XmlAttribute("state")]
         public KeyState KeyState { get; set; }
 

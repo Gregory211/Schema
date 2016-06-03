@@ -12,6 +12,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class KeyInfoRequest : DtoRequest
     {
+        
         [DataMember][XmlElement("query")]
         public KeyInfoQuery Query { get; set; }
 

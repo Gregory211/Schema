@@ -13,6 +13,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class AvailabilityResponse : DtoResponse
     {
+        public AvailabilityResponse(): base() { }
         /// <summary>
         /// Gets the answer object.
         /// </summary>
@@ -23,6 +24,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityAnswer
     {
+        public AvailabilityAnswer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
@@ -73,6 +75,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityAnswerBody
     {
+        public AvailabilityAnswerBody() { }
         /// <summary>
         /// Gets the departure city.
         /// </summary>
@@ -179,6 +182,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilitySegmentedFlight
     {
+        public AvailabilitySegmentedFlight() { }
         /// <summary>
         /// Gets the flight segments.
         /// </summary>
@@ -193,6 +197,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityFlight
     {
+        public AvailabilityFlight() { }
         /// <summary>
         /// Gets the air company name.
         /// </summary>
@@ -408,6 +413,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityFlightTime
     {
+        public AvailabilityFlightTime() { }
         /// <summary>
         /// Gets the shift of the initial departure date.
         /// </summary>
@@ -469,6 +475,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityFlightClassInfo
     {
+        public AvailabilityFlightClassInfo() { }
         /// <summary>
         /// Gets the economy class availablity.
         /// </summary>
@@ -506,6 +513,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class AvailabilityFlightSubClass
     {
+        public AvailabilityFlightSubClass() { }
         /// <summary>
         /// Gets the subclass name.
         /// </summary>

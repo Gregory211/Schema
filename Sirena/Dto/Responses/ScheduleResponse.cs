@@ -10,6 +10,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class ScheduleResponse : DtoResponse
     {
+        public ScheduleResponse() { }
         /// <summary>
         /// Gets the response answer.
         /// </summary>
@@ -19,6 +20,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleAsnwer
     {
+        public ScheduleAsnwer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
@@ -72,6 +74,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleAnswerBody
     {
+        public ScheduleAnswerBody() { }
         /// <summary>
         /// Gets the departure city.
         /// </summary>
@@ -149,6 +152,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleSegmentedFlight
     {
+        public ScheduleSegmentedFlight() { }
         /// <summary>
         /// Gets the flight segments.
         /// </summary>
@@ -162,6 +166,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleFlight
     {
+        public ScheduleFlight() { }
         /// <summary>
         /// Gets the air company name.
         /// </summary>
@@ -290,6 +295,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleFlightPeriod
     {
+        public ScheduleFlightPeriod() { }
         /// <summary>
         /// Gets the period begin date.
         /// </summary>
@@ -363,6 +369,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleFlightClassInfo
     {
+        public ScheduleFlightClassInfo() { }
         /// <summary>
         /// Gets the economy class availablity.
         /// </summary>
@@ -393,6 +400,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleFlightTime
     {
+        public ScheduleFlightTime() { }
         /// <summary>
         /// Gets the shift of the initial departure date.
         /// </summary>

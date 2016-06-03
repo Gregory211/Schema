@@ -15,6 +15,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class BookingRequest : DtoRequest
     {
+        public BookingRequest(): base() { }
         /// <summary>
         /// Gets or sets the query data.
         /// </summary>
@@ -33,6 +34,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingQuery
     {
+        public BookingQuery() { }
         /// <summary>
         /// Gets or sets the query params.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingQueryParams
     {
+        public BookingQueryParams() { }
         /// <summary>
         /// Gets or sets the flight segments.
         /// </summary>
@@ -99,6 +102,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingAnswerParams
     {
+        public BookingAnswerParams() { }
         /// <summary>
         /// Gets or sets the flag to show the airplane type.
         /// </summary>
@@ -127,6 +131,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingRequestParams
     {
+        public BookingRequestParams() { }
         /// <summary>
         /// Gets or sets the language used in the response.
         /// </summary>
@@ -158,6 +163,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingRequestSegment
     {
+        public BookingRequestSegment() { }
         /// <summary>
         /// Gets or sets the segment id.
         /// </summary>
@@ -280,6 +286,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingRequestPassenger
     {
+        public BookingRequestPassenger() { }
         /// <summary>
         /// Gets the passenger id.
         /// </summary>
@@ -524,6 +531,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingContact
     {
+        public BookingContact() { }
         /// <summary>
         /// Gets or sets the contact type.
         /// </summary>
@@ -565,6 +573,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class BookingRequestContacts
     {
+        public BookingRequestContacts() { }
         /// <summary>
         /// Gets or sets the phone.
         /// </summary>

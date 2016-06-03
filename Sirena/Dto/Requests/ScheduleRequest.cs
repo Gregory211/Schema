@@ -9,6 +9,7 @@ namespace Sirena
     [XmlRoot("sirena")]
     public sealed class ScheduleRequest : DtoRequest
     {
+        public ScheduleRequest() { }
         [DataMember]
         [XmlElement("query")]
         public ScheduleQuery Query { get; set; }
@@ -17,6 +18,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleQuery
     {
+        public ScheduleQuery() { }
         [DataMember]
         [XmlElement("schedule")]
         public ScheduleQueryParams Params { get; set; }
@@ -30,6 +32,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleQueryParams
     {
+        public ScheduleQueryParams() { }
         /// <summary>
         /// Код города или порта отправления
         /// </summary>
@@ -175,6 +178,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleRequestParams
     {
+        public ScheduleRequestParams() { }
         /// <summary>
         /// Gets or sets the flag to show connected flights
         /// for a single company.
@@ -190,6 +194,7 @@ namespace Sirena
     [DataContract, Serializable]
     public sealed class ScheduleAnswerParams
     {
+        public ScheduleAnswerParams() { }
         /// <summary>
         /// Gets or sets the marker to show the flight time info.
         /// </summary>
