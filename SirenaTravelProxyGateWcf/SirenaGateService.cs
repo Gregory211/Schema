@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Sirena;
@@ -12,13 +13,18 @@ namespace SirenaTravelProxyGateWcf
 
         public SirenaGateService()
         {
+
             var settings = new SirenaClientSettings()
             {
                 UserId = 922,
-                Host = "193.106.94.28",
-                Port = 8080,
+                Host = ConfigurationManager.AppSettings["SirenaGateIp"] ?? "193.104.87.251",
+                Port = 34323,
                 PublicRsaKey = new RSAParameters()
             };
+
+            if (ConfigurationManager.AppSettings["SirenaGatePort"] != null)
+                settings.Port = Convert.ToInt32(ConfigurationManager.AppSettings["SirenaGatePort"]);
+
             _client = new SirenaClient(settings);
         }
 
