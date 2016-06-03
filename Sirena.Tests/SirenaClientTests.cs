@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Sirena.Helpers;
@@ -35,6 +36,7 @@ namespace Sirena.Tests
             Assert.IsTrue(_client.IsConnected);
         }
 
+        #region AvailabilityRequest
         [Test]
         public async Task AvailabilityRequest()
         {
@@ -49,7 +51,8 @@ namespace Sirena.Tests
                                 Departure = "МОВ",
                                 Arrival = "ХБР",
                                 AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
-                                Connections = "only ", ProxyDate = "02.06.16"
+                                Connections = "only ",
+                                ProxyDate = DateTime.Now.ToString("dd.MM.yy")
                             }
                     }
             };
@@ -60,6 +63,9 @@ namespace Sirena.Tests
             Assert.Null(result.Answer.Body.Error);
         }
 
+        #endregion
+
+        #region ScheduleRequest
         [Test]
         public async Task ScheduleRequest()
         {
@@ -73,7 +79,7 @@ namespace Sirena.Tests
                             {
                                 Departure = "МОВ",
                                 Arrival = "ХБР",
-                                ProxyDate = "02.06.16",
+                                ProxyDate = DateTime.Now.ToString("dd.MM.yy"),
                                 AnswerParams = new ScheduleAnswerParams()
                                 {
                                     FullDate = true,
@@ -90,5 +96,6 @@ namespace Sirena.Tests
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
         }
+        #endregion
     }
 }
