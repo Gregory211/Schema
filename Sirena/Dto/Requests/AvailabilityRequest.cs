@@ -159,7 +159,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("connections")]
-        public string Connections { get; set; }
+        public string Connections { get; set; } = "only";
 
 
         /// <summary>

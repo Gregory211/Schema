@@ -1505,7 +1505,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FareNameField, value) != true)) {
                     this.FareNameField = value;
-                    this.RaisePropertyChanged("FareName");
+                    this.RaisePropertyChanged("Code");
                 }
             }
         }

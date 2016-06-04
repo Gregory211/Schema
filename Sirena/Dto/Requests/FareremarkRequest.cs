@@ -49,7 +49,7 @@ namespace Sirena
         /// </remarks>
         [DataMember]
         [XmlElement("code")]
-        public String FareName { get; set; }
+        public String Code { get; set; }
 
         [DataMember]
         [XmlElement("request_params")]

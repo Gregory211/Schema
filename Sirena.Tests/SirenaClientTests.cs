@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using NUnit.Framework;
 using Sirena.Helpers;
 
@@ -37,8 +39,13 @@ namespace Sirena.Tests
         }
 
         #region AvailabilityRequest
+
+        /// <summary>
+        /// Пример 2. Запрос наличия мест на направлении Москва-Хабаровск
+        /// </summary>
+        /// <returns></returns>
         [Test]
-        public async Task AvailabilityRequest()
+        public async Task AvailabilityRequest_Example_2()
         {
             var request = new AvailabilityRequest()
             {
@@ -49,9 +56,8 @@ namespace Sirena.Tests
                             new AvailabilityQueryParamas()
                             {
                                 Departure = "МОВ",
-                                Arrival = "ХБР",
+                                Arrival = "СПТ",
                                 AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
-                                Connections = "only ",
                                 ProxyDate = DateTime.Now.ToString("dd.MM.yy")
                             }
                     }
@@ -63,11 +69,50 @@ namespace Sirena.Tests
             Assert.Null(result.Answer.Body.Error);
         }
 
-        #endregion
-
-        #region ScheduleRequest
+        /// <summary>
+        /// Пример 10. Запрос наличия мест на направлении
+        /// </summary>
+        /// <returns></returns>
         [Test]
-        public async Task ScheduleRequest()
+        public async Task AvailabilityRequest_Example_10()
+        {
+            var request = new AvailabilityRequest()
+            {
+                Query = new AvailabilityQuery()
+                {
+                    Params = new AvailabilityQueryParamas()
+                    {
+                        Departure = "МОВ",
+                        Arrival = "СПТ",
+                        SubClasses = new List<string>()
+                                {
+                                    "Э",
+                                    "К",
+                                    "Л",
+                                    "М",
+                                    "Н",
+                                    "Я"
+                                },
+                        RequestParams = new AvailabilityRequestParams() { JointType = JointType.All },
+                        ProxyDate = DateTime.Now.ToString("dd.MM.yy")
+                    }
+                }
+            };
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+
+        #endregion
+        #region ScheduleRequest
+        /// <summary>
+        /// Пример 8. Запрос расписания на направлении
+        /// </summary>
+        /// <returns></returns>
+        [Test]
+        public async Task ScheduleRequest_Example_8()
         {
             var request = new ScheduleRequest()
             {
@@ -78,7 +123,7 @@ namespace Sirena.Tests
                             new ScheduleQueryParams()
                             {
                                 Departure = "МОВ",
-                                Arrival = "ХБР",
+                                Arrival = "СПТ",
                                 ProxyDate = DateTime.Now.ToString("dd.MM.yy"),
                                 AnswerParams = new ScheduleAnswerParams()
                                 {
@@ -89,6 +134,75 @@ namespace Sirena.Tests
                                 }
                             }
                     }
+            };
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+        #endregion
+        #region FaresRequest
+        /// <summary>
+        /// Пример 12. Запрос справки по тарифам
+        /// </summary>
+        /// <returns></returns>
+        [Test]
+        public async Task FaresRequest_Example_12()
+        {
+            var request = new FaresRequest()
+            {
+                Query = new FaresQuery()
+                {
+                    Params = new FaresQueryParams()
+                    {
+                        Departure = "МОВ",
+                        Arrival = "СПТ",
+                        Company = "ПЛ",
+                        SubClasses = new List<string> { "Т", "М" },
+                        PassengerCategory = "ААА"
+                    }
+                }
+            };
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+        #endregion
+        #region FareremarkRequests
+        /// <summary>
+        /// Пример 14. Запрос текста УПТ
+        /// </summary>
+        /// <returns></returns>
+        [Test]
+        public async Task fareremarkRequest_Example_14()
+        {
+            var request = new FareremarkRequest()
+            {
+                Query = new FareremarkQuery()
+                {
+                    Params = new FareremarkQueryParams()
+                    {
+                        Company = "SU",
+                        Code = "2000",
+                        AnswerParams = new FareremarkAnswerParams()
+                        {
+                            Language = "ru"
+                        },
+                        RequestParams = new FareremarkRequestParams()
+                        {
+                            Upt = new FaresUpt()
+                            {
+                                CustomElements = new XElement[]
+                                {
+                                    new XElement("idar1") {Value = "31346266"},
+                                }
+                            }
+                        }
+                    }
+                }
             };
 
             var result = await _client.SendRequestAsync(request);

@@ -42,7 +42,6 @@ namespace Sirena.Tests
             Assert.NotNull(arrival);
         }
 
-
         [Test]
         public void AvailabilityRequest_DeserializeResponse_ShouldContainErrorProperty()
         {
