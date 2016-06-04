@@ -278,6 +278,7 @@ namespace Sirena
         /// <returns>Returns the task object representing the asynchronous operation.</returns>
         public async Task ConnectAsync()
         {
+            client = new TcpClient();
             await AcquireConnectionAsync();
           //  await RequestPublicKeyAsync();
           //  await HandshakeAsync();
@@ -367,6 +368,7 @@ namespace Sirena
         /// </summary>
         public void Close()
         {
+            client.GetStream().Close();
             client.Close();
         }
     }
