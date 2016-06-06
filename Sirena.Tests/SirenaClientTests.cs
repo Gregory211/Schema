@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using NUnit.Framework;
+using Sirena.Dto.Requests;
 using Sirena.Helpers;
 
 namespace Sirena.Tests
@@ -218,6 +219,37 @@ namespace Sirena.Tests
                                     new XElement("fdate") {Value = "20160221190000"},
                                 }
                             }
+                        }
+                    }
+                }
+            };
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+        #endregion    
+        #region PricingRequest
+        [Test]
+        public async Task PricingRequest_Example()
+        {
+            var request = new PricingRequest()
+            {
+                Query = new PricingQuery()
+                {
+                    Params = new PricingQueryParamas()
+                    {
+                        Segment = new PricingRequestSegment()
+                        {
+                            Departure = "МОВ",
+                            Arrival = "СПТ",
+                            ProxyDate = DateTime.Now.ToString("dd.MM.yy")
+                        },
+                        Passenger = new PricingRequestPassenger()
+                        {
+                            Code = "ААА",
+                            Count = 1
                         }
                     }
                 }

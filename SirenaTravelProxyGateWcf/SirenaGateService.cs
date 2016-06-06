@@ -3,6 +3,8 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Sirena;
+using Sirena.Dto.Requests;
+using Sirena.Dto.Responses;
 
 namespace SirenaTravelProxyGateWcf
 {
@@ -211,6 +213,38 @@ namespace SirenaTravelProxyGateWcf
             {
                 _client.Connect();
                 var result = _client.SendRequest(fareremarkRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
+        public async Task<PricingResponse> PricingRequestAsync(PricingRequest pricingRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(pricingRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
+        public PricingResponse SendPricingRequest(PricingRequest pricingRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(pricingRequest);
                 _client.Close();
                 return result;
             }

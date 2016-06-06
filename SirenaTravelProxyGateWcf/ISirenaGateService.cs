@@ -3,6 +3,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using Sirena;
+using Sirena.Dto.Requests;
+using Sirena.Dto.Responses;
 
 namespace SirenaTravelProxyGateWcf
 {
@@ -45,5 +47,11 @@ namespace SirenaTravelProxyGateWcf
 
         [OperationContract]
         FareremarkResponse SendFareremarkRequest(FareremarkRequest fareremarkRequest);
+
+        [OperationContract]
+        Task<PricingResponse> PricingRequestAsync(PricingRequest pricingRequest);
+
+        [OperationContract]
+        PricingResponse SendPricingRequest(PricingRequest pricingRequest);
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
 using Sirena.Cryptography;
+using Sirena.Dto.Requests;
+using Sirena.Dto.Responses;
 using Sirena.Helpers;
 
 namespace Sirena
@@ -265,6 +267,25 @@ namespace Sirena
         }
 
         /// <summary>
+        /// Asynchronously sends a PricingRequest object to the Sirena server.
+        /// </summary>
+        /// <param name="pricingRequest"></param>
+        /// <returns>Returns the task object representing the asynchronous operation.</returns>
+        public async Task<PricingResponse> SendRequestAsync(PricingRequest pricingRequest)
+        {
+            return await SendRequestAsync<PricingRequest, PricingResponse>(pricingRequest);
+        }
+
+        /// <summary>
+        /// Sends a PricingRequest object to the Sirena server.
+        /// </summary>
+        /// <returns>Returns a PricingResponse object contains the response.</returns>
+        public PricingResponse SendRequest(PricingRequest pricingRequest)
+        {
+            return SendRequest<PricingRequest, PricingResponse>(pricingRequest);
+        }
+
+        /// <summary>
         /// Connects to the Sirena server.
         /// </summary>
         public void Connect()
@@ -278,6 +299,7 @@ namespace Sirena
         /// <returns>Returns the task object representing the asynchronous operation.</returns>
         public async Task ConnectAsync()
         {
+            client = new TcpClient();
             await AcquireConnectionAsync();
           //  await RequestPublicKeyAsync();
           //  await HandshakeAsync();
@@ -367,6 +389,7 @@ namespace Sirena
         /// </summary>
         public void Close()
         {
+            client.GetStream().Close();
             client.Close();
         }
     }

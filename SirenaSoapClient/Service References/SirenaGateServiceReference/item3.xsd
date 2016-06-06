@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sirena" />
+  <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" />
+  <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" />
   <xs:element name="SendStringRequest">
     <xs:complexType>
       <xs:sequence>
@@ -168,6 +170,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="SendFareremarkRequestResult" nillable="true" type="q22:FareremarkResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PricingRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="pricingRequest" nillable="true" type="q23:PricingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PricingRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="PricingRequestResult" nillable="true" type="q24:PricingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPricingRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="pricingRequest" nillable="true" type="q25:PricingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPricingRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendPricingRequestResult" nillable="true" type="q26:PricingResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

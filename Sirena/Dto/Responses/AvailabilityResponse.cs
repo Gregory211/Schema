@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Sirena.Helpers;
+
 // OK
 namespace Sirena
 {
@@ -280,7 +281,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("ilc")]
-        public String ProxyIntermediateStops
+        public string ProxyIntermediateStops
         {
             get
             {
@@ -310,7 +311,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("delay")]
-        public String ProxyDelay
+        public string ProxyDelay
         {
             get
             {
