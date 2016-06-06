@@ -23,8 +23,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ae0d2be4-95cc-4146-beaf-874b71b15da1" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd2" />
+    <MetadataFile FileName="item52.xsd" MetadataType="Schema" ID="eb6c1217-743e-4ed5-864f-ac89286b71f5" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd5" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="944bbec4-f687-4ff6-b27e-ef15f942ccd3" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd4" />
     <MetadataFile FileName="SirenaGateService.wsdl" MetadataType="Wsdl" ID="1cc735be-36f6-4c0b-bf71-77b05e34355c" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?wsdl" />
+    <MetadataFile FileName="item53.xsd" MetadataType="Schema" ID="69846dff-cd2f-4f95-9ce0-a73256f83868" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd6" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="eec9347a-1e9d-455d-8a0b-2ff74e99493e" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?disco" />
     <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6bdf4f09-c8f6-4f41-a429-8c64da9d1cc3" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd1" />
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="d435b326-4da7-41e6-a47b-3d196b8a6fa5" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd0" />

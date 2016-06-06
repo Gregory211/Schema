@@ -70,6 +70,18 @@
     <None Include="Service References\SirenaGateServiceReference\item4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SirenaGateServiceReference\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\item51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\item52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\item53.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaGateService.wsdl" />
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.AvailabilityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -81,6 +93,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.KeyInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.PricingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.ScheduleResponse.datasource">

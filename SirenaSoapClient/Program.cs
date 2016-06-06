@@ -14,7 +14,8 @@ namespace SirenaSoapClient
         {
             SirenaGateServiceClient sirenaGateServiceClient = new SirenaGateServiceClient();
 
-            var request = new AvailabilityRequest()
+            #region AvailabilityRequest
+            var availabilityRequest = new AvailabilityRequest()
             {
                 Query =
                     new AvailabilityQuery()
@@ -31,18 +32,49 @@ namespace SirenaSoapClient
                             }
                     }
             };
-
-            var xmlView1 = SerializationHelper.Serialize(request);
+            #endregion
+            #region PricingRequest
+            var pricingRequest = new PricingRequest()
+            {
+                Query = new PricingQuery()
+                {
+                    Params = new PricingQueryParamas()
+                    {
+                        Segment = new PricingRequestSegment()
+                        {
+                            Departure = "МОВ",
+                            Arrival = "СПТ",
+                            ProxyDate = DateTime.Now.AddDays(4).ToString("dd.MM.yy")
+                        },
+                        Passenger = new PricingRequestPassenger()
+                        {
+                            Code = "ААА",
+                            Count = 1
+                        }
+                    }
+                }
+            };
+            #endregion
+            var xmlView1 = SerializationHelper.Serialize(pricingRequest);
             Console.WriteLine(xmlView1);
 
             try
             {
-                Console.Write("Send request -> ");
-                var response = sirenaGateServiceClient.SendAvailabilityRequest(request);
-                Console.WriteLine("Success");
-                Console.WriteLine("Response: ");
-                var xmlView2 = SerializationHelper.Serialize(response);
-                Console.WriteLine(xmlView2);
+                while (true)
+                {
+                    Console.Write("Send request -> ");
+                    //var response = sirenaGateServiceClient.SendAvailabilityRequest(availabilityRequest);
+                    var response = sirenaGateServiceClient.SendPricingRequest(pricingRequest);
+                    Console.WriteLine("Success");
+                    Console.WriteLine("Response: ");
+                    var xmlView2 = SerializationHelper.Serialize(response);
+                    Console.WriteLine(xmlView2);
+
+                    Console.Write("'exit' command for quit or press Enter for continiue: ");
+                    var exit = Console.ReadLine();
+                    if (exit != null && exit.Equals("exit"))
+                        break;
+                }
             }
             catch (Exception exc)
             {

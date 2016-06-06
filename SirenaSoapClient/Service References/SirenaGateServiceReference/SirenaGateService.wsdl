@@ -7,6 +7,8 @@
       <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sirena" />
       <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Xml.Linq" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" />
+      <xsd:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISirenaGateService_SendStringRequest_InputMessage">
@@ -81,6 +83,18 @@
   <wsdl:message name="ISirenaGateService_SendFareremarkRequest_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendFareremarkRequestResponse" />
   </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PricingRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:PricingRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PricingRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PricingRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPricingRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPricingRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPricingRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPricingRequestResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISirenaGateService">
     <wsdl:operation name="SendStringRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendStringRequest" message="tns:ISirenaGateService_SendStringRequest_InputMessage" />
@@ -129,6 +143,14 @@
     <wsdl:operation name="SendFareremarkRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendFareremarkRequest" message="tns:ISirenaGateService_SendFareremarkRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendFareremarkRequestResponse" message="tns:ISirenaGateService_SendFareremarkRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PricingRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/PricingRequest" message="tns:ISirenaGateService_PricingRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/PricingRequestResponse" message="tns:ISirenaGateService_PricingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPricingRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequest" message="tns:ISirenaGateService_SendPricingRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse" message="tns:ISirenaGateService_SendPricingRequest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISirenaGateService" type="tns:ISirenaGateService">
@@ -234,6 +256,24 @@
     </wsdl:operation>
     <wsdl:operation name="SendFareremarkRequest">
       <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendFareremarkRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PricingRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/PricingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPricingRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendPricingRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

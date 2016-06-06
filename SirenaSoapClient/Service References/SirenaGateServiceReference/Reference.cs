@@ -38,6 +38,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.AvailabilityRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.FaresRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.FareremarkRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.PricingRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.KeyInfoRequest))]
     public partial class DtoRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -144,6 +145,29 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SirenaSoapClient.SirenaGateServiceReference.FareremarkQuery Query {
+            get {
+                return this.QueryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QueryField, value) != true)) {
+                    this.QueryField = value;
+                    this.RaisePropertyChanged("Query");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingRequest", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests")]
+    [System.SerializableAttribute()]
+    public partial class PricingRequest : SirenaSoapClient.SirenaGateServiceReference.DtoRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingQuery QueryField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingQuery Query {
             get {
                 return this.QueryField;
             }
@@ -1453,10 +1477,10 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         private SirenaSoapClient.SirenaGateServiceReference.FareremarkAnswerParams AnswerParamsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyField;
+        private string CodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FareNameField;
+        private string CompanyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SirenaSoapClient.SirenaGateServiceReference.FareremarkRequestParams RequestParamsField;
@@ -1485,6 +1509,19 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Company {
             get {
                 return this.CompanyField;
@@ -1493,19 +1530,6 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
                 if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
                     this.CompanyField = value;
                     this.RaisePropertyChanged("Company");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FareName {
-            get {
-                return this.FareNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FareNameField, value) != true)) {
-                    this.FareNameField = value;
-                    this.RaisePropertyChanged("Code");
                 }
             }
         }
@@ -1686,6 +1710,378 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingQuery", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests")]
+    [System.SerializableAttribute()]
+    public partial class PricingQuery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingQueryParamas ParamsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingQueryParamas Params {
+            get {
+                return this.ParamsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParamsField, value) != true)) {
+                    this.ParamsField = value;
+                    this.RaisePropertyChanged("Params");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingQueryParamas", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests")]
+    [System.SerializableAttribute()]
+    public partial class PricingQueryParamas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingRequestPassenger PassengerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingRequestSegment SegmentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingRequestPassenger Passenger {
+            get {
+                return this.PassengerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PassengerField, value) != true)) {
+                    this.PassengerField = value;
+                    this.RaisePropertyChanged("Passenger");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingRequestSegment Segment {
+            get {
+                return this.SegmentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SegmentField, value) != true)) {
+                    this.SegmentField = value;
+                    this.RaisePropertyChanged("Segment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingRequestPassenger", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests")]
+    [System.SerializableAttribute()]
+    public partial class PricingRequestPassenger : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingRequestSegment", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests")]
+    [System.SerializableAttribute()]
+    public partial class PricingRequestSegment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArrivalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BaseClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ConnectionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DepartureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DirectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FlightNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProxyDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProxyTimeFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProxyTimeTillField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] SubClassesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Arrival {
+            get {
+                return this.ArrivalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArrivalField, value) != true)) {
+                    this.ArrivalField = value;
+                    this.RaisePropertyChanged("Arrival");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BaseClass {
+            get {
+                return this.BaseClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BaseClassField, value) != true)) {
+                    this.BaseClassField = value;
+                    this.RaisePropertyChanged("BaseClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Connections {
+            get {
+                return this.ConnectionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ConnectionsField, value) != true)) {
+                    this.ConnectionsField = value;
+                    this.RaisePropertyChanged("Connections");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Departure {
+            get {
+                return this.DepartureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartureField, value) != true)) {
+                    this.DepartureField = value;
+                    this.RaisePropertyChanged("Departure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Direct {
+            get {
+                return this.DirectField;
+            }
+            set {
+                if ((this.DirectField.Equals(value) != true)) {
+                    this.DirectField = value;
+                    this.RaisePropertyChanged("Direct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FlightNumber {
+            get {
+                return this.FlightNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
+                    this.FlightNumberField = value;
+                    this.RaisePropertyChanged("FlightNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProxyDate {
+            get {
+                return this.ProxyDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProxyDateField, value) != true)) {
+                    this.ProxyDateField = value;
+                    this.RaisePropertyChanged("ProxyDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProxyTimeFrom {
+            get {
+                return this.ProxyTimeFromField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProxyTimeFromField, value) != true)) {
+                    this.ProxyTimeFromField = value;
+                    this.RaisePropertyChanged("ProxyTimeFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProxyTimeTill {
+            get {
+                return this.ProxyTimeTillField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProxyTimeTillField, value) != true)) {
+                    this.ProxyTimeTillField = value;
+                    this.RaisePropertyChanged("ProxyTimeTill");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] SubClasses {
+            get {
+                return this.SubClassesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubClassesField, value) != true)) {
+                    this.SubClassesField = value;
+                    this.RaisePropertyChanged("SubClasses");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="KeyInfoQueryParams", Namespace="http://schemas.datacontract.org/2004/07/Sirena")]
     [System.SerializableAttribute()]
     public partial class KeyInfoQueryParams : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1782,6 +2178,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.AvailabilityResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.FaresResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.FareremarkResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.PricingResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SirenaSoapClient.SirenaGateServiceReference.KeyInfoResponse))]
     public partial class DtoResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1888,6 +2285,29 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SirenaSoapClient.SirenaGateServiceReference.FareremarkAnswer Answer {
+            get {
+                return this.AnswerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnswerField, value) != true)) {
+                    this.AnswerField = value;
+                    this.RaisePropertyChanged("Answer");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingResponse", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class PricingResponse : SirenaSoapClient.SirenaGateServiceReference.DtoResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingAnswer AnswerField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingAnswer Answer {
             get {
                 return this.AnswerField;
             }
@@ -4490,6 +4910,718 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingAnswer", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class PricingAnswer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingAnswerBody BodyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InstanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProxyTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PultField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingAnswerBody Body {
+            get {
+                return this.BodyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BodyField, value) != true)) {
+                    this.BodyField = value;
+                    this.RaisePropertyChanged("Body");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Instance {
+            get {
+                return this.InstanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstanceField, value) != true)) {
+                    this.InstanceField = value;
+                    this.RaisePropertyChanged("Instance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MessageId {
+            get {
+                return this.MessageIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageIdField, value) != true)) {
+                    this.MessageIdField = value;
+                    this.RaisePropertyChanged("MessageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProxyTime {
+            get {
+                return this.ProxyTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProxyTimeField, value) != true)) {
+                    this.ProxyTimeField = value;
+                    this.RaisePropertyChanged("ProxyTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pult {
+            get {
+                return this.PultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PultField, value) != true)) {
+                    this.PultField = value;
+                    this.RaisePropertyChanged("Pult");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingAnswerBody", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class PricingAnswerBody : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.Error ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.Info InfoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResultsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingVariant VariantField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.Error Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.Info Info {
+            get {
+                return this.InfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InfoField, value) != true)) {
+                    this.InfoField = value;
+                    this.RaisePropertyChanged("Info");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Results {
+            get {
+                return this.ResultsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultsField, value) != true)) {
+                    this.ResultsField = value;
+                    this.RaisePropertyChanged("Results");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingVariant Variant {
+            get {
+                return this.VariantField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VariantField, value) != true)) {
+                    this.VariantField = value;
+                    this.RaisePropertyChanged("Variant");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingVariant", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class PricingVariant : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.PricingFlight[] FlightsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SeanceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.PricingFlight[] Flights {
+            get {
+                return this.FlightsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlightsField, value) != true)) {
+                    this.FlightsField = value;
+                    this.RaisePropertyChanged("Flights");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Seance {
+            get {
+                return this.SeanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SeanceField, value) != true)) {
+                    this.SeanceField = value;
+                    this.RaisePropertyChanged("Seance");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PricingFlight", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class PricingFlight : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AirplaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.ArrvDate ArrvDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArrvTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.DeptDate DeptDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeptTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.Destination DestinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SirenaSoapClient.SirenaGateServiceReference.Origin OriginalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubClassField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Airplane {
+            get {
+                return this.AirplaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AirplaneField, value) != true)) {
+                    this.AirplaneField = value;
+                    this.RaisePropertyChanged("Airplane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.ArrvDate ArrvDate {
+            get {
+                return this.ArrvDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArrvDateField, value) != true)) {
+                    this.ArrvDateField = value;
+                    this.RaisePropertyChanged("ArrvDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ArrvTime {
+            get {
+                return this.ArrvTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArrvTimeField, value) != true)) {
+                    this.ArrvTimeField = value;
+                    this.RaisePropertyChanged("ArrvTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Class {
+            get {
+                return this.ClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClassField, value) != true)) {
+                    this.ClassField = value;
+                    this.RaisePropertyChanged("Class");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.DeptDate DeptDate {
+            get {
+                return this.DeptDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeptDateField, value) != true)) {
+                    this.DeptDateField = value;
+                    this.RaisePropertyChanged("DeptDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeptTime {
+            get {
+                return this.DeptTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeptTimeField, value) != true)) {
+                    this.DeptTimeField = value;
+                    this.RaisePropertyChanged("DeptTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.Destination Destination {
+            get {
+                return this.DestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DestinationField, value) != true)) {
+                    this.DestinationField = value;
+                    this.RaisePropertyChanged("Destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Num {
+            get {
+                return this.NumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumField, value) != true)) {
+                    this.NumField = value;
+                    this.RaisePropertyChanged("Num");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SirenaSoapClient.SirenaGateServiceReference.Origin Original {
+            get {
+                return this.OriginalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalField, value) != true)) {
+                    this.OriginalField = value;
+                    this.RaisePropertyChanged("Original");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SubClass {
+            get {
+                return this.SubClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubClassField, value) != true)) {
+                    this.SubClassField = value;
+                    this.RaisePropertyChanged("SubClass");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ArrvDate", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class ArrvDate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DelayField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Delay {
+            get {
+                return this.DelayField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DelayField, value) != true)) {
+                    this.DelayField = value;
+                    this.RaisePropertyChanged("Delay");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeptDate", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class DeptDate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DelayField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Delay {
+            get {
+                return this.DelayField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DelayField, value) != true)) {
+                    this.DelayField = value;
+                    this.RaisePropertyChanged("Delay");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Destination", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class Destination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TerminalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Terminal {
+            get {
+                return this.TerminalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TerminalField, value) != true)) {
+                    this.TerminalField = value;
+                    this.RaisePropertyChanged("Terminal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Origin", Namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses")]
+    [System.SerializableAttribute()]
+    public partial class Origin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TerminalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Terminal {
+            get {
+                return this.TerminalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TerminalField, value) != true)) {
+                    this.TerminalField = value;
+                    this.RaisePropertyChanged("Terminal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="KeyAnswerBody", Namespace="http://schemas.datacontract.org/2004/07/Sirena")]
     [System.SerializableAttribute()]
     public partial class KeyAnswerBody : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4805,6 +5937,18 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendFareremarkRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendFareremarkRequestResponse")]
         System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.FareremarkResponse> SendFareremarkRequestAsync(SirenaSoapClient.SirenaGateServiceReference.FareremarkRequest fareremarkRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/PricingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/PricingRequestResponse")]
+        SirenaSoapClient.SirenaGateServiceReference.PricingResponse PricingRequest([System.ServiceModel.MessageParameterAttribute(Name="pricingRequest")] SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/PricingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/PricingRequestResponse")]
+        System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.PricingResponse> PricingRequestAsync(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendPricingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse")]
+        SirenaSoapClient.SirenaGateServiceReference.PricingResponse SendPricingRequest(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendPricingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse")]
+        System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.PricingResponse> SendPricingRequestAsync(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4928,6 +6072,22 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         
         public System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.FareremarkResponse> SendFareremarkRequestAsync(SirenaSoapClient.SirenaGateServiceReference.FareremarkRequest fareremarkRequest) {
             return base.Channel.SendFareremarkRequestAsync(fareremarkRequest);
+        }
+        
+        public SirenaSoapClient.SirenaGateServiceReference.PricingResponse PricingRequest(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest1) {
+            return base.Channel.PricingRequest(pricingRequest1);
+        }
+        
+        public System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.PricingResponse> PricingRequestAsync(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest) {
+            return base.Channel.PricingRequestAsync(pricingRequest);
+        }
+        
+        public SirenaSoapClient.SirenaGateServiceReference.PricingResponse SendPricingRequest(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest) {
+            return base.Channel.SendPricingRequest(pricingRequest);
+        }
+        
+        public System.Threading.Tasks.Task<SirenaSoapClient.SirenaGateServiceReference.PricingResponse> SendPricingRequestAsync(SirenaSoapClient.SirenaGateServiceReference.PricingRequest pricingRequest) {
+            return base.Channel.SendPricingRequestAsync(pricingRequest);
         }
     }
 }
