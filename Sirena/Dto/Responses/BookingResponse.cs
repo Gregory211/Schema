@@ -60,6 +60,10 @@ namespace Sirena
             }
         }
 
+        [DataMember]
+        [XmlAttribute("instance")]
+        public string Instance { get; set; }
+
         [DataMember][XmlElement("booking")]
         public BookingAnswerBody Body { get; set; }
     }
@@ -257,12 +261,12 @@ namespace Sirena
         {
             get
             {
-                return BirthDate.ToString("dd.MM.yy");
+                return BirthDate.ToString("dd.MM.yyyy");
             }
             set
             {
                 var date = default(DateTime);
-                if (DateTime.TryParseExact(value, "dd.MM.yy", null, DateTimeStyles.None, out date))
+                if (DateTime.TryParseExact(value, "dd.MM.yyyy", null, DateTimeStyles.None, out date))
                 {
                     BirthDate = date;
                     return;
@@ -336,13 +340,13 @@ namespace Sirena
         {
             get
             {
-                return DocumentExpirationDate.HasValue ? DocumentExpirationDate.Value.ToString("dd.MM.yy") : null;
+                return DocumentExpirationDate.HasValue ? DocumentExpirationDate.Value.ToString("dd.MM.yyyy") : null;
             }
             set
             {
                 if (!String.IsNullOrEmpty(value))
                 {
-                    DocumentExpirationDate = DateTime.ParseExact(value, "dd.MM.yy", null);
+                    DocumentExpirationDate = DateTime.ParseExact(value, "dd.MM.yyyy", null);
                 }
             }
         }
@@ -383,13 +387,13 @@ namespace Sirena
         {
             get
             {
-                return DiscountDocumentExpirationDate.HasValue ? DiscountDocumentExpirationDate.Value.ToString("dd.MM.yy") : null;
+                return DiscountDocumentExpirationDate.HasValue ? DiscountDocumentExpirationDate.Value.ToString("dd.MM.yyyy") : null;
             }
             set
             {
                 if (!String.IsNullOrEmpty(value))
                 {
-                    DiscountDocumentExpirationDate = DateTime.ParseExact(value, "dd.MM.yy", null);
+                    DiscountDocumentExpirationDate = DateTime.ParseExact(value, "dd.MM.yyyy", null);
                 }
             }
         }

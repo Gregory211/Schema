@@ -822,7 +822,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }
@@ -1278,7 +1278,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }
@@ -2013,7 +2013,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }
@@ -2904,7 +2904,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }
@@ -3724,7 +3724,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }
@@ -4500,7 +4500,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.FlightNumberField, value) != true)) {
                     this.FlightNumberField = value;
-                    this.RaisePropertyChanged("FlightNumber");
+                    this.RaisePropertyChanged("Num");
                 }
             }
         }

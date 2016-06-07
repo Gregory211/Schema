@@ -286,6 +286,25 @@ namespace Sirena
         }
 
         /// <summary>
+        /// Asynchronously sends a bookingRequest object to the Sirena server.
+        /// </summary>
+        /// <param name="bookingRequest"></param>
+        /// <returns>Returns the task object representing the asynchronous operation.</returns>
+        public async Task<BookingResponse> SendRequestAsync(BookingRequest bookingRequest)
+        {
+            return await SendRequestAsync<BookingRequest, BookingResponse>(bookingRequest);
+        }
+
+        /// <summary>
+        /// Sends a bookingRequest object to the Sirena server.
+        /// </summary>
+        /// <returns>Returns a BookingResponse object contains the response.</returns>
+        public BookingResponse SendRequest(BookingRequest bookingRequest)
+        {
+            return SendRequest<BookingRequest, BookingResponse>(bookingRequest);
+        }
+
+        /// <summary>
         /// Connects to the Sirena server.
         /// </summary>
         public void Connect()

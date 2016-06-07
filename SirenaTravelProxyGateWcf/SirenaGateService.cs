@@ -29,7 +29,6 @@ namespace SirenaTravelProxyGateWcf
 
             _client = new SirenaClient(settings);
         }
-
         public string SendStringRequest(string data, ConnectionMode connectionMode = ConnectionMode.Plain)
         {
             try
@@ -46,7 +45,6 @@ namespace SirenaTravelProxyGateWcf
             }
 
         }
-
         public async Task<string> StringRequestAsync(string data, ConnectionMode connectionMode = ConnectionMode.Plain)
         {
             try
@@ -62,7 +60,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<KeyInfoResponse> KeyInfoRequestAsync(KeyInfoRequest keyInfoRequest)
         {
             try
@@ -78,7 +75,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public KeyInfoResponse SendKeyInfoRequest(KeyInfoRequest keyInfoRequest)
         {
             try
@@ -94,7 +90,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<ScheduleResponse> ScheduleRequestAsync(ScheduleRequest scheduleRequest)
         {
             try
@@ -110,7 +105,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public ScheduleResponse SendScheduleRequest(ScheduleRequest scheduleRequest)
         {
             try
@@ -126,7 +120,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<AvailabilityResponse> AvailabilityRequestAsync(AvailabilityRequest availabilityRequest)
         {
             try
@@ -142,7 +135,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public AvailabilityResponse SendAvailabilityRequest(AvailabilityRequest availabilityRequest)
         {
             try
@@ -158,7 +150,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<FaresResponse> FaresRequestAsync(FaresRequest faresRequest)
         {
             try
@@ -174,7 +165,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public FaresResponse SendFaresRequest(FaresRequest faresRequest)
         {
             try
@@ -190,7 +180,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<FareremarkResponse> FareremarkRequestAsync(FareremarkRequest fareremarkRequest)
         {
             try
@@ -206,7 +195,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public FareremarkResponse SendFareremarkRequest(FareremarkRequest fareremarkRequest)
         {
             try
@@ -222,7 +210,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public async Task<PricingResponse> PricingRequestAsync(PricingRequest pricingRequest)
         {
             try
@@ -238,7 +225,6 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-
         public PricingResponse SendPricingRequest(PricingRequest pricingRequest)
         {
             try

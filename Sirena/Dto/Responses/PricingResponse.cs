@@ -211,6 +211,7 @@ namespace Sirena.Dto.Responses
         [XmlText]
         public string Value { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class Destination
     {
@@ -222,6 +223,7 @@ namespace Sirena.Dto.Responses
         [XmlText]
         public string Value { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class DeptDate
     {
@@ -236,6 +238,7 @@ namespace Sirena.Dto.Responses
         [XmlText]
         public string Value { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class ArrvDate
     {
@@ -250,6 +253,7 @@ namespace Sirena.Dto.Responses
         [XmlText]
         public string Value { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class Price
     {

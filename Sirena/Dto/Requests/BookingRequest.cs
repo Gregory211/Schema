@@ -73,6 +73,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("contacts")]
+        //[XmlElement("customer")]
         public BookingRequestContacts Contacts { get; set; }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Sirena
         /// </remarks>
         [DataMember]
         [XmlElement("num")]
-        public String FlightNumber { get; set; }
+        public string Num { get; set; }
 
         /// <summary>
         /// Gets or sets the departure city or airport.
@@ -249,7 +250,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("date")]
-        public String ProxyDate
+        public string ProxyDate
         {
             get
             {
@@ -266,7 +267,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("airplane")]
-        public String Airplane { get; set; }
+        public string Airplane { get; set; }
 
         /// <summary>
         /// Gets or sets the flight class.
@@ -277,7 +278,11 @@ namespace Sirena
         /// </remarks>
         [DataMember]
         [XmlElement("subclass")]
-        public String SubClass { get; set; }
+        public string SubClass { get; set; }
+
+        [DataMember]
+        [XmlElement("class")]
+        public string Class { get; set; }
     }
 
     /// <summary>
@@ -391,8 +396,8 @@ namespace Sirena
         /// USE BirthDate instead.
         /// </summary>
         [DataMember]
-        [XmlAttribute("age")]
-        public String ProxyBirthDate
+        [XmlElement("age")]
+        public string ProxyBirthDate
         {
             get
             {
@@ -400,16 +405,15 @@ namespace Sirena
             }
             set
             {
-                var date = default(DateTime);
+                DateTime date;
                 if (DateTime.TryParseExact(value, "dd.MM.yy", null, DateTimeStyles.None, out date))
                 {
                     BirthDate = date;
                     return;
                 }
-                if (DateTime.TryParseExact(value, "dd.MM.yyyy", null, DateTimeStyles.None, out date))
+                if (DateTime.TryParseExact(value, "dd.MM.yy", null, DateTimeStyles.None, out date))
                 {
                     BirthDate = date;
-                    return;
                 }
             }
         }
@@ -425,14 +429,14 @@ namespace Sirena
         /// </remarks>
         [DataMember]
         [XmlElement("doccode")]
-        public String DocumentType { get; set; }
+        public string DocCode { get; set; }
 
         /// <summary>
         /// Gets or sets the document number.
         /// </summary>
         [DataMember]
         [XmlElement("doc")]
-        public String DocumentNumber { get; set; }
+        public string Doc { get; set; }
 
         /// <summary>
         /// Gets or sets the document expiration date.
@@ -469,7 +473,7 @@ namespace Sirena
         /// </summary>
         [DataMember]
         [XmlElement("nationality")]
-        public String Nationality { get; set; }
+        public string Nationality { get; set; }
 
         /// <summary>
         /// Gets or sets the discount document type.
@@ -584,7 +588,7 @@ namespace Sirena
         /// Gets or sets the email.
         /// </summary>
         [DataMember][XmlElement("email")]
-        public String Email { get; set; }
+        public string Email { get; set; }
     }
 
     /// <summary>

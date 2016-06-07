@@ -29,7 +29,7 @@ namespace Sirena.Helpers
         /// <typeparam name="T">The object type.</typeparam>
         /// <param name="value">The object to serialize.</param>
         /// <returns>Returns a string contained the serialized object.</returns>
-        public static String Serialize<T>(T value)
+        public static string Serialize<T>(T value)
         {
             if (value == null)
             {

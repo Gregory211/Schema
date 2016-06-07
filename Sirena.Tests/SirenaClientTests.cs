@@ -243,5 +243,66 @@ namespace Sirena.Tests
             Assert.Null(result.Answer.Body.Error);
         }
         #endregion
+        #region BookiungRequest
+        [Test]
+        public async Task BookiungRequest_Example()
+        {
+            var request = new BookingRequest
+            {
+                Query = new BookingQuery
+                {
+
+                    Params = new BookingQueryParams
+                    {
+                        Segments = new List<BookingRequestSegment>()
+                        {
+                            new BookingRequestSegment
+                            {
+                                Company  = "UT", Num = "203", Departure = "МОВ", Arrival = "СПТ", ProxyDate = DateTime.Now.AddDays(10).ToString("dd.MM.yy"), Class = "Y"
+                            }
+                        },
+                        Passengers = new List<BookingRequestPassenger>()
+                        {
+                            new BookingRequestPassenger()
+                            {
+                                Surname = "ИВАНОВ",
+                                Name = "ВАСИЛИЙ ПЕТРОВИЧ",
+                                ProxyBirthDate = new DateTime(1988,5,25).ToString("dd.MM.yy"),
+                                Category = "ААА",
+                                ProxySexType = "male",
+                                DocCode = "ПС",
+                                Doc = "1234561234",
+                                Nationality = "РФ",
+                                Phones = new List<BookingContact>()
+                                {
+                                    new BookingContact { ContactType = BookingContactType.Mobile, Comment = "ЗВОНИТЬ ПОСЛЕ 19:00", Value = "79101234567" },
+                                    new BookingContact { ContactType =  BookingContactType.Work, Value = "74957654321" }
+                                }
+                            }
+                        },
+                        Contacts = new BookingRequestContacts()
+                        {
+                            Phone = new BookingContact()
+                            {
+                                ContactType = BookingContactType.Agency,
+                                Comment = "ДОП. ОФИС #15",
+                                Value = "74991234567"
+                            }
+                        },
+                        AnswerParams = new BookingAnswerParams()
+                        {
+                            ShowTts = true
+                        }
+                    }
+                }
+            };
+
+
+            var result = await _client.SendRequestAsync(request);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
+        }
+        #endregion
     }
 }
