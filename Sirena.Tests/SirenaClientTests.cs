@@ -177,7 +177,7 @@ namespace Sirena.Tests
         /// Пример 14. Запрос текста УПТ
         /// </summary>
         /// <returns></returns>
-        [Test]
+        //[Test]
         public async Task fareremarkRequest_Example_14()
         {
             var request = new FareremarkRequest()
@@ -244,8 +244,8 @@ namespace Sirena.Tests
         }
         #endregion
         #region BookingRequest
-        [Test]
-        public BookingAnswerBody BookingRequest_Example()
+
+        public async Task<BookingAnswerBody> BookingRequest()
         {
             var request = new BookingRequest
             {
@@ -298,19 +298,27 @@ namespace Sirena.Tests
             };
 
 
-            var result = _client.SendRequestAsync(request).Result;
+            var result = await _client.SendRequestAsync(request);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
 
             return result.Answer.Body;
         }
+        [Test]
+        public async Task BookingRequest_Example()
+        {           
+            var result = await BookingRequest();
+
+            Assert.NotNull(result);
+            Assert.Null(result.Error);
+        }
         #endregion
         #region BookingCancelRequest
         [Test]
         public async Task BookingCancelRequest_Example()
         {
-            var bookingBody = BookingRequest_Example();
+            var bookingBody = BookingRequest().Result;
             var bookingResponsePassenger = bookingBody.PassengerNameRecord.Passengers.FirstOrDefault();
 
             if (bookingResponsePassenger != null)
