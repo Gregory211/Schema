@@ -22,18 +22,19 @@ namespace Sirena
     /// </summary>
     [DataContract, Serializable]
     public sealed class BookingAnswer
-    {   public BookingAnswer() { }
+    {
+        public BookingAnswer() { }
         /// <summary>
         /// Gets the pult name.
         /// </summary>
         [DataMember][XmlAttribute("pult")]
-        public String Pult { get; set; }
+        public string Pult { get; set; }
 
         /// <summary>
         /// Gets the message id.
         /// </summary>
         [DataMember][XmlAttribute("msgid")]
-        public String MessageId { get; set; }
+        public string MessageId { get; set; }
 
         /// <summary>
         /// Gets the time when response was processed.
@@ -45,7 +46,7 @@ namespace Sirena
         /// USE Time instead.
         /// </summary>
         [DataMember][XmlAttribute("time")]
-        public String ProxyTime
+        public string ProxyTime
         {
             get
             {
@@ -72,10 +73,10 @@ namespace Sirena
     {
         public BookingAnswerBody() { }
         [DataMember][XmlAttribute("regnum")]
-        public String RegistrationNumber { get; set; }
+        public string Regnum { get; set; }
 
         [DataMember][XmlAttribute("agency")]
-        public String Agency { get; set; }
+        public string Agency { get; set; }
 
         [DataMember][XmlElement("pnr")]
         public BookingPassengerNameRecord PassengerNameRecord { get; set; }
@@ -119,13 +120,13 @@ namespace Sirena
     {
         public BookingPassengerNameRecord() { }
         [DataMember][XmlElement("regnum")]
-        public String RegistrationNumber { get; set; }
+        public string RegistrationNumber { get; set; }
 
         [XmlIgnore]
         public DateTime TimeLimit { get; set; }
 
         [DataMember][XmlElement("timelimit")]
-        public String ProxyTimeLimit
+        public string ProxyTimeLimit
         {
             get
             {
@@ -141,7 +142,7 @@ namespace Sirena
         public DateTime UtcTimeLimit { get; set; }
 
         [DataMember][XmlElement("utc_timelimit")]
-        public String ProxyUtcTimeLimit
+        public string ProxyUtcTimeLimit
         {
             get
             {

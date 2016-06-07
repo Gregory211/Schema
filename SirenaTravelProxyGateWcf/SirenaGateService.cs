@@ -240,5 +240,65 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+        public async Task<BookingResponse> PricingRequestAsync(BookingRequest bookingRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(bookingRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public BookingResponse SendPricingRequest(BookingRequest bookingRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(bookingRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public async Task<BookingCancelResponse> PricingRequestAsync(BookingCancelRequest bookingCancelRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(bookingCancelRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public BookingCancelResponse SendPricingRequest(BookingCancelRequest bookingCancelRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(bookingCancelRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
     }
 }

@@ -51,8 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionMode.cs" />
+    <Compile Include="Dto\Requests\BookingCancelRequest.cs" />
     <Compile Include="Dto\Requests\BookingRequest.cs" />
     <Compile Include="Dto\Requests\PricingRequest.cs" />
+    <Compile Include="Dto\Responses\BookingCancelResponse.cs" />
     <Compile Include="Dto\Responses\BookingResponse.cs" />
     <Compile Include="Dto\Requests\ScheduleRequest.cs" />
     <Compile Include="Dto\Responses\Info.cs" />

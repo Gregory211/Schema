@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Sirena.Dto.Requests;
-using Sirena.Helpers;
 
 namespace Sirena.Tests
 {
@@ -243,9 +243,9 @@ namespace Sirena.Tests
             Assert.Null(result.Answer.Body.Error);
         }
         #endregion
-        #region BookiungRequest
+        #region BookingRequest
         [Test]
-        public async Task BookiungRequest_Example()
+        public BookingAnswerBody BookingRequest_Example()
         {
             var request = new BookingRequest
             {
@@ -298,10 +298,40 @@ namespace Sirena.Tests
             };
 
 
-            var result = await _client.SendRequestAsync(request);
+            var result = _client.SendRequestAsync(request).Result;
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            return result.Answer.Body;
+        }
+        #endregion
+        #region BookingCancelRequest
+        [Test]
+        public async Task BookingCancelRequest_Example()
+        {
+            var bookingBody = BookingRequest_Example();
+            var bookingResponsePassenger = bookingBody.PassengerNameRecord.Passengers.FirstOrDefault();
+
+            if (bookingResponsePassenger != null)
+            {
+                var request = new BookingCancelRequest
+                {
+                    Query = new BookingCancelQuery()
+                    {
+                        Params = new BookingCancelQueryParams()
+                        {
+                            Surname = bookingResponsePassenger.Surname,
+                            Regnum = bookingBody.Regnum
+                        }
+                    }
+
+                };
+
+                var result = await _client.SendRequestAsync(request);
+
+                Assert.NotNull(result.Answer.BookingCancel);
+            }
         }
         #endregion
     }
