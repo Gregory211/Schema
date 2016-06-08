@@ -14,12 +14,12 @@ namespace Sirena.Helpers
     /// </summary>
     public static class SerializationHelper
     {
-        private static XmlSerializerNamespaces emptyNamespaces;
+        private static readonly XmlSerializerNamespaces EmptyNamespaces;
 
         static SerializationHelper()
         {
-            emptyNamespaces = new XmlSerializerNamespaces();
-            emptyNamespaces.Add("", "");
+            EmptyNamespaces = new XmlSerializerNamespaces();
+            EmptyNamespaces.Add("", "");
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Sirena.Helpers
         /// <typeparam name="T">The object type.</typeparam>
         /// <param name="value">The object to serialize.</param>
         /// <returns>Returns a string contained the serialized object.</returns>
-        public static String Serialize<T>(T value)
+        public static string Serialize<T>(T value)
         {
             if (value == null)
             {
@@ -40,7 +40,7 @@ namespace Sirena.Helpers
 
             using (var stringWriter = new Utf8StringWriter())
             {
-                serializer.Serialize(stringWriter, value, emptyNamespaces);
+                serializer.Serialize(stringWriter, value, EmptyNamespaces);
                 return stringWriter.ToString();
             }
         }

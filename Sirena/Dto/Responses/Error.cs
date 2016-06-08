@@ -8,6 +8,7 @@ namespace Sirena
     public sealed class Error
     {
         public Error() { }
+
         [DataMember]
         [XmlAttribute("code")]
         public Int32 Code { get; set; }

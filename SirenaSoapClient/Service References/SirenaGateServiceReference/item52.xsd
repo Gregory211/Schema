@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sirena" />
   <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -20,19 +20,19 @@
   <xs:element name="PricingQuery" nillable="true" type="tns:PricingQuery" />
   <xs:complexType name="PricingQueryParamas">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Passenger" nillable="true" type="tns:PricingRequestPassenger" />
-      <xs:element minOccurs="0" name="Segment" nillable="true" type="tns:PricingRequestSegment" />
+      <xs:element minOccurs="0" name="ReguestPassenger" nillable="true" type="tns:PricingRequestReguestPassenger" />
+      <xs:element minOccurs="0" name="ReguestSegment" nillable="true" type="tns:PricingRequestReguestSegment" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PricingQueryParamas" nillable="true" type="tns:PricingQueryParamas" />
-  <xs:complexType name="PricingRequestPassenger">
+  <xs:complexType name="PricingRequestReguestPassenger">
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Count" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PricingRequestPassenger" nillable="true" type="tns:PricingRequestPassenger" />
-  <xs:complexType name="PricingRequestSegment">
+  <xs:element name="PricingRequestReguestPassenger" nillable="true" type="tns:PricingRequestReguestPassenger" />
+  <xs:complexType name="PricingRequestReguestSegment">
     <xs:sequence>
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
@@ -40,12 +40,12 @@
       <xs:element minOccurs="0" name="Connections" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Direct" type="xs:boolean" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeFrom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeTill" nillable="true" type="xs:string" />
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubClasses" nillable="true" type="q2:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PricingRequestSegment" nillable="true" type="tns:PricingRequestSegment" />
+  <xs:element name="PricingRequestReguestSegment" nillable="true" type="tns:PricingRequestReguestSegment" />
 </xs:schema>

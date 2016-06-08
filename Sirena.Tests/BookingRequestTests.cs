@@ -569,8 +569,8 @@ namespace Sirena.Tests
             Assert.True(deserializedResponse.Answer.Body.LatinRegistration.Value == true);
             Assert.True(deserializedResponse.Answer.Body.Contacts.Emails[0] == "TKP@ZCTS.RU");
             Assert.True(deserializedResponse.Answer.Body.Contacts.Emails[1] == "ELENTRA66@RAMBLER.RU");
-            Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[0].ContactType == BookingContactType.Agency);
-            Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[1].ContactType == BookingContactType.Mobile);
+            Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[0].ContactType == ContactType.Agency);
+            Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[1].ContactType == ContactType.Mobile);
             Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[0].Value == "74959332033");
             Assert.True(deserializedResponse.Answer.Body.Contacts.ContactItems[1].Value == "79162166091");
         }
@@ -857,7 +857,7 @@ namespace Sirena.Tests
             Assert.True(deserializedPassenger.DocumentNumber == "712294311");
             Assert.True(deserializedPassenger.Category == "AAT");
             Assert.True(deserializedPassenger.Contacts.Email == "YUSUPOVA956@MAIL.RU");
-            Assert.True(deserializedPassenger.Contacts.ContactItems[0].ContactType == BookingContactType.Mobile);
+            Assert.True(deserializedPassenger.Contacts.ContactItems[0].ContactType == ContactType.Mobile);
             Assert.True(deserializedPassenger.Contacts.ContactItems[0].Value == "79173404435");
         }
     }

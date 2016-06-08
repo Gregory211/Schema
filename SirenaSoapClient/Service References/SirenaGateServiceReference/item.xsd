@@ -238,7 +238,7 @@
       <xs:element minOccurs="0" name="DepartureTime" nillable="true" type="tns:ScheduleFlightTime" />
       <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DestinationTerminal" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OperatingCompany" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Original" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OriginalTerminal" nillable="true" type="xs:string" />
@@ -307,7 +307,7 @@
       <xs:element minOccurs="0" name="Connections" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Direct" type="xs:boolean" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeFrom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTimeTill" nillable="true" type="xs:string" />
@@ -392,7 +392,7 @@
       <xs:element minOccurs="0" name="DepartureTime" nillable="true" type="tns:AvailabilityFlightTime" />
       <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DestinationTerminal" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IntermediateStops" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="OperatingCompany" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Original" nillable="true" type="xs:string" />
@@ -469,7 +469,7 @@
       <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PassengerCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyBookDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyDepartureTime" nillable="true" type="xs:string" />
@@ -529,7 +529,7 @@
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CurrencyRates" nillable="true" type="tns:ArrayOfFaresCurrencyRate" />
       <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaximumStay" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MinimumStay" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />

@@ -46,7 +46,6 @@ namespace Sirena.Dto.Requests
         public PricingQueryParamas Params { get; set; }
     }
 
-
     /// <summary>
     /// Таблица 28. Параметры запроса pricing
     /// Наличие мест (availability) 
@@ -77,7 +76,6 @@ namespace Sirena.Dto.Requests
         [XmlElement("passenger")]
         public PricingRequestPassenger Passenger { get; set; }
     }
-
 
     /// <summary>
     /// Таблица 29. Параметры элемента segment
@@ -255,7 +253,6 @@ namespace Sirena.Dto.Requests
         }
 
         // <desire> Список рейсов, которые будут рассматриваться при оценке. Все остальные рассматриваться не будут 
-        // 
         // <ignore> Список рейсов, исключаемых из рассмотрения 
     }
 

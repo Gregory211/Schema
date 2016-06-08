@@ -286,6 +286,45 @@ namespace Sirena
         }
 
         /// <summary>
+        /// Asynchronously sends a bookingRequest object to the Sirena server.
+        /// </summary>
+        /// <param name="bookingRequest"></param>
+        /// <returns>Returns the task object representing the asynchronous operation.</returns>
+        public async Task<BookingResponse> SendRequestAsync(BookingRequest bookingRequest)
+        {
+            return await SendRequestAsync<BookingRequest, BookingResponse>(bookingRequest);
+        }
+
+        /// <summary>
+        /// Sends a bookingRequest object to the Sirena server.
+        /// </summary>
+        /// <returns>Returns a BookingResponse object contains the response.</returns>
+        public BookingResponse SendRequest(BookingRequest bookingRequest)
+        {
+            return SendRequest<BookingRequest, BookingResponse>(bookingRequest);
+        }
+
+        public async Task<BookingCancelResponse> SendRequestAsync(BookingCancelRequest bookingRequest)
+        {
+            return await SendRequestAsync<BookingCancelRequest, BookingCancelResponse>(bookingRequest);
+        }
+
+        public BookingCancelResponse SendRequest(BookingCancelRequest bookingRequest)
+        {
+            return SendRequest<BookingCancelRequest, BookingCancelResponse>(bookingRequest);
+        }
+
+        public async Task<SellingQueryResponse> SendRequestAsync(SellingQueryRequest sellingQueryRequest)
+        {
+            return await SendRequestAsync<SellingQueryRequest, SellingQueryResponse>(sellingQueryRequest);
+        }
+
+        public SellingQueryResponse SendRequest(SellingQueryRequest bookingRequest)
+        {
+            return SendRequest<SellingQueryRequest, SellingQueryResponse>(bookingRequest);
+        }
+
+        /// <summary>
         /// Connects to the Sirena server.
         /// </summary>
         public void Connect()
