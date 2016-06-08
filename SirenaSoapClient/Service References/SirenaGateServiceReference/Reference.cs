@@ -1786,7 +1786,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.PassengerField, value) != true)) {
                     this.PassengerField = value;
-                    this.RaisePropertyChanged("Passenger");
+                    this.RaisePropertyChanged("ReguestPassenger");
                 }
             }
         }
@@ -1799,7 +1799,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.SegmentField, value) != true)) {
                     this.SegmentField = value;
-                    this.RaisePropertyChanged("Segment");
+                    this.RaisePropertyChanged("ReguestSegment");
                 }
             }
         }

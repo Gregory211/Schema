@@ -540,7 +540,7 @@ namespace Sirena
         /// Gets or sets the contact type.
         /// </summary>
         [XmlIgnore]
-        public BookingContactType ContactType { get; set; }
+        public ContactType ContactType { get; set; }
 
         /// <summary>
         /// USE ContactType instead.
@@ -554,7 +554,7 @@ namespace Sirena
             }
             set
             {
-                ContactType = (BookingContactType)EnumHelper.ParseXmlEnumName(typeof(BookingContactType), value.ToString());
+                ContactType = (ContactType)EnumHelper.ParseXmlEnumName(typeof(ContactType), value.ToString());
             }
         }
 
@@ -592,7 +592,7 @@ namespace Sirena
     }
 
     /// <summary>
-    /// Passenger genders.
+    /// ReguestPassenger genders.
     /// </summary>
     [DataContract]
     public enum BookingPassengerSex
@@ -610,7 +610,7 @@ namespace Sirena
     /// Contains contact types.
     /// </summary>
     [DataContract]
-    public enum BookingContactType
+    public enum ContactType
     {
         [EnumMember]
         [XmlEnum("agency")]

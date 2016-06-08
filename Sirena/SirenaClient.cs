@@ -314,6 +314,16 @@ namespace Sirena
             return SendRequest<BookingCancelRequest, BookingCancelResponse>(bookingRequest);
         }
 
+        public async Task<SellingQueryResponse> SendRequestAsync(SellingQueryRequest sellingQueryRequest)
+        {
+            return await SendRequestAsync<SellingQueryRequest, SellingQueryResponse>(sellingQueryRequest);
+        }
+
+        public SellingQueryResponse SendRequest(SellingQueryRequest bookingRequest)
+        {
+            return SendRequest<SellingQueryRequest, SellingQueryResponse>(bookingRequest);
+        }
+
         /// <summary>
         /// Connects to the Sirena server.
         /// </summary>
