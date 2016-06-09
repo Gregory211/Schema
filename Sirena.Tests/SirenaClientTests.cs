@@ -201,6 +201,24 @@ namespace Sirena.Tests
                                 CustomElements = new XElement[]
                                 {
                                     new XElement("idar1") {Value = "31346266"},
+                                    new XElement("addon_ida") {Value = "-1"},
+                                    new XElement("ntrip") {Value = "0"},
+                                    new XElement("nvr") {Value = "-1"},
+                                    new XElement("code_upt") {Value = "3004"},
+                                    new XElement("tariff") {Value = "0"},
+                                    new XElement("deliv_type") {Value = "4"},
+                                    new XElement("main_awk") {Value = "31"},
+                                    new XElement("cat") {Value = "-1"},
+                                    new XElement("vcat"),
+                                    new XElement("city1"){Value = "88"},
+                                    new XElement("city2") {Value = "26"},
+                                    new XElement("dport") {Value = "88"},
+                                    new XElement("aport") {Value = "26"},
+                                    new XElement("base_fare") {Value = "UWBOW   "},
+                                    new XElement("iit") {Value = "3"},
+                                    new XElement("owrt") {Value = "OW"},
+                                    new XElement("ddate") {Value = "20160215134317"},
+                                    new XElement("fdate") {Value = "20160221190000"},
                                 }
                             }
                         }

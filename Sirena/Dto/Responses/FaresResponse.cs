@@ -272,7 +272,7 @@ namespace Sirena
         /// Gets the UPT parameters for getting the additional fare info.
         /// </summary>
         [DataMember][XmlElement("upt")]
-        public FaresUpt Upt { get; set; }
+        public FaresUpt Upt { get; set; } 
     }
     [DataContract, Serializable]
     public sealed class FaresCurrencyRate
