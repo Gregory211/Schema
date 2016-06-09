@@ -61,13 +61,13 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("selling_query")]
-        public Body Body { get; set; }
+        public SellingQueryAnswerBody Body { get; set; }
     }
 
     [DataContract, Serializable]
-    public sealed class Body
+    public sealed class SellingQueryAnswerBody
     {
-        public Body(){}
+        public SellingQueryAnswerBody(){}
 
         [DataMember]
         [XmlAttribute("regnum")]

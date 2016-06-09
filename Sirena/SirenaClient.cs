@@ -324,6 +324,27 @@ namespace Sirena
             return SendRequest<SellingQueryRequest, SellingQueryResponse>(bookingRequest);
         }
 
+        public async Task<PaymentExtAuthConfirmResponse> SendRequestAsync(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest)
+        {
+            return await SendRequestAsync<PaymentExtAuthConfirmRequest, PaymentExtAuthConfirmResponse>(paymentExtAuthConfirmRequest);
+        }
+
+        public PaymentExtAuthConfirmResponse SendRequest(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest)
+        {
+            return SendRequest<PaymentExtAuthConfirmRequest, PaymentExtAuthConfirmResponse>(paymentExtAuthConfirmRequest);
+        }
+
+        public async Task<PaymentExtAuthQueryResponse> SendRequestAsync(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest)
+        {
+            return await SendRequestAsync<PaymentExtAuthQueryRequest, PaymentExtAuthQueryResponse>(paymentExtAuthQueryRequest);
+        }
+
+        public PaymentExtAuthQueryResponse SendRequest(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest)
+        {
+            return SendRequest<PaymentExtAuthQueryRequest, PaymentExtAuthQueryResponse>(paymentExtAuthQueryRequest);
+        }
+
+
         /// <summary>
         /// Connects to the Sirena server.
         /// </summary>

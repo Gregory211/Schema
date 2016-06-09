@@ -403,12 +403,8 @@ namespace Sirena.Tests
             Assert.NotNull(xmlResult);
         }
 
-
-        #endregion
-
-        #region SellingQueryRequest
         [Test]
-        public void SellingQueryRequestDeserializeResponse()
+        public void SellingQueryRawRequest_DeserializeResponse_Should_Be_Ok()
         {
             var response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sirena>\n  <answer pult=\"ОНГВЕБ\" msgid=\"1106032448\" time=\"19:40:39 08.06.2016\" instance=\"ГРУ\">\n    <selling_query regnum=\"199ДКТ\" agency=\"01ОНГ\">\n      <pnr>\n        <passengers>\n          <passenger id=\"12\" lead_pass=\"true\">\n            <name>ВАСИЛИЙ ПЕТРОВИЧ</name>\n            <surname>ИВАНОВ</surname>\n            <sex>male</sex>\n            <birthdate>01.06.1978</birthdate>\n            <age>38</age>\n            <doccode>ПС</doccode>\n            <doc>1234561234</doc>\n            <pspexpire>31.12.2049</pspexpire>\n            <category rbm=\"0\">ААА</category>\n            <doc_country>РФ</doc_country>\n            <nationality>РФ</nationality>\n            <residence>РФ</residence>\n          </passenger>\n        </passengers>\n        <segments>\n          <segment id=\"12\">\n            <company>UT</company>\n            <flight>203</flight>\n            <subclass>Y</subclass>\n            <class>Y</class>\n            <baseclass>Y</baseclass>\n            <seatcount>1</seatcount>\n            <airplane>735</airplane>\n            <departure>\n              <city>МОВ</city>\n              <airport>ВНК</airport>\n              <time>11:05</time>\n              <date>13.06.2016</date>\n            </departure>\n            <arrival>\n              <city>СПТ</city>\n              <airport>ПЛК</airport>\n              <time>12:25</time>\n              <date>13.06.2016</date>\n            </arrival>\n            <status text=\"HK\">confirmed</status>\n            <flightTime>1:20</flightTime>\n          </segment>\n        </segments>\n        <prices tick_ser=\"ЭБМ\" fop=\"ПК\">\n          <price segment-id=\"12\" passenger-id=\"12\" code=\"ААА\" count=\"1\" currency=\"РУБ\" ticket=\"0000000000\" baggage=\"20К\" fc=\"1,12,12,12\" accode=\"298\" validating_company=\"UT\">\n            <vat fare=\"418.18\" zz=\"28.22\"/>\n            <fare remark=\"0151\" fare_expdate=\"2016-06-13 11:05\">\n              <value currency=\"РУБ\">3000.00</value>\n              <code base_code=\"YOW\">YOW</code>\n            </fare>\n            <taxes>\n              <tax owner=\"aircompany\">\n                <code>SA</code>\n                <value currency=\"РУБ\">300.00</value>\n              </tax>\n              <tax owner=\"aircompany\">\n                <code>YQ</code>\n                <value currency=\"РУБ\">1300.00</value>\n              </tax>\n              <tax owner=\"aircompany\">\n                <code>ZZ</code>\n                <value currency=\"РУБ\">185.00</value>\n              </tax>\n              <tax owner=\"agency\">\n                <code>АГ</code>\n                <value currency=\"РУБ\">300.00</value>\n              </tax>\n              <tax owner=\"agency\">\n                <code>ДД</code>\n                <value currency=\"РУБ\">100.00</value>\n              </tax>\n              <tax owner=\"aircompany\">\n                <code>RI</code>\n                <value currency=\"РУБ\">1008.00</value>\n              </tax>\n            </taxes>\n            <payment_info>\n              <payment fop=\"ПК\" num=\"VI\" curr=\"РУБ\">6193.00</payment>\n            </payment_info>\n            <total>6193.00</total>\n          </price>\n          <variant_total currency=\"РУБ\">6193.00</variant_total>\n        </prices>\n        <regnum>199ДКТ</regnum>\n        <version>1</version>\n        <utc_timelimit>08:06 11.06.2016</utc_timelimit>\n      </pnr>\n      <contacts>\n        <contact cont_id=\"1\" loc_id=\"1\" type=\"agency\">74951231234</contact>\n        <contact cont_id=\"2\" loc_id=\"1\" type=\"mobile\">84957250900</contact>\n        <customer>\n          <firstname></firstname>\n          <lastname></lastname>\n        </customer>\n      </contacts>\n      <timeout utc_deadline=\"17:40 08.06.2016\">60</timeout>\n      <cost curr=\"РУБ\">6193.00</cost>\n    </selling_query>\n  </answer>\n</sirena>\n";
 
@@ -419,6 +415,85 @@ namespace Sirena.Tests
             Assert.NotNull(xml.Answer.Body.Contacts);
             Assert.NotNull(xml.Answer.Body.Timeout);
             Assert.NotNull(xml.Answer.Body.Cost);
+        }
+        #endregion
+
+        #region PaymentExtAuthQueryRequest
+
+        [Test]
+        public async Task PaymentExtQueryRequest_Example()
+        {
+            var request = new PaymentExtAuthQueryRequest
+            {
+                ConfirmQuery = new PaymentExtAuthQuery
+                {
+                    Params = new PaymentExtAuthQueryParams
+                    {
+                        Regnum = "0Ж8ФВ9",
+                        Surname = "ИВАНОВ",
+                        Action = "query",
+                        PayDoc = new PaymentExtAuthQueryPayDoc()
+                        {
+                            Formpay = "ПК",
+                            Type = "VI",
+                        },
+                        RequestParams = new PaymentExtAuthQueryRequestParams { TickSer = "ЭБМ" }
+                    }
+                }
+            };
+
+            var xml = SerializationHelper.Serialize(request);
+
+            var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
+
+            Assert.NotNull(result.ConfirmAnswer.Body);
+            Assert.Null(result.ConfirmAnswer.Body.Error);
+
+            Assert.NotNull(xmlResult);
+        }
+
+        #endregion
+
+
+        #region PaymentExtAuthConfirmRequest
+
+        [Test]
+        public async Task PaymentExtConfirmRequest_Example()
+        {
+            var request = new PaymentExtAuthConfirmRequest
+            {
+                ConfirmQuery = new PaymentExtAuthConfirmQuery
+                {
+                    ConfirmParams = new PaymentExtAuthConfirmParams
+                    {
+                        Regnum = "123456",
+                        Surname = "ИВАНОВ",
+                        Action = "confirm",
+                        PayDoc = new PaymentExtAuthPayDoc()
+                        {
+                            Formpay = "ПК",
+                            Type = "VI",
+                            Num = "4405*7915",
+                            ExpDate = "01.02.10",
+                            Holder = "Mr. Holder",
+                            AuthCode = "654321"
+                        },
+                        Cost = new Cost {  Curr = "РУБ", Value = "5000.00" },
+                        AnswerParams = new PaymentExtAuthAnswerParams{ ReturnReceipt = true }
+                    }
+                }
+            };
+
+            var xml = SerializationHelper.Serialize(request);
+
+            var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
+
+            Assert.NotNull(result.ConfirmAnswer.Body);
+            Assert.Null(result.ConfirmAnswer.Body.Error);
+
+            Assert.NotNull(xmlResult);
         }
 
         #endregion

@@ -82,7 +82,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }
@@ -128,7 +128,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }
@@ -174,7 +174,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }
@@ -197,7 +197,7 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
             set {
                 if ((object.ReferenceEquals(this.QueryField, value) != true)) {
                     this.QueryField = value;
-                    this.RaisePropertyChanged("Query");
+                    this.RaisePropertyChanged("ConfirmQuery");
                 }
             }
         }

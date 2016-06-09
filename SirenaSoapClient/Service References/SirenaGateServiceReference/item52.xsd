@@ -6,25 +6,25 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Sirena" base="q1:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:PricingQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:PricingConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PricingRequest" nillable="true" type="tns:PricingRequest" />
-  <xs:complexType name="PricingQuery">
+  <xs:complexType name="PricingConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:PricingQueryParamas" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:PricingConfirmQueryParamas" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PricingQuery" nillable="true" type="tns:PricingQuery" />
-  <xs:complexType name="PricingQueryParamas">
+  <xs:element name="PricingConfirmQuery" nillable="true" type="tns:PricingConfirmQuery" />
+  <xs:complexType name="PricingConfirmQueryParamas">
     <xs:sequence>
       <xs:element minOccurs="0" name="ReguestPassenger" nillable="true" type="tns:PricingRequestReguestPassenger" />
       <xs:element minOccurs="0" name="ReguestSegment" nillable="true" type="tns:PricingRequestReguestSegment" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PricingQueryParamas" nillable="true" type="tns:PricingQueryParamas" />
+  <xs:element name="PricingConfirmQueryParamas" nillable="true" type="tns:PricingConfirmQueryParamas" />
   <xs:complexType name="PricingRequestReguestPassenger">
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />

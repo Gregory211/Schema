@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sirena" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sirena" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://localhost:8833/SirenaGateService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -40,7 +40,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:KeyInfoQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:KeyInfoConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -50,29 +50,29 @@
     <xs:sequence />
   </xs:complexType>
   <xs:element name="DtoRequest" nillable="true" type="tns:DtoRequest" />
-  <xs:complexType name="KeyInfoQuery">
+  <xs:complexType name="KeyInfoConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:KeyInfoQueryParams" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:KeyInfoConfirmQueryParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="KeyInfoQuery" nillable="true" type="tns:KeyInfoQuery" />
-  <xs:complexType name="KeyInfoQueryParams">
+  <xs:element name="KeyInfoConfirmQuery" nillable="true" type="tns:KeyInfoConfirmQuery" />
+  <xs:complexType name="KeyInfoConfirmQueryParams">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:KeyInfoAnswerParams" />
+      <xs:element minOccurs="0" name="ConfirmAnswerParams" nillable="true" type="tns:KeyInfoConfirmAnswerParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="KeyInfoQueryParams" nillable="true" type="tns:KeyInfoQueryParams" />
-  <xs:complexType name="KeyInfoAnswerParams">
+  <xs:element name="KeyInfoConfirmQueryParams" nillable="true" type="tns:KeyInfoConfirmQueryParams" />
+  <xs:complexType name="KeyInfoConfirmAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="LanguageParams" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="KeyInfoAnswerParams" nillable="true" type="tns:KeyInfoAnswerParams" />
+  <xs:element name="KeyInfoConfirmAnswerParams" nillable="true" type="tns:KeyInfoConfirmAnswerParams" />
   <xs:complexType name="KeyInfoResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:KeyAnswer" />
+          <xs:element minOccurs="0" name="ConfirmAnswer" nillable="true" type="tns:KeyConfirmAnswer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -82,21 +82,21 @@
     <xs:sequence />
   </xs:complexType>
   <xs:element name="DtoResponse" nillable="true" type="tns:DtoResponse" />
-  <xs:complexType name="KeyAnswer">
+  <xs:complexType name="KeyConfirmAnswer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:KeyAnswerBody" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:KeyConfirmAnswerBody" />
       <xs:element minOccurs="0" name="Pult" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="KeyAnswer" nillable="true" type="tns:KeyAnswer" />
-  <xs:complexType name="KeyAnswerBody">
+  <xs:element name="KeyConfirmAnswer" nillable="true" type="tns:KeyConfirmAnswer" />
+  <xs:complexType name="KeyConfirmAnswerBody">
     <xs:sequence>
       <xs:element minOccurs="0" name="Error" nillable="true" type="tns:Error" />
       <xs:element minOccurs="0" name="Info" nillable="true" type="tns:Info" />
       <xs:element minOccurs="0" name="KeyManager" nillable="true" type="tns:KeyManager" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="KeyAnswerBody" nillable="true" type="tns:KeyAnswerBody" />
+  <xs:element name="KeyConfirmAnswerBody" nillable="true" type="tns:KeyConfirmAnswerBody" />
   <xs:complexType name="Error">
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" type="xs:int" />
@@ -150,21 +150,21 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ScheduleQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:ScheduleConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ScheduleRequest" nillable="true" type="tns:ScheduleRequest" />
-  <xs:complexType name="ScheduleQuery">
+  <xs:complexType name="ScheduleConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:ScheduleQueryParams" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:ScheduleConfirmQueryParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ScheduleQuery" nillable="true" type="tns:ScheduleQuery" />
-  <xs:complexType name="ScheduleQueryParams">
+  <xs:element name="ScheduleConfirmQuery" nillable="true" type="tns:ScheduleConfirmQuery" />
+  <xs:complexType name="ScheduleConfirmQueryParams">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:ScheduleAnswerParams" />
+      <xs:element minOccurs="0" name="ConfirmAnswerParams" nillable="true" type="tns:ScheduleConfirmAnswerParams" />
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
@@ -176,8 +176,8 @@
       <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:ScheduleRequestParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ScheduleQueryParams" nillable="true" type="tns:ScheduleQueryParams" />
-  <xs:complexType name="ScheduleAnswerParams">
+  <xs:element name="ScheduleConfirmQueryParams" nillable="true" type="tns:ScheduleConfirmQueryParams" />
+  <xs:complexType name="ScheduleConfirmAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="FullDate" type="xs:boolean" />
       <xs:element minOccurs="0" name="MarkCityPort" type="xs:boolean" />
@@ -185,7 +185,7 @@
       <xs:element minOccurs="0" name="ShowFlightTime" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ScheduleAnswerParams" nillable="true" type="tns:ScheduleAnswerParams" />
+  <xs:element name="ScheduleConfirmAnswerParams" nillable="true" type="tns:ScheduleConfirmAnswerParams" />
   <xs:complexType name="ScheduleRequestParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="OnlyM2Joints" type="xs:boolean" />
@@ -196,7 +196,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:ScheduleAsnwer" />
+          <xs:element minOccurs="0" name="ConfirmAnswer" nillable="true" type="tns:ScheduleAsnwer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -204,14 +204,14 @@
   <xs:element name="ScheduleResponse" nillable="true" type="tns:ScheduleResponse" />
   <xs:complexType name="ScheduleAsnwer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:ScheduleAnswerBody" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:ScheduleConfirmAnswerBody" />
       <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pult" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ScheduleAsnwer" nillable="true" type="tns:ScheduleAsnwer" />
-  <xs:complexType name="ScheduleAnswerBody">
+  <xs:complexType name="ScheduleConfirmAnswerBody">
     <xs:sequence>
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
@@ -222,7 +222,7 @@
       <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ScheduleAnswerBody" nillable="true" type="tns:ScheduleAnswerBody" />
+  <xs:element name="ScheduleConfirmAnswerBody" nillable="true" type="tns:ScheduleConfirmAnswerBody" />
   <xs:complexType name="ArrayOfScheduleFlight">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleFlight" nillable="true" type="tns:ScheduleFlight" />
@@ -286,21 +286,21 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:AvailabilityQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:AvailabilityConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AvailabilityRequest" nillable="true" type="tns:AvailabilityRequest" />
-  <xs:complexType name="AvailabilityQuery">
+  <xs:complexType name="AvailabilityConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:AvailabilityQueryParamas" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:AvailabilityConfirmQueryParamas" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AvailabilityQuery" nillable="true" type="tns:AvailabilityQuery" />
-  <xs:complexType name="AvailabilityQueryParamas">
+  <xs:element name="AvailabilityConfirmQuery" nillable="true" type="tns:AvailabilityConfirmQuery" />
+  <xs:complexType name="AvailabilityConfirmQueryParamas">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:AvailabilityAnswerParams" />
+      <xs:element minOccurs="0" name="ConfirmAnswerParams" nillable="true" type="tns:AvailabilityConfirmAnswerParams" />
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
@@ -315,8 +315,8 @@
       <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubClasses" nillable="true" type="q1:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AvailabilityQueryParamas" nillable="true" type="tns:AvailabilityQueryParamas" />
-  <xs:complexType name="AvailabilityAnswerParams">
+  <xs:element name="AvailabilityConfirmQueryParamas" nillable="true" type="tns:AvailabilityConfirmQueryParamas" />
+  <xs:complexType name="AvailabilityConfirmAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="MarkCityPort" type="xs:boolean" />
       <xs:element minOccurs="0" name="ReturnDate" type="xs:boolean" />
@@ -325,7 +325,7 @@
       <xs:element minOccurs="0" name="ShowFlightTime" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AvailabilityAnswerParams" nillable="true" type="tns:AvailabilityAnswerParams" />
+  <xs:element name="AvailabilityConfirmAnswerParams" nillable="true" type="tns:AvailabilityConfirmAnswerParams" />
   <xs:complexType name="AvailabilityRequestParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="CheckTchRestrictions" type="xs:boolean" />
@@ -349,22 +349,22 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:AvailabilityAnswer" />
+          <xs:element minOccurs="0" name="ConfirmAnswer" nillable="true" type="tns:AvailabilityConfirmAnswer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AvailabilityResponse" nillable="true" type="tns:AvailabilityResponse" />
-  <xs:complexType name="AvailabilityAnswer">
+  <xs:complexType name="AvailabilityConfirmAnswer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:AvailabilityAnswerBody" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:AvailabilityConfirmAnswerBody" />
       <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pult" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AvailabilityAnswer" nillable="true" type="tns:AvailabilityAnswer" />
-  <xs:complexType name="AvailabilityAnswerBody">
+  <xs:element name="AvailabilityConfirmAnswer" nillable="true" type="tns:AvailabilityConfirmAnswer" />
+  <xs:complexType name="AvailabilityConfirmAnswerBody">
     <xs:sequence>
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
@@ -376,7 +376,7 @@
       <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AvailabilityAnswerBody" nillable="true" type="tns:AvailabilityAnswerBody" />
+  <xs:element name="AvailabilityConfirmAnswerBody" nillable="true" type="tns:AvailabilityConfirmAnswerBody" />
   <xs:complexType name="ArrayOfAvailabilityFlight">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AvailabilityFlight" nillable="true" type="tns:AvailabilityFlight" />
@@ -451,19 +451,19 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:FaresQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:FaresConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="FaresRequest" nillable="true" type="tns:FaresRequest" />
-  <xs:complexType name="FaresQuery">
+  <xs:complexType name="FaresConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:FaresQueryParams" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:FaresConfirmQueryParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FaresQuery" nillable="true" type="tns:FaresQuery" />
-  <xs:complexType name="FaresQueryParams">
+  <xs:element name="FaresConfirmQuery" nillable="true" type="tns:FaresConfirmQuery" />
+  <xs:complexType name="FaresConfirmQueryParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
@@ -477,7 +477,7 @@
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubClasses" nillable="true" type="q2:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FaresQueryParams" nillable="true" type="tns:FaresQueryParams" />
+  <xs:element name="FaresConfirmQueryParams" nillable="true" type="tns:FaresConfirmQueryParams" />
   <xs:complexType name="FaresRequestParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="TicketSeries" nillable="true" type="xs:string" />
@@ -489,22 +489,22 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:FaresAnswer" />
+          <xs:element minOccurs="0" name="ConfirmAnswer" nillable="true" type="tns:FaresConfirmAnswer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="FaresResponse" nillable="true" type="tns:FaresResponse" />
-  <xs:complexType name="FaresAnswer">
+  <xs:complexType name="FaresConfirmAnswer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:FaresAnswerBody" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:FaresConfirmAnswerBody" />
       <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pult" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FaresAnswer" nillable="true" type="tns:FaresAnswer" />
-  <xs:complexType name="FaresAnswerBody">
+  <xs:element name="FaresConfirmAnswer" nillable="true" type="tns:FaresConfirmAnswer" />
+  <xs:complexType name="FaresConfirmAnswerBody">
     <xs:sequence>
       <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
@@ -517,7 +517,7 @@
       <xs:element minOccurs="0" name="ProxyDepartureTime" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FaresAnswerBody" nillable="true" type="tns:FaresAnswerBody" />
+  <xs:element name="FaresConfirmAnswerBody" nillable="true" type="tns:FaresConfirmAnswerBody" />
   <xs:complexType name="ArrayOfFare">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Fare" nillable="true" type="tns:Fare" />
@@ -564,33 +564,33 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoRequest">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:FareremarkQuery" />
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:FareremarkConfirmQuery" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="FareremarkRequest" nillable="true" type="tns:FareremarkRequest" />
-  <xs:complexType name="FareremarkQuery">
+  <xs:complexType name="FareremarkConfirmQuery">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:FareremarkQueryParams" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:FareremarkConfirmQueryParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FareremarkQuery" nillable="true" type="tns:FareremarkQuery" />
-  <xs:complexType name="FareremarkQueryParams">
+  <xs:element name="FareremarkConfirmQuery" nillable="true" type="tns:FareremarkConfirmQuery" />
+  <xs:complexType name="FareremarkConfirmQueryParams">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:FareremarkAnswerParams" />
+      <xs:element minOccurs="0" name="ConfirmAnswerParams" nillable="true" type="tns:FareremarkConfirmAnswerParams" />
       <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:FareremarkRequestParams" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FareremarkQueryParams" nillable="true" type="tns:FareremarkQueryParams" />
-  <xs:complexType name="FareremarkAnswerParams">
+  <xs:element name="FareremarkConfirmQueryParams" nillable="true" type="tns:FareremarkConfirmQueryParams" />
+  <xs:complexType name="FareremarkConfirmAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FareremarkAnswerParams" nillable="true" type="tns:FareremarkAnswerParams" />
+  <xs:element name="FareremarkConfirmAnswerParams" nillable="true" type="tns:FareremarkConfirmAnswerParams" />
   <xs:complexType name="FareremarkRequestParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="CatSixteen" type="xs:boolean" />
@@ -602,29 +602,29 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:DtoResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:FareremarkAnswer" />
+          <xs:element minOccurs="0" name="ConfirmAnswer" nillable="true" type="tns:FareremarkConfirmAnswer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="FareremarkResponse" nillable="true" type="tns:FareremarkResponse" />
-  <xs:complexType name="FareremarkAnswer">
+  <xs:complexType name="FareremarkConfirmAnswer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:FareremarkAnswerBody" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="tns:FareremarkConfirmAnswerBody" />
       <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProxyTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pult" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FareremarkAnswer" nillable="true" type="tns:FareremarkAnswer" />
-  <xs:complexType name="FareremarkAnswerBody">
+  <xs:element name="FareremarkConfirmAnswer" nillable="true" type="tns:FareremarkConfirmAnswer" />
+  <xs:complexType name="FareremarkConfirmAnswerBody">
     <xs:sequence>
       <xs:element minOccurs="0" name="Error" nillable="true" type="tns:Error" />
       <xs:element minOccurs="0" name="Info" nillable="true" type="tns:Info" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="tns:FareremarkRemark" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="FareremarkAnswerBody" nillable="true" type="tns:FareremarkAnswerBody" />
+  <xs:element name="FareremarkConfirmAnswerBody" nillable="true" type="tns:FareremarkConfirmAnswerBody" />
   <xs:complexType name="FareremarkRemark">
     <xs:sequence>
       <xs:element minOccurs="0" name="ProxyNewFare" nillable="true" type="xs:string" />
