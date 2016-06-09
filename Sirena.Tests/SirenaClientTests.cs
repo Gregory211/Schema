@@ -435,7 +435,6 @@ namespace Sirena.Tests
             Assert.NotNull(xml.Answer.Body.Cost);
         }
         #endregion
-
         #region PaymentExtAuthQueryRequest
 
         [Test]
@@ -472,10 +471,7 @@ namespace Sirena.Tests
         }
 
         #endregion
-
-
         #region PaymentExtAuthConfirmRequest
-
         [Test]
         public async Task PaymentExtConfirmRequest_Example()
         {
@@ -513,7 +509,6 @@ namespace Sirena.Tests
 
             Assert.NotNull(xmlResult);
         }
-
         #endregion
     }
 }

@@ -55,15 +55,35 @@ namespace SirenaTravelProxyGateWcf
         PricingResponse SendPricingRequest(PricingRequest pricingRequest);
 
         [OperationContract]
-        Task<BookingResponse> PricingRequestAsync(BookingRequest bookingRequest);
+        Task<BookingResponse> BookingRequestAsync(BookingRequest bookingRequest);
 
         [OperationContract]
-        BookingResponse SendPricingRequest(BookingRequest bookingRequest);
+        BookingResponse SendBookingRequest(BookingRequest bookingRequest);
 
         [OperationContract]
-        Task<BookingCancelResponse> PricingRequestAsync(BookingCancelRequest bookingCancelRequest);
+        Task<BookingCancelResponse> BookingCancelRequestAsync(BookingCancelRequest bookingCancelRequest);
 
         [OperationContract]
-        BookingCancelResponse SendPricingRequest(BookingCancelRequest bookingCancelRequest);
+        BookingCancelResponse SendBookingCancelRequest(BookingCancelRequest bookingCancelRequest);
+
+        [OperationContract]
+        Task<SellingQueryResponse> SellingQueryRequestAsync(SellingQueryRequest sellingQueryRequest);
+
+        [OperationContract]
+        SellingQueryResponse SendSellingQueryRequest(SellingQueryRequest bookingCancelRequest);
+
+        [OperationContract]
+        Task<PaymentExtAuthConfirmResponse> PaymentExtAuthConfirmRequestAsync(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest);
+
+        [OperationContract]
+        PaymentExtAuthConfirmResponse SendPaymentExtAuthConfirmRequest(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest);
+
+        [OperationContract]
+        Task<PaymentExtAuthQueryResponse> PaymentExtAuthQueryRequestAsync(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest);
+
+        [OperationContract]
+        PaymentExtAuthQueryResponse SendPaymentExtAuthQueryRequest(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest);
+
+
     }
 }

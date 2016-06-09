@@ -60,6 +60,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<KeyInfoResponse> KeyInfoRequestAsync(KeyInfoRequest keyInfoRequest)
         {
             try
@@ -90,6 +91,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<ScheduleResponse> ScheduleRequestAsync(ScheduleRequest scheduleRequest)
         {
             try
@@ -120,6 +122,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<AvailabilityResponse> AvailabilityRequestAsync(AvailabilityRequest availabilityRequest)
         {
             try
@@ -150,6 +153,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<FaresResponse> FaresRequestAsync(FaresRequest faresRequest)
         {
             try
@@ -180,6 +184,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<FareremarkResponse> FareremarkRequestAsync(FareremarkRequest fareremarkRequest)
         {
             try
@@ -210,6 +215,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
         public async Task<PricingResponse> PricingRequestAsync(PricingRequest pricingRequest)
         {
             try
@@ -240,7 +246,8 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-        public async Task<BookingResponse> PricingRequestAsync(BookingRequest bookingRequest)
+
+        public async Task<BookingResponse> BookingRequestAsync(BookingRequest bookingRequest)
         {
             try
             {
@@ -255,7 +262,7 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-        public BookingResponse SendPricingRequest(BookingRequest bookingRequest)
+        public BookingResponse SendBookingRequest(BookingRequest bookingRequest)
         {
             try
             {
@@ -270,7 +277,8 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-        public async Task<BookingCancelResponse> PricingRequestAsync(BookingCancelRequest bookingCancelRequest)
+
+        public async Task<BookingCancelResponse> BookingCancelRequestAsync(BookingCancelRequest bookingCancelRequest)
         {
             try
             {
@@ -285,12 +293,105 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
-        public BookingCancelResponse SendPricingRequest(BookingCancelRequest bookingCancelRequest)
+        public BookingCancelResponse SendBookingCancelRequest(BookingCancelRequest bookingCancelRequest)
         {
             try
             {
                 _client.Connect();
                 var result = _client.SendRequest(bookingCancelRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
+        public async Task<SellingQueryResponse> SellingQueryRequestAsync(SellingQueryRequest sellingQueryRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(sellingQueryRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public SellingQueryResponse SendSellingQueryRequest(SellingQueryRequest sellingQueryRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(sellingQueryRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
+        public async Task<PaymentExtAuthConfirmResponse> PaymentExtAuthConfirmRequestAsync(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(paymentExtAuthConfirmRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public PaymentExtAuthConfirmResponse SendPaymentExtAuthConfirmRequest(PaymentExtAuthConfirmRequest paymentExtAuthConfirmRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(paymentExtAuthConfirmRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
+        public async Task<PaymentExtAuthQueryResponse> PaymentExtAuthQueryRequestAsync(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(paymentExtAuthQueryRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public PaymentExtAuthQueryResponse SendPaymentExtAuthQueryRequest(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(paymentExtAuthQueryRequest);
                 _client.Close();
                 return result;
             }
