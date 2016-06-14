@@ -179,8 +179,8 @@ namespace Sirena.Tests
         /// Пример 14. Запрос текста УПТ
         /// </summary>
         /// <returns></returns>
-        //[Test]
-        public async Task fareremarkRequest_Example_14()
+        [Test]
+        public async Task FareremarkRequest_Example_14()
         {
             var request = new FareremarkRequest()
             {
@@ -198,6 +198,7 @@ namespace Sirena.Tests
                         {
                             Upt = new FaresUpt()
                             {
+                                //Value = "Some content as an exact copy from the previous pricing or booking answer"
                                 CustomElements = new XElement[]
                                 {
                                     new XElement("idar1") {Value = "31346266"},
@@ -226,10 +227,15 @@ namespace Sirena.Tests
                 }
             };
 
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
         }
         #endregion    
         #region PricingRequest
@@ -354,7 +360,6 @@ namespace Sirena.Tests
                             Regnum = bookingBody.Regnum
                         }
                     }
-
                 };
 
                 var result = await _client.SendRequestAsync(request);
@@ -493,8 +498,8 @@ namespace Sirena.Tests
                             Holder = "Mr. Holder",
                             AuthCode = "654321"
                         },
-                        Cost = new Cost {  Curr = "РУБ", Value = "5000.00" },
-                        AnswerParams = new PaymentExtAuthAnswerParams{ ReturnReceipt = true }
+                        Cost = new Cost { Curr = "РУБ", Value = "5000.00" },
+                        AnswerParams = new PaymentExtAuthAnswerParams { ReturnReceipt = true }
                     }
                 }
             };
@@ -506,6 +511,33 @@ namespace Sirena.Tests
 
             Assert.NotNull(result.ConfirmAnswer.Body);
             Assert.Null(result.ConfirmAnswer.Body.Error);
+
+            Assert.NotNull(xmlResult);
+        }
+        #endregion
+        #region GetInitReceiptsRequest
+        [Test]
+        public async Task GetItinReceiptsRequest_Example()
+        {
+            var request = new GetInitReceiptsRequest
+            {
+                Query = new GetInitReceiptsQuery
+                {
+                    Params = new GetInitReceiptsParamas
+                    {
+                        Regnum = "00001Х",
+                        Surname = "ИВАНОВ"
+                    }
+                }
+            };
+
+            var xml = SerializationHelper.Serialize(request);
+
+            var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
 
             Assert.NotNull(xmlResult);
         }

@@ -312,8 +312,13 @@ namespace Sirena
     public sealed class FaresUpt
     {
         public FaresUpt() { }
+
         [DataMember]
         [XmlAnyElement]
         public XElement[] CustomElements { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 }
