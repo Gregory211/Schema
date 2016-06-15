@@ -250,23 +250,46 @@ namespace Sirena.Tests
                     {
                         Segment = new PricingRequestSegment()
                         {
-                            Departure = "МОВ",
-                            Arrival = "СПТ",
-                            ProxyDate = DateTime.Now.ToString("dd.MM.yy")
+                            Departure = "MOW",
+                            Arrival = "LED",
+                            ProxyDate = DateTime.Now.AddDays(1).ToString("dd.MM.yy"),
+                            Class = "Y",
+                            Direct = false
                         },
                         Passenger = new PricingRequestPassenger()
                         {
-                            Code = "ААА",
-                            Count = 1
+                            Code = "ADT",
+                            Count = "1"
+                        },
+                        AnswerParams = new PricingAnswerParams()
+                        {
+                            ShowFlightTime = true,
+                            ShowAvailable = true,
+                            ShowIoMatching = true,
+                            ShowVariantTotal = true
+                        },
+                        RequestParams = new PricingRequestParams()
+                        {
+                            FormPay = new FormPay()
+                            {
+                                Value = "IN"
+                            }
                         }
+                        
                     }
                 }
             };
 
+
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
         }
         #endregion
         #region BookingRequest

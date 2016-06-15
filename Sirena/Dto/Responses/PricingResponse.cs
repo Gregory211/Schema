@@ -93,7 +93,7 @@ namespace Sirena.Dto.Responses
        
         [DataMember]
         [XmlElement("variant")]
-        public PricingVariant Variant { get; set; }
+        public PricingVariant[] Variant { get; set; }
 
         /// <summary>
         /// Gets the response error.
@@ -114,12 +114,20 @@ namespace Sirena.Dto.Responses
     public sealed class PricingVariant
     {
         [DataMember]
+        [XmlAttribute("fop")]
+        public string Fop { get; set; }
+
+        [DataMember]
+        [XmlAttribute("card_type")]
+        public string CardType { get; set; }
+
+        [DataMember]
         [XmlAttribute("seance")]
         public string Seance { get; set; }
 
         [DataMember]
         [XmlElement("flight")]
-        public List<PricingFlight> Flights { get; set; }
+        public PricingFlight Flight { get; set; }
     }
 
     [DataContract, Serializable]
@@ -198,6 +206,11 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlElement("airplane")]
         public string Airplane { get; set; }
+
+        [DataMember]
+        [XmlElement("price")]
+        public Price Price { get; set; }
+
     }
 
     [DataContract, Serializable]
