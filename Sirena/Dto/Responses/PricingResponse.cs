@@ -209,7 +209,7 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("price")]
-        public Price Price { get; set; }
+        public Price[] Price { get; set; }
 
     }
 

@@ -248,18 +248,32 @@ namespace Sirena.Tests
                 {
                     Params = new PricingQueryParamas()
                     {
-                        Segment = new PricingRequestSegment()
+                        Segments = new[]
                         {
-                            Departure = "MOW",
-                            Arrival = "LED",
-                            ProxyDate = DateTime.Now.AddDays(1).ToString("dd.MM.yy"),
-                            Class = "Y",
-                            Direct = false
+                            new PricingRequestSegment()
+                            {
+                                Company = "UT",
+                                Departure = "MOW",
+                                Arrival = "LED",
+                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
+                                Direct = false
+                            },
+                            new PricingRequestSegment()
+                            {
+                                Company = "UT",
+                                Departure = "LED",
+                                Arrival = "MOW",
+                                ProxyDate = DateTime.Now.AddDays(11).ToString("dd.MM.yy"),
+                                Direct = false
+                            }
                         },
-                        Passenger = new PricingRequestPassenger()
+                        Passengers = new[]
                         {
-                            Code = "ADT",
-                            Count = "1"
+                            new PricingRequestPassenger()
+                            {
+                                Code = "ADT",
+                                Count = "2"
+                            },
                         },
                         AnswerParams = new PricingAnswerParams()
                         {
@@ -275,7 +289,6 @@ namespace Sirena.Tests
                                 Value = "IN"
                             }
                         }
-                        
                     }
                 }
             };

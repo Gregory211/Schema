@@ -64,7 +64,7 @@ namespace Sirena.Dto.Requests
         /// </remarks>
         [DataMember]
         [XmlElement("segment")]
-        public PricingRequestSegment Segment { get; set; }
+        public PricingRequestSegment[] Segments { get; set; }
 
         /// <summary>
         /// Gets or set the passenger params.
@@ -74,7 +74,7 @@ namespace Sirena.Dto.Requests
         /// </remarks>
         [DataMember]
         [XmlElement("passenger")]
-        public PricingRequestPassenger Passenger { get; set; }
+        public PricingRequestPassenger[] Passengers { get; set; }
 
         [DataMember]
         [XmlElement("answer_params")]
