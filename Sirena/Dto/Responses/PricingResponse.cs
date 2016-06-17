@@ -127,13 +127,73 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("flight")]
-        public PricingFlight Flight { get; set; }
+        public PricingFlight[] Flights { get; set; }
+
+        [DataMember]
+        [XmlElement("segmentTransferTime")]
+        public SegmentTransferTime SegmentTransferTime { get; set; }
+
+        [DataMember]
+        [XmlElement("variant_total")]
+        public VariantTotal VariantTotal { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class SegmentTransferTime
+    {
+        [DataMember]
+        [XmlAttribute("iSegmentNum")]
+        public string iSegmentNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentOrig")]
+        public string iSegmentOrig { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentDest")]
+        public string iSegmentDest { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class VariantTotal
+    {
+        [DataMember]
+        [XmlAttribute("currency")]
+        public string Currency { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 
     [DataContract, Serializable]
     public sealed class PricingFlight
     {
         public PricingFlight(){}
+
+        [DataMember]
+        [XmlAttribute("iSegmentNum")]
+        public string iSegmentNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentOrig")]
+        public string iSegmentOrig { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentDest")]
+        public string iSegmentDest { get; set; }
+
+        [DataMember]
+        [XmlAttribute("oSegmentPartNum")]
+        public string oSegmentPartNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("oSegmentPartQuantity")]
+        public string oSegmentPartQuantity { get; set; }
 
         /// <summary>
         /// Gets the air company name.
@@ -168,28 +228,28 @@ namespace Sirena.Dto.Responses
         /// Gets the departure time.
         /// </summary>
         [DataMember]
-        [XmlElement("deptdate ")]
+        [XmlElement("deptdate")]
         public DeptDate DeptDate { get; set; }
 
         /// <summary>
         /// Gets the arrival time.
         /// </summary>
         [DataMember]
-        [XmlElement("arrvdate ")]
+        [XmlElement("arrvdate")]
         public ArrvDate ArrvDate { get; set; }
 
         /// <summary>
         /// HH:mm
         /// </summary>
         [DataMember]
-        [XmlElement("depttime ")]
+        [XmlElement("depttime")]
         public string DeptTime { get; set; }
 
         /// <summary>
         /// HH:mm
         /// </summary>
         [DataMember]
-        [XmlElement("arrvtime ")]
+        [XmlElement("arrvtime")]
         public string ArrvTime { get; set; }
 
         [DataMember]

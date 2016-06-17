@@ -326,6 +326,10 @@ namespace Sirena.Dto.Requests
         [XmlElement("show_available")]
         public bool ShowAvailable { get; set; }
 
+        [DataMember]
+        [XmlElement("show_baseclass")]
+        public Boolean ShowBaseClass { get; set; }
+
     }
 
     [DataContract, Serializable]

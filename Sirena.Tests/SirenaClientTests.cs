@@ -179,7 +179,7 @@ namespace Sirena.Tests
         /// Пример 14. Запрос текста УПТ
         /// </summary>
         /// <returns></returns>
-        [Test]
+        //[Test]
         public async Task FareremarkRequest_Example_14()
         {
             var request = new FareremarkRequest()
@@ -250,39 +250,40 @@ namespace Sirena.Tests
                     {
                         Segments = new[]
                         {
-                            new PricingRequestSegment()
+                            new PricingRequestSegment
                             {
                                 Company = "UT",
                                 Departure = "MOW",
                                 Arrival = "LED",
-                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
+                                ProxyDate = DateTime.Now.AddDays(7).ToString("dd.MM.yy"),
                                 Direct = false
                             },
-                            new PricingRequestSegment()
+                            new PricingRequestSegment
                             {
                                 Company = "UT",
                                 Departure = "LED",
                                 Arrival = "MOW",
-                                ProxyDate = DateTime.Now.AddDays(11).ToString("dd.MM.yy"),
+                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
                                 Direct = false
                             }
                         },
                         Passengers = new[]
                         {
-                            new PricingRequestPassenger()
+                            new PricingRequestPassenger
                             {
                                 Code = "ADT",
                                 Count = "2"
                             },
                         },
-                        AnswerParams = new PricingAnswerParams()
+                        AnswerParams = new PricingAnswerParams
                         {
+                            Lang = "en",
                             ShowFlightTime = true,
                             ShowAvailable = true,
                             ShowIoMatching = true,
-                            ShowVariantTotal = true
+                            ShowVariantTotal = true,                            
                         },
-                        RequestParams = new PricingRequestParams()
+                        RequestParams = new PricingRequestParams
                         {
                             FormPay = new FormPay()
                             {
@@ -335,10 +336,10 @@ namespace Sirena.Tests
                                 DocCode = "ПС",
                                 Doc = "1234561234",
                                 Nationality = "РФ",
-                                Phones = new List<BookingContact>()
+                                Phones = new []
                                 {
                                     new BookingContact { ContactType = ContactType.Mobile, Comment = "ЗВОНИТЬ ПОСЛЕ 19:00", Value = "79101234567" },
-                                    new BookingContact { ContactType =  ContactType.Work, Value = "74957654321" }
+                                    new BookingContact { ContactType = ContactType.Work,   Value = "74957654321" }
                                 }
                             }
                         },
@@ -353,17 +354,23 @@ namespace Sirena.Tests
                         },
                         AnswerParams = new BookingAnswerParams()
                         {
-                            ShowTts = true
+                            ShowTts = true,
+                            ShowBaseClass = true
                         }
                     }
                 }
             };
 
 
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
 
             return result.Answer.Body;
         }
@@ -478,7 +485,7 @@ namespace Sirena.Tests
         #endregion
         #region PaymentExtAuthQueryRequest
 
-        [Test]
+        //[Test]
         public async Task PaymentExtQueryRequest_Example()
         {
             var request = new PaymentExtAuthQueryRequest
@@ -513,7 +520,7 @@ namespace Sirena.Tests
 
         #endregion
         #region PaymentExtAuthConfirmRequest
-        [Test]
+     //   [Test]
         public async Task PaymentExtConfirmRequest_Example()
         {
             var request = new PaymentExtAuthConfirmRequest
@@ -552,7 +559,7 @@ namespace Sirena.Tests
         }
         #endregion
         #region GetInitReceiptsRequest
-        [Test]
+        //[Test]
         public async Task GetItinReceiptsRequest_Example()
         {
             var request = new GetInitReceiptsRequest
