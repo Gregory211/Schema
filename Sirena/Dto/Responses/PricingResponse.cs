@@ -93,7 +93,7 @@ namespace Sirena.Dto.Responses
        
         [DataMember]
         [XmlElement("variant")]
-        public PricingVariant Variant { get; set; }
+        public PricingVariant[] Variant { get; set; }
 
         /// <summary>
         /// Gets the response error.
@@ -114,18 +114,86 @@ namespace Sirena.Dto.Responses
     public sealed class PricingVariant
     {
         [DataMember]
+        [XmlAttribute("fop")]
+        public string Fop { get; set; }
+
+        [DataMember]
+        [XmlAttribute("card_type")]
+        public string CardType { get; set; }
+
+        [DataMember]
         [XmlAttribute("seance")]
         public string Seance { get; set; }
 
         [DataMember]
         [XmlElement("flight")]
-        public List<PricingFlight> Flights { get; set; }
+        public PricingFlight[] Flights { get; set; }
+
+        [DataMember]
+        [XmlElement("segmentTransferTime")]
+        public SegmentTransferTime SegmentTransferTime { get; set; }
+
+        [DataMember]
+        [XmlElement("variant_total")]
+        public VariantTotal VariantTotal { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class SegmentTransferTime
+    {
+        [DataMember]
+        [XmlAttribute("iSegmentNum")]
+        public string iSegmentNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentOrig")]
+        public string iSegmentOrig { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentDest")]
+        public string iSegmentDest { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class VariantTotal
+    {
+        [DataMember]
+        [XmlAttribute("currency")]
+        public string Currency { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 
     [DataContract, Serializable]
     public sealed class PricingFlight
     {
         public PricingFlight(){}
+
+        [DataMember]
+        [XmlAttribute("iSegmentNum")]
+        public string iSegmentNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentOrig")]
+        public string iSegmentOrig { get; set; }
+
+        [DataMember]
+        [XmlAttribute("iSegmentDest")]
+        public string iSegmentDest { get; set; }
+
+        [DataMember]
+        [XmlAttribute("oSegmentPartNum")]
+        public string oSegmentPartNum { get; set; }
+
+        [DataMember]
+        [XmlAttribute("oSegmentPartQuantity")]
+        public string oSegmentPartQuantity { get; set; }
 
         /// <summary>
         /// Gets the air company name.
@@ -160,28 +228,28 @@ namespace Sirena.Dto.Responses
         /// Gets the departure time.
         /// </summary>
         [DataMember]
-        [XmlElement("deptdate ")]
+        [XmlElement("deptdate")]
         public DeptDate DeptDate { get; set; }
 
         /// <summary>
         /// Gets the arrival time.
         /// </summary>
         [DataMember]
-        [XmlElement("arrvdate ")]
+        [XmlElement("arrvdate")]
         public ArrvDate ArrvDate { get; set; }
 
         /// <summary>
         /// HH:mm
         /// </summary>
         [DataMember]
-        [XmlElement("depttime ")]
+        [XmlElement("depttime")]
         public string DeptTime { get; set; }
 
         /// <summary>
         /// HH:mm
         /// </summary>
         [DataMember]
-        [XmlElement("arrvtime ")]
+        [XmlElement("arrvtime")]
         public string ArrvTime { get; set; }
 
         [DataMember]
@@ -198,6 +266,11 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlElement("airplane")]
         public string Airplane { get; set; }
+
+        [DataMember]
+        [XmlElement("price")]
+        public Price[] Price { get; set; }
+
     }
 
     [DataContract, Serializable]

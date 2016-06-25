@@ -54,52 +54,28 @@ namespace Sirena
     public sealed class BookingQueryParams
     {
         public BookingQueryParams() { }
-        /// <summary>
-        /// Gets or sets the flight segments.
-        /// </summary>
+
         [DataMember]
         [XmlElement("segment")]
         public List<BookingRequestSegment> Segments { get; set; }
 
-        /// <summary>
-        /// Gets or sets the passengers info.
-        /// </summary>
         [DataMember]
         [XmlElement("passenger")]
         public List<BookingRequestPassenger> Passengers { get; set; }
 
-        /// <summary>
-        /// Gets or sets the general contacts info.
-        /// </summary>
         [DataMember]
         [XmlElement("contacts")]
-        //[XmlElement("customer")]
         public BookingRequestContacts Contacts { get; set; }
 
-        /// <summary>
-        /// Gets or set the answer params.
-        /// </summary>
-        /// <remarks>
-        /// Optional.
-        /// </remarks>
         [DataMember]
         [XmlElement("answer_params")]
         public BookingAnswerParams AnswerParams { get; set; }
 
-        /// <summary>
-        /// Gets or sets the request params.
-        /// </summary>
-        /// <remarks>
-        /// Optional.
-        /// </remarks>
         [DataMember]
         [XmlElement("request_params")]
         public BookingRequestParams RequestParams { get; set; }
     }
 
-    /// <summary>
-    /// Represents the booking asnwer params.
-    /// </summary>
     [DataContract, Serializable]
     public sealed class BookingAnswerParams
     {
@@ -124,11 +100,12 @@ namespace Sirena
         [DataMember]
         [XmlElement("add_remarks")]
         public Boolean AddRemarks { get; set; }
+
+        [DataMember]
+        [XmlElement("show_baseclass")]
+        public Boolean ShowBaseClass { get; set; }
     }
 
-    /// <summary>
-    /// Represents the booking request params.
-    /// </summary>
     [DataContract, Serializable]
     public sealed class BookingRequestParams
     {
@@ -158,9 +135,6 @@ namespace Sirena
         public String ParcelAgency { get; set; }
     }
 
-    /// <summary>
-    /// Represents the booking request segment info.
-    /// </summary>
     [DataContract, Serializable]
     public sealed class BookingRequestSegment
     {
@@ -285,9 +259,6 @@ namespace Sirena
         public string Class { get; set; }
     }
 
-    /// <summary>
-    /// Represents the booking request passenger info.
-    /// </summary>
     [DataContract, Serializable]
     public sealed class BookingRequestPassenger
     {
@@ -520,7 +491,7 @@ namespace Sirena
         /// Gets or sets the passenger phones.
         /// </summary>
         [DataMember][XmlElement("phone")]
-        public List<BookingContact> Phones { get; set; }
+        public BookingContact[] Phones { get; set; }
 
         /// <summary>
         /// Gets or sets the passenger contacts.
@@ -529,51 +500,6 @@ namespace Sirena
         public List<BookingContact> Contacts { get; set; }
     }
 
-    /// <summary>
-    /// Represents the booking contact info.
-    /// </summary>
-    [DataContract, Serializable]
-    public sealed class BookingContact
-    {
-        public BookingContact() { }
-        /// <summary>
-        /// Gets or sets the contact type.
-        /// </summary>
-        [XmlIgnore]
-        public ContactType ContactType { get; set; }
-
-        /// <summary>
-        /// USE ContactType instead.
-        /// </summary>
-        [XmlAttribute("type")]
-        public String ProxyContactType
-        {
-            get
-            {
-                return EnumHelper.GetXmlEnumName(ContactType);
-            }
-            set
-            {
-                ContactType = (ContactType)EnumHelper.ParseXmlEnumName(typeof(ContactType), value.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the contact comment.
-        /// </summary>
-        [XmlAttribute("comment")]
-        public String Comment { get; set; }
-
-        /// <summary>
-        /// Gets or sets the contact value such as an email or phone.
-        /// </summary>
-        [XmlText]
-        public String Value { get; set; }
-    }
-
-    /// <summary>
-    /// Represents the booking request common contacts info.
-    /// </summary>
     [DataContract, Serializable]
     public sealed class BookingRequestContacts
     {
@@ -589,6 +515,38 @@ namespace Sirena
         /// </summary>
         [DataMember][XmlElement("email")]
         public string Email { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class BookingContact
+    {
+        public BookingContact() { }
+
+        [DataMember]
+        [XmlIgnore]
+        public ContactType ContactType { get; set; }
+
+        [DataMember]
+        [XmlAttribute("type")]
+        public string ProxyContactType
+        {
+            get
+            {
+                return EnumHelper.GetXmlEnumName(ContactType);
+            }
+            set
+            {
+                ContactType = (ContactType)EnumHelper.ParseXmlEnumName(typeof(ContactType), value.ToString());
+            }
+        }
+
+        [DataMember]
+        [XmlAttribute("comment")]
+        public string Comment { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 
     /// <summary>

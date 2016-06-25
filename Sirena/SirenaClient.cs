@@ -344,6 +344,16 @@ namespace Sirena
             return SendRequest<PaymentExtAuthQueryRequest, PaymentExtAuthQueryResponse>(paymentExtAuthQueryRequest);
         }
 
+        public async Task<GetItinReceiptsResponse> SendRequestAsync(GetInitReceiptsRequest getInitReceiptsRequest)
+        {
+            return await SendRequestAsync<GetInitReceiptsRequest, GetItinReceiptsResponse>(getInitReceiptsRequest);
+        }
+
+        public GetItinReceiptsResponse SendRequest(GetInitReceiptsRequest getInitReceiptsRequest)
+        {
+            return SendRequest<GetInitReceiptsRequest, GetItinReceiptsResponse>(getInitReceiptsRequest);
+        }
+
 
         /// <summary>
         /// Connects to the Sirena server.

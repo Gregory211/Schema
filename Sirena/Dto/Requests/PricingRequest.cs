@@ -64,7 +64,7 @@ namespace Sirena.Dto.Requests
         /// </remarks>
         [DataMember]
         [XmlElement("segment")]
-        public PricingRequestSegment Segment { get; set; }
+        public PricingRequestSegment[] Segments { get; set; }
 
         /// <summary>
         /// Gets or set the passenger params.
@@ -74,7 +74,15 @@ namespace Sirena.Dto.Requests
         /// </remarks>
         [DataMember]
         [XmlElement("passenger")]
-        public PricingRequestPassenger Passenger { get; set; }
+        public PricingRequestPassenger[] Passengers { get; set; }
+
+        [DataMember]
+        [XmlElement("answer_params")]
+        public PricingAnswerParams AnswerParams { get; set; }
+
+        [DataMember]
+        [XmlElement("request_params")]
+        public PricingRequestParams RequestParams { get; set; }
     }
 
     /// <summary>
@@ -170,6 +178,10 @@ namespace Sirena.Dto.Requests
         [XmlElement("baseclass")]
         public string BaseClass { get; set; }
 
+        [DataMember]
+        [XmlElement("class")]
+        public string Class { get; set; }
+
         /// <summary>
         /// Gets or sets the subclass.
         /// </summary>
@@ -193,7 +205,7 @@ namespace Sirena.Dto.Requests
         /// </summary>
         [DataMember]
         [XmlElement("connections")]
-        public string Connections { get; set; } = "only";
+        public string Connections { get; set; }
 
 
         /// <summary>
@@ -278,12 +290,99 @@ namespace Sirena.Dto.Requests
         /// </summary>
         [DataMember]
         [XmlElement("count")]
-        public int Count { get; set; }
+        public string Count { get; set; }
 
         /// <summary>
         /// Возраст пассажиров категории
         /// </summary>
         [XmlElement("age")]
-        public int Age { get; set; }
+        public string Age { get; set; }
+    }
+    [DataContract, Serializable]
+    public sealed class PricingAnswerParams
+    {
+        public PricingAnswerParams() : base()
+        {
+
+        }
+
+        [DataMember]
+        [XmlAttribute("lang")]
+        public string Lang { get; set; }
+
+        [DataMember]
+        [XmlElement("show_flighttime")]
+        public bool ShowFlightTime { get; set; }
+
+        [DataMember]
+        [XmlElement("show_io_matching")]
+        public bool ShowIoMatching { get; set; }
+
+        [DataMember]
+        [XmlElement("show_varianttotal")]
+        public bool ShowVariantTotal { get; set; }
+
+        [DataMember]
+        [XmlElement("show_available")]
+        public bool ShowAvailable { get; set; }
+
+        [DataMember]
+        [XmlElement("show_baseclass")]
+        public Boolean ShowBaseClass { get; set; }
+
+    }
+
+    [DataContract, Serializable]
+    public sealed class PricingRequestParams
+    {
+        public PricingRequestParams() : base(){}
+
+        [DataMember]
+        [XmlElement("min_results")]
+        public string MinResults { get; set; }
+
+        [DataMember]
+        [XmlElement("max_results")]
+        public string MaxResults { get; set; }
+
+        [DataMember]
+        [XmlElement("timeout")]
+        public string Timeout { get; set; }
+
+        [DataMember]
+        [XmlArray("comb_rules")][XmlArrayItem("rule")]
+        public PricingCombRule[] CombRules { get; set; }
+
+        [DataMember]
+        [XmlElement("formpay")]
+        public FormPay FormPay { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class PricingCombRule
+    {
+        public PricingCombRule() : base() { }
+
+        [DataMember]
+        [XmlAttribute("comb")]
+        public string Comb { get; set; }
+
+        [DataMember]
+        [XmlElement("acomp")]
+        public string Acomp { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class FormPay
+    {
+        public FormPay() { }
+
+        [DataMember]
+        [XmlElement("type")]
+        public string Type { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 }

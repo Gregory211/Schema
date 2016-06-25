@@ -180,7 +180,7 @@ namespace Sirena.Tests
         /// </summary>
         /// <returns></returns>
         //[Test]
-        public async Task fareremarkRequest_Example_14()
+        public async Task FareremarkRequest_Example_14()
         {
             var request = new FareremarkRequest()
             {
@@ -198,6 +198,7 @@ namespace Sirena.Tests
                         {
                             Upt = new FaresUpt()
                             {
+                                //Value = "Some content as an exact copy from the previous pricing or booking answer"
                                 CustomElements = new XElement[]
                                 {
                                     new XElement("idar1") {Value = "31346266"},
@@ -226,10 +227,15 @@ namespace Sirena.Tests
                 }
             };
 
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
         }
         #endregion    
         #region PricingRequest
@@ -242,25 +248,62 @@ namespace Sirena.Tests
                 {
                     Params = new PricingQueryParamas()
                     {
-                        Segment = new PricingRequestSegment()
+                        Segments = new[]
                         {
-                            Departure = "МОВ",
-                            Arrival = "СПТ",
-                            ProxyDate = DateTime.Now.ToString("dd.MM.yy")
+                            new PricingRequestSegment
+                            {
+                                Company = "UT",
+                                Departure = "MOW",
+                                Arrival = "LED",
+                                ProxyDate = DateTime.Now.AddDays(7).ToString("dd.MM.yy"),
+                                Direct = false
+                            },
+                            new PricingRequestSegment
+                            {
+                                Company = "UT",
+                                Departure = "LED",
+                                Arrival = "MOW",
+                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
+                                Direct = false
+                            }
                         },
-                        Passenger = new PricingRequestPassenger()
+                        Passengers = new[]
                         {
-                            Code = "ААА",
-                            Count = 1
+                            new PricingRequestPassenger
+                            {
+                                Code = "ADT",
+                                Count = "2"
+                            },
+                        },
+                        AnswerParams = new PricingAnswerParams
+                        {
+                            Lang = "en",
+                            ShowFlightTime = true,
+                            ShowAvailable = true,
+                            ShowIoMatching = true,
+                            ShowVariantTotal = true,                            
+                        },
+                        RequestParams = new PricingRequestParams
+                        {
+                            FormPay = new FormPay()
+                            {
+                                Value = "IN"
+                            }
                         }
                     }
                 }
             };
 
+
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
         }
         #endregion
         #region BookingRequest
@@ -293,10 +336,10 @@ namespace Sirena.Tests
                                 DocCode = "ПС",
                                 Doc = "1234561234",
                                 Nationality = "РФ",
-                                Phones = new List<BookingContact>()
+                                Phones = new []
                                 {
                                     new BookingContact { ContactType = ContactType.Mobile, Comment = "ЗВОНИТЬ ПОСЛЕ 19:00", Value = "79101234567" },
-                                    new BookingContact { ContactType =  ContactType.Work, Value = "74957654321" }
+                                    new BookingContact { ContactType = ContactType.Work,   Value = "74957654321" }
                                 }
                             }
                         },
@@ -311,17 +354,23 @@ namespace Sirena.Tests
                         },
                         AnswerParams = new BookingAnswerParams()
                         {
-                            ShowTts = true
+                            ShowTts = true,
+                            ShowBaseClass = true
                         }
                     }
                 }
             };
 
 
+            var xml = SerializationHelper.Serialize(request);
+
             var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
+
+            Assert.NotNull(xmlResult);
 
             return result.Answer.Body;
         }
@@ -354,7 +403,6 @@ namespace Sirena.Tests
                             Regnum = bookingBody.Regnum
                         }
                     }
-
                 };
 
                 var result = await _client.SendRequestAsync(request);
@@ -437,7 +485,7 @@ namespace Sirena.Tests
         #endregion
         #region PaymentExtAuthQueryRequest
 
-        [Test]
+        //[Test]
         public async Task PaymentExtQueryRequest_Example()
         {
             var request = new PaymentExtAuthQueryRequest
@@ -472,7 +520,7 @@ namespace Sirena.Tests
 
         #endregion
         #region PaymentExtAuthConfirmRequest
-        [Test]
+     //   [Test]
         public async Task PaymentExtConfirmRequest_Example()
         {
             var request = new PaymentExtAuthConfirmRequest
@@ -493,8 +541,8 @@ namespace Sirena.Tests
                             Holder = "Mr. Holder",
                             AuthCode = "654321"
                         },
-                        Cost = new Cost {  Curr = "РУБ", Value = "5000.00" },
-                        AnswerParams = new PaymentExtAuthAnswerParams{ ReturnReceipt = true }
+                        Cost = new Cost { Curr = "РУБ", Value = "5000.00" },
+                        AnswerParams = new PaymentExtAuthAnswerParams { ReturnReceipt = true }
                     }
                 }
             };
@@ -506,6 +554,33 @@ namespace Sirena.Tests
 
             Assert.NotNull(result.ConfirmAnswer.Body);
             Assert.Null(result.ConfirmAnswer.Body.Error);
+
+            Assert.NotNull(xmlResult);
+        }
+        #endregion
+        #region GetInitReceiptsRequest
+        //[Test]
+        public async Task GetItinReceiptsRequest_Example()
+        {
+            var request = new GetInitReceiptsRequest
+            {
+                Query = new GetInitReceiptsQuery
+                {
+                    Params = new GetInitReceiptsParamas
+                    {
+                        Regnum = "00001Х",
+                        Surname = "ИВАНОВ"
+                    }
+                }
+            };
+
+            var xml = SerializationHelper.Serialize(request);
+
+            var result = await _client.SendRequestAsync(request);
+            var xmlResult = await _client.SendRequestAsync(xml);
+
+            Assert.NotNull(result.Answer.Body);
+            Assert.Null(result.Answer.Body.Error);
 
             Assert.NotNull(xmlResult);
         }

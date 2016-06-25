@@ -401,5 +401,36 @@ namespace SirenaTravelProxyGateWcf
                 return null;
             }
         }
+
+        public async Task<GetItinReceiptsResponse> GetInitReceiptsRequestAsync(GetInitReceiptsRequest getInitReceiptsRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(getInitReceiptsRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public GetItinReceiptsResponse SendGetInitReceiptsRequest(GetInitReceiptsRequest getInitReceiptsRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(getInitReceiptsRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
     }
 }

@@ -85,6 +85,11 @@ namespace SirenaTravelProxyGateWcf
         [OperationContract]
         PaymentExtAuthQueryResponse SendPaymentExtAuthQueryRequest(PaymentExtAuthQueryRequest paymentExtAuthQueryRequest);
 
+        [OperationContract]
+        Task<GetItinReceiptsResponse> GetInitReceiptsRequestAsync(GetInitReceiptsRequest getInitReceiptsRequest);
+
+        [OperationContract]
+        GetItinReceiptsResponse SendGetInitReceiptsRequest(GetInitReceiptsRequest getInitReceiptsRequest);
 
     }
 }

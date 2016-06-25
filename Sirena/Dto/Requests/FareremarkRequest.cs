@@ -75,7 +75,7 @@ namespace Sirena
         /// </remarks>
         [DataMember]
         [XmlElement("cat_16")]
-        public Boolean CatSixteen { get; set; }
+        public string CatSixteen { get; set; }
 
         /// <summary>
         /// Gets or sets the UPT parameters gotten from a fare response.

@@ -24,7 +24,7 @@ namespace SirenaServiceSelfhost
             catch (Exception exc)
             {
                 Console.WriteLine(exc);
-                Console.Read();
+                Console.ReadLine();
             }
         }
     }
