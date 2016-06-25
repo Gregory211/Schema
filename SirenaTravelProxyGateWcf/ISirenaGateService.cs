@@ -13,10 +13,11 @@ namespace SirenaTravelProxyGateWcf
     public interface ISirenaGateService
     {
         [OperationContract]
-        string SendStringRequest(string data, ConnectionMode connectionMode = ConnectionMode.Plain);
+        string SendStringRequest(string data);
 
         [OperationContract]
-        Task<string> StringRequestAsync(string data, ConnectionMode connectionMode = ConnectionMode.Plain);
+        Task<string> StringRequestAsync(string data);
+
 
         [OperationContract]
         Task<KeyInfoResponse> KeyInfoRequestAsync(KeyInfoRequest keyInfoRequest);
