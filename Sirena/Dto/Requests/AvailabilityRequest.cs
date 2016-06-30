@@ -360,3 +360,5 @@ namespace Sirena
         Interline,
     }
 }
+
+// 'JointType' : 'All'

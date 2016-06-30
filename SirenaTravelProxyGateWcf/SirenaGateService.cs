@@ -29,7 +29,7 @@ namespace SirenaTravelProxyGateWcf
 
             _client = new SirenaClient(settings);
         }
-        public string SendStringRequest(string data, ConnectionMode connectionMode = ConnectionMode.Plain)
+        public string SendStringRequest(string data)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace SirenaTravelProxyGateWcf
             }
 
         }
-        public async Task<string> StringRequestAsync(string data, ConnectionMode connectionMode = ConnectionMode.Plain)
+        public async Task<string> StringRequestAsync(string data)
         {
             try
             {

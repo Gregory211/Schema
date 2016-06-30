@@ -87,7 +87,7 @@ namespace Sirena.Tests
                     {
                         Departure = "МОВ",
                         Arrival = "СПТ",
-                        SubClasses = new List<string>()
+                        SubClasses = new List<string>
                                 {
                                     "Э",
                                     "К",
