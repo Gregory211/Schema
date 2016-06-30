@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23f6e1bb-0725-4597-bef7-ff91a9651b81" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1384fc33-5ec8-41e2-b03f-538f3b4139eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,15 +22,15 @@
     <MetadataSource Address="http://localhost:8833/SirenaGateService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ae0d2be4-95cc-4146-beaf-874b71b15da1" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd2" />
-    <MetadataFile FileName="item52.xsd" MetadataType="Schema" ID="eb6c1217-743e-4ed5-864f-ac89286b71f5" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd5" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="944bbec4-f687-4ff6-b27e-ef15f942ccd3" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd4" />
-    <MetadataFile FileName="SirenaGateService.wsdl" MetadataType="Wsdl" ID="1cc735be-36f6-4c0b-bf71-77b05e34355c" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?wsdl" />
-    <MetadataFile FileName="item53.xsd" MetadataType="Schema" ID="69846dff-cd2f-4f95-9ce0-a73256f83868" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd6" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="eec9347a-1e9d-455d-8a0b-2ff74e99493e" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6bdf4f09-c8f6-4f41-a429-8c64da9d1cc3" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd1" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="d435b326-4da7-41e6-a47b-3d196b8a6fa5" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd0" />
-    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="e4149747-4008-4d66-a074-0ff6c45411ea" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd3" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="7b1623cc-6252-4302-984b-3851c1a5b17d" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="6c161fab-988e-41e7-85f1-e560a390d282" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd5" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="2b03402d-2128-4a80-bb24-fcd3a71fd98d" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd4" />
+    <MetadataFile FileName="SirenaGateService.wsdl" MetadataType="Wsdl" ID="62b56f89-5615-4f51-b154-9abf0de6b142" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="b1d43615-e8c0-4c99-a52c-385f0e5624d7" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd6" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="4d7aecfa-237a-478d-a0ee-f00deff8437b" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?disco" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="6d183d3e-ffcd-45c3-b459-2c9d6650c78f" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd1" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="78b81069-7d67-44ab-a323-61e3fd84760e" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd0" />
+    <MetadataFile FileName="item6.xsd" MetadataType="Schema" ID="dd97a0df-3584-4b17-9a13-e79bc172c23c" SourceId="1" SourceUrl="http://localhost:8833/SirenaGateService/?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

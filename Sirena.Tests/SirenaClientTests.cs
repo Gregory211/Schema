@@ -242,6 +242,7 @@ namespace Sirena.Tests
         [Test]
         public async Task PricingRequest_Example()
         {
+            #region req 1
             var request = new PricingRequest()
             {
                 Query = new PricingQuery()
@@ -281,7 +282,7 @@ namespace Sirena.Tests
                             ShowFlightTime = true,
                             ShowAvailable = true,
                             ShowIoMatching = true,
-                            ShowVariantTotal = true,                            
+                            ShowVariantTotal = true,
                         },
                         RequestParams = new PricingRequestParams
                         {
@@ -293,9 +294,64 @@ namespace Sirena.Tests
                     }
                 }
             };
+            #endregion
+            #region req 2
+            var request2 = new PricingRequest()
+            {
+                Query = new PricingQuery()
+                {
+                    Params = new PricingQueryParamas()
+                    {
+                        Segments = new[]
+                        {
+                            new PricingRequestSegment
+                            {
+                                Company = "UT",
+                                Departure = "MOW",
+                                Arrival = "LED",
+                                ProxyDate = DateTime.Now.AddDays(7).ToString("dd.MM.yy"),
+                                Direct = false
+                            },
+                            new PricingRequestSegment
+                            {
+                                Company = "UT",
+                                Departure = "LED",
+                                Arrival = "MOW",
+                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
+                                Direct = true
+                            }
+                        },
+                        Passengers = new[]
+                        {
+                            new PricingRequestPassenger
+                            {
+                                Code = "ADT",
+                                Count = "2"
+                            },
+                        },
+                        AnswerParams = new PricingAnswerParams
+                        {
+                            //Lang = "en",
+                            ShowFlightTime = true,
+                            ShowAvailable = true,
+                            ShowIoMatching = true,
+                            ShowVariantTotal = true,
+                            ShowBaseClass = true
+                        },
+                        RequestParams = new PricingRequestParams
+                        {
+                            FormPay = new FormPay()
+                            {
+                                Value = "IN"
+                            }
+                        }
+                    }
+                }
+            };
+            #endregion
 
 
-            var xml = SerializationHelper.Serialize(request);
+            var xml = SerializationHelper.Serialize(request2);
 
             var result = await _client.SendRequestAsync(request);
             var xmlResult = await _client.SendRequestAsync(xml);
@@ -314,7 +370,6 @@ namespace Sirena.Tests
             {
                 Query = new BookingQuery
                 {
-
                     Params = new BookingQueryParams
                     {
                         Segments = new List<BookingRequestSegment>()
@@ -374,6 +429,7 @@ namespace Sirena.Tests
 
             return result.Answer.Body;
         }
+
         [Test]
         public async Task BookingRequest_Example()
         {
@@ -520,7 +576,7 @@ namespace Sirena.Tests
 
         #endregion
         #region PaymentExtAuthConfirmRequest
-     //   [Test]
+        //   [Test]
         public async Task PaymentExtConfirmRequest_Example()
         {
             var request = new PaymentExtAuthConfirmRequest

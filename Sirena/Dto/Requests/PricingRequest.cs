@@ -328,8 +328,7 @@ namespace Sirena.Dto.Requests
 
         [DataMember]
         [XmlElement("show_baseclass")]
-        public Boolean ShowBaseClass { get; set; }
-
+        public bool ShowBaseClass { get; set; }
     }
 
     [DataContract, Serializable]

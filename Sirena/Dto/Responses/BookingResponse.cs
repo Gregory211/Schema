@@ -460,6 +460,9 @@ namespace Sirena
         [DataMember][XmlElement("subclass")]
         public String SubClass { get; set; }
 
+        [DataMember][XmlElement("baseclass")]
+        public String BaseClass { get; set; }
+
         [DataMember][XmlElement("seatcount")]
         public Int32 SeatCount { get; set; }
 
@@ -490,7 +493,6 @@ namespace Sirena
                 Status = (BookingSegmentStatus)EnumHelper.ParseXmlEnumName(typeof(BookingSegmentStatus), value);
             }
         }
-
     }
 
     /// <summary>
@@ -613,6 +615,7 @@ namespace Sirena
         [DataMember][XmlElement("fare")]
         public BookingPriceFare Fare { get; set; }
 
+        [DataMember]
         [XmlArray("taxes")]
         [XmlArrayItem("tax")]
         public BookingPriceTax[] Taxes { get; set; }
@@ -724,8 +727,8 @@ namespace Sirena
         /// <summary>
         /// Gets the currency value.
         /// </summary>
-        [XmlText]
-        public Single Value { get; set; }
+        [DataMember][XmlText]
+        public string Value { get; set; }
     }
 
     /// <summary>
@@ -744,6 +747,7 @@ namespace Sirena
         /// <summary>
         /// Gets the code value.
         /// </summary>
+        [DataMember]
         [XmlText]
         public String Value { get; set; }
     }

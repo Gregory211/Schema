@@ -727,12 +727,12 @@ namespace Sirena.Tests
         {
             var priceValue = new BookingCurrencyValue();
             priceValue.Currency = "RUR";
-            priceValue.Value = 13.00f;
+            priceValue.Value = "13.00f";
 
             var serializedPriceValue = SerializationHelper.Serialize(priceValue);
             priceValue = SerializationHelper.Deserialize<BookingCurrencyValue>(serializedPriceValue);
             Assert.True(priceValue.Currency == "RUR");
-            Assert.True(priceValue.Value == 13.00f);
+            Assert.True(priceValue.Value == "13.00f");
         }
 
         [Test]
@@ -762,7 +762,7 @@ namespace Sirena.Tests
             Assert.True(deserializedPriceFare.Code.BaseCode == "OPORT14");
             Assert.True(deserializedPriceFare.Code.Value == "OPORT14");
             Assert.True(deserializedPriceFare.CurrencyValue.Currency == "RUB");
-            Assert.True(deserializedPriceFare.CurrencyValue.Value == 6752.50f);
+            Assert.True(deserializedPriceFare.CurrencyValue.Value == "6752.50f");
         }
 
         [Test]
@@ -780,7 +780,7 @@ namespace Sirena.Tests
             Assert.True(deserializedTax.Code.BaseCode == null);
             Assert.True(deserializedTax.Code.Value == "ZZ");
             Assert.True(deserializedTax.CurrencyValue.Currency == null);
-            Assert.True(deserializedTax.CurrencyValue.Value == 125.00f);
+            Assert.True(deserializedTax.CurrencyValue.Value == "125.00f");
         }
 
         [Test]

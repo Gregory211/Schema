@@ -89,8 +89,7 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlAttribute("results")]
         public string Results { get; set; }
-
-       
+      
         [DataMember]
         [XmlElement("variant")]
         public PricingVariant[] Variant { get; set; }

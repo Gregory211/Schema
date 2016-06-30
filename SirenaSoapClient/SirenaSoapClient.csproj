@@ -73,17 +73,17 @@
     <None Include="Service References\SirenaGateServiceReference\item5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SirenaGateServiceReference\item51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SirenaGateServiceReference\item52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SirenaGateServiceReference\item53.xsd">
+    <None Include="Service References\SirenaGateServiceReference\item6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaGateService.wsdl" />
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.AvailabilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.BookingCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.BookingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.FareremarkResponse.datasource">
@@ -92,13 +92,25 @@
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.FaresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.GetItinReceiptsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.KeyInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.PaymentExtAuthConfirmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.PaymentExtAuthQueryResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.PricingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.ScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SirenaGateServiceReference\SirenaSoapClient.SirenaGateServiceReference.SellingQueryResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

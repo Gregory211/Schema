@@ -95,6 +95,78 @@
   <wsdl:message name="ISirenaGateService_SendPricingRequest_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendPricingRequestResponse" />
   </wsdl:message>
+  <wsdl:message name="ISirenaGateService_BookingRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_BookingRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendBookingRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBookingRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendBookingRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBookingRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_BookingCancelRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingCancelRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_BookingCancelRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingCancelRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendBookingCancelRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBookingCancelRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendBookingCancelRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBookingCancelRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SellingQueryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellingQueryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SellingQueryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellingQueryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendSellingQueryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSellingQueryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendSellingQueryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSellingQueryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PaymentExtAuthConfirmRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentExtAuthConfirmRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PaymentExtAuthConfirmRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentExtAuthConfirmRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPaymentExtAuthConfirmRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPaymentExtAuthConfirmRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPaymentExtAuthConfirmRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPaymentExtAuthConfirmRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PaymentExtAuthQueryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentExtAuthQueryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_PaymentExtAuthQueryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentExtAuthQueryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPaymentExtAuthQueryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPaymentExtAuthQueryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendPaymentExtAuthQueryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPaymentExtAuthQueryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_GetInitReceiptsRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInitReceiptsRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_GetInitReceiptsRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInitReceiptsRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendGetInitReceiptsRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendGetInitReceiptsRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendGetInitReceiptsRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendGetInitReceiptsRequestResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISirenaGateService">
     <wsdl:operation name="SendStringRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendStringRequest" message="tns:ISirenaGateService_SendStringRequest_InputMessage" />
@@ -151,6 +223,54 @@
     <wsdl:operation name="SendPricingRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequest" message="tns:ISirenaGateService_SendPricingRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse" message="tns:ISirenaGateService_SendPricingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/BookingRequest" message="tns:ISirenaGateService_BookingRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/BookingRequestResponse" message="tns:ISirenaGateService_BookingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendBookingRequest" message="tns:ISirenaGateService_SendBookingRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendBookingRequestResponse" message="tns:ISirenaGateService_SendBookingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingCancelRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/BookingCancelRequest" message="tns:ISirenaGateService_BookingCancelRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/BookingCancelRequestResponse" message="tns:ISirenaGateService_BookingCancelRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingCancelRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendBookingCancelRequest" message="tns:ISirenaGateService_SendBookingCancelRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendBookingCancelRequestResponse" message="tns:ISirenaGateService_SendBookingCancelRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellingQueryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SellingQueryRequest" message="tns:ISirenaGateService_SellingQueryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SellingQueryRequestResponse" message="tns:ISirenaGateService_SellingQueryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSellingQueryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendSellingQueryRequest" message="tns:ISirenaGateService_SendSellingQueryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendSellingQueryRequestResponse" message="tns:ISirenaGateService_SendSellingQueryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentExtAuthConfirmRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/PaymentExtAuthConfirmRequest" message="tns:ISirenaGateService_PaymentExtAuthConfirmRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/PaymentExtAuthConfirmRequestResponse" message="tns:ISirenaGateService_PaymentExtAuthConfirmRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPaymentExtAuthConfirmRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthConfirmRequest" message="tns:ISirenaGateService_SendPaymentExtAuthConfirmRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthConfirmRequestResponse" message="tns:ISirenaGateService_SendPaymentExtAuthConfirmRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentExtAuthQueryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/PaymentExtAuthQueryRequest" message="tns:ISirenaGateService_PaymentExtAuthQueryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/PaymentExtAuthQueryRequestResponse" message="tns:ISirenaGateService_PaymentExtAuthQueryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPaymentExtAuthQueryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthQueryRequest" message="tns:ISirenaGateService_SendPaymentExtAuthQueryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthQueryRequestResponse" message="tns:ISirenaGateService_SendPaymentExtAuthQueryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInitReceiptsRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/GetInitReceiptsRequest" message="tns:ISirenaGateService_GetInitReceiptsRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/GetInitReceiptsRequestResponse" message="tns:ISirenaGateService_GetInitReceiptsRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendGetInitReceiptsRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendGetInitReceiptsRequest" message="tns:ISirenaGateService_SendGetInitReceiptsRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendGetInitReceiptsRequestResponse" message="tns:ISirenaGateService_SendGetInitReceiptsRequest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISirenaGateService" type="tns:ISirenaGateService">
@@ -274,6 +394,114 @@
     </wsdl:operation>
     <wsdl:operation name="SendPricingRequest">
       <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendPricingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/BookingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendBookingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingCancelRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/BookingCancelRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingCancelRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendBookingCancelRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellingQueryRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SellingQueryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSellingQueryRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendSellingQueryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentExtAuthConfirmRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/PaymentExtAuthConfirmRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaymentExtAuthConfirmRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthConfirmRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentExtAuthQueryRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/PaymentExtAuthQueryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaymentExtAuthQueryRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendPaymentExtAuthQueryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInitReceiptsRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/GetInitReceiptsRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendGetInitReceiptsRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendGetInitReceiptsRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
