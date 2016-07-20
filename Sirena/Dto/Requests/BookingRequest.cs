@@ -416,28 +416,9 @@ namespace Sirena
         /// Optional.
         /// The date format is DD.MM.YY.
         /// </remarks>
-        [XmlIgnore]
-        public DateTime? DocumentExpirationDate { get; set; }
-
-        /// <summary>
-        /// USE DocumentExpirationDate instead.
-        /// </summary>
         [DataMember]
         [XmlElement("pspexpire")]
-        public String ProxyDocumentExpirationDate
-        {
-            get
-            {
-                return DocumentExpirationDate.HasValue ? DocumentExpirationDate.Value.ToString("dd.MM.yy") : null;
-            }
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    DocumentExpirationDate = DateTime.ParseExact(value, "dd.MM.yy", null);
-                }
-            }
-        }
+        public string DocumentExpirationDate { get; set; }
 
         /// <summary>
         /// Gets or sets the passenger nationality.
