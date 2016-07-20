@@ -395,7 +395,8 @@ namespace Sirena.Tests
                                 {
                                     new BookingContact { ContactType = ContactType.Mobile, Comment = "ЗВОНИТЬ ПОСЛЕ 19:00", Value = "79101234567" },
                                     new BookingContact { ContactType = ContactType.Work,   Value = "74957654321" }
-                                }
+                                },
+                                DocumentExpirationDate = DateTime.Now.ToString("dd.MM.yyyy")
                             }
                         },
                         Contacts = new BookingRequestContacts()
