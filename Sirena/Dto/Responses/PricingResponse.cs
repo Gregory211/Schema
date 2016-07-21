@@ -253,11 +253,11 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("class")]
-        public string Class { get; set; }
+        public FlightClass Class { get; set; }
 
         [DataMember]
         [XmlElement("subclass")]
-        public string SubClass { get; set; }
+        public FlightSubClass SubClass { get; set; }
 
         /// <summary>
         /// Gets the airplane code.
@@ -270,6 +270,35 @@ namespace Sirena.Dto.Responses
         [XmlElement("price")]
         public Price[] Price { get; set; }
 
+    }
+
+
+    [DataContract, Serializable]
+    public sealed class FlightClass
+    {
+        [DataMember]
+        [XmlAttribute("baseclass")]
+        public string Baseclass { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class FlightSubClass
+    {
+        [DataMember]
+        [XmlAttribute("baseclass")]
+        public string BaseClass { get; set; }
+
+        [DataMember]
+        [XmlAttribute("cabin")]
+        public string Cabin { get; set; }
+
+        [DataMember]
+        [XmlText]
+        public string Value { get; set; }
     }
 
     [DataContract, Serializable]

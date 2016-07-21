@@ -350,11 +350,13 @@ namespace Sirena.Tests
             };
             #endregion
 
-
             var xml = SerializationHelper.Serialize(request2);
 
             var result = await _client.SendRequestAsync(request);
             var xmlResult = await _client.SendRequestAsync(xml);
+
+            var cl = result.Answer.Body.Variant[0].Flights[0].Class;
+            var subcl = result.Answer.Body.Variant[0].Flights[0].SubClass;
 
             Assert.NotNull(result.Answer.Body);
             Assert.Null(result.Answer.Body.Error);
