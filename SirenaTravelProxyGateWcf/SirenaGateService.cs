@@ -15,17 +15,22 @@ namespace SirenaTravelProxyGateWcf
 
         public SirenaGateService()
         {
-
-            var settings = new SirenaClientSettings()
+            var settings = new SirenaClientSettings
             {
-                UserId = 922,
-                Host = ConfigurationManager.AppSettings["SirenaGateIp"] ?? "193.104.87.251",
+                Host = "193.104.87.251",
                 Port = 34323,
+                UserId = 922,
                 PublicRsaKey = new RSAParameters()
             };
 
+            if (ConfigurationManager.AppSettings["SirenaGateHost"] != null)
+                settings.Host = ConfigurationManager.AppSettings["SirenaGateHost"];
+
             if (ConfigurationManager.AppSettings["SirenaGatePort"] != null)
                 settings.Port = Convert.ToInt32(ConfigurationManager.AppSettings["SirenaGatePort"]);
+
+            if (ConfigurationManager.AppSettings["SirenaGateUserId"] != null)
+                settings.UserId = Convert.ToInt32(ConfigurationManager.AppSettings["SirenaGateUserId"]);
 
             _client = new SirenaClient(settings);
         }
