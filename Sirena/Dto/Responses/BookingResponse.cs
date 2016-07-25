@@ -88,7 +88,7 @@ namespace Sirena
         public Boolean? LatinRegistration { get; set; }
 
         [DataMember][XmlElement("latin_registration")]
-        public String ProxyLatinRegistration
+        public string ProxyLatinRegistration
         {
             get
             {
@@ -119,6 +119,7 @@ namespace Sirena
     public sealed class BookingPassengerNameRecord
     {
         public BookingPassengerNameRecord() { }
+
         [DataMember][XmlElement("regnum")]
         public string RegistrationNumber { get; set; }
 
@@ -154,10 +155,12 @@ namespace Sirena
             }
         }
 
+        [DataMember]
         [XmlArray("passengers")]
         [XmlArrayItem("passenger")]
         public BookingResponsePassenger[] Passengers { get; set; }
 
+        [DataMember]
         [XmlArray("segments")]
         [XmlArrayItem("segment")]
         public BookingResponseSegment[] Segments { get; set; }
@@ -165,6 +168,7 @@ namespace Sirena
         [DataMember][XmlElement("prices")]
         public BookingPrices Prices { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class BookingResponseContacts
     {

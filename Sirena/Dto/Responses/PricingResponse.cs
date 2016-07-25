@@ -270,6 +270,9 @@ namespace Sirena.Dto.Responses
         [XmlElement("price")]
         public Price[] Price { get; set; }
 
+        [DataMember]
+        [XmlElement("flightTime")]
+        public string FlightTime { get; set; }
     }
 
 
