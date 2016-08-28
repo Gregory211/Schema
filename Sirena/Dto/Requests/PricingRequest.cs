@@ -299,6 +299,7 @@ namespace Sirena.Dto.Requests
         [XmlElement("age")]
         public string Age { get; set; }
     }
+
     [DataContract, Serializable]
     public sealed class PricingAnswerParams
     {
@@ -330,6 +331,42 @@ namespace Sirena.Dto.Requests
         [DataMember]
         [XmlElement("show_baseclass")]
         public bool ShowBaseClass { get; set; }
+
+        [DataMember]
+        [XmlElement("show_reg_latin")]
+        public bool ShowRegLatin { get; set; }
+
+        [DataMember]
+        [XmlElement("show_upt_rec")]
+        public bool ShowUptRec { get; set; }
+
+        [DataMember]
+        [XmlElement("show_fareexpdate")]
+        public bool ShowFareExpDate { get; set; }
+
+        [DataMember]
+        [XmlElement("show_et")]
+        public bool ShowEt { get; set; }
+
+        [DataMember]
+        [XmlElement("show_n_blanks")]
+        public bool ShowNBlanks { get; set; }
+
+        [DataMember]
+        [XmlElement("regroup")]
+        public bool ReGroup { get; set; }
+
+        [DataMember]
+        [XmlElement("split_companies")]
+        public bool SplitCompanies { get; set; }
+
+        [DataMember]
+        [XmlElement("reference_style_codes")]
+        public bool ReferenceStyleCodes { get; set; }
+
+        [DataMember]
+        [XmlElement("mark_cityport")]
+        public bool MarkCityPort { get; set; }
     }
 
     [DataContract, Serializable]

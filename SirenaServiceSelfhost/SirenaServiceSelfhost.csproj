@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +55,10 @@
     <ProjectReference Include="..\SirenaTravelProxyGateWcf\SirenaTravelProxyGateWcf.csproj">
       <Project>{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}</Project>
       <Name>SirenaTravelProxyGateWcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sirena\Sirena.csproj">
+      <Project>{f65fd165-4a19-4679-ab4b-8e9742c27a1e}</Project>
+      <Name>Sirena</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

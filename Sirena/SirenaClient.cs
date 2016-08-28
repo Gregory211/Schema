@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Sirena
         private SirenaClientSettings clientSettings;
 
         private TcpClient client;
+
+        private bool LoggerEnabled;
 
         /// <summary>
         /// Gets the client unique id.
@@ -58,6 +61,9 @@ namespace Sirena
             {
                 throw new ArgumentNullException("clientSettings can not be null");
             }
+
+            if (ConfigurationManager.AppSettings["LoggerEnabled"] != null)
+                LoggerEnabled = Convert.ToBoolean(ConfigurationManager.AppSettings["LoggerEnabled"]);
 
             Id = Guid.NewGuid();
 
@@ -162,6 +168,12 @@ namespace Sirena
         {
             var requestXml = SerializationHelper.Serialize(dtoRequest);
             var responseXml = await SendRequestAsync(requestXml, connectionMode);
+
+            if (LoggerEnabled)
+            {
+                Logger.Info("Request:\n" + requestXml + "\nResponse:\n" + responseXml);
+            }
+
             var dtoResponse = SerializationHelper.Deserialize<TDtoResponse>(responseXml);
             return dtoResponse;
         }
