@@ -415,7 +415,7 @@ namespace Sirena.Dto.Requests
         public FormPay() { }
 
         [DataMember]
-        [XmlElement("type")]
+        [XmlAttribute("type")]
         public string Type { get; set; }
 
         [DataMember]
