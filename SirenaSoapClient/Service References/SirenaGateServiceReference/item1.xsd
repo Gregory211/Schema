@@ -31,11 +31,20 @@
   <xs:complexType name="PricingAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkCityPort" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferenceStyleCodes" type="xs:boolean" />
       <xs:element minOccurs="0" name="ShowAvailable" type="xs:boolean" />
       <xs:element minOccurs="0" name="ShowBaseClass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowEt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowFareExpDate" type="xs:boolean" />
       <xs:element minOccurs="0" name="ShowFlightTime" type="xs:boolean" />
       <xs:element minOccurs="0" name="ShowIoMatching" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowNBlanks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowRegLatin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowUptRec" type="xs:boolean" />
       <xs:element minOccurs="0" name="ShowVariantTotal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SplitCompanies" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PricingAnswerParams" nillable="true" type="tns:PricingAnswerParams" />
@@ -47,6 +56,7 @@
   <xs:element name="ArrayOfPricingRequestPassenger" nillable="true" type="tns:ArrayOfPricingRequestPassenger" />
   <xs:complexType name="PricingRequestPassenger">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
     </xs:sequence>

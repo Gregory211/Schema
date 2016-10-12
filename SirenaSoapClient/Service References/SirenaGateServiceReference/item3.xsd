@@ -58,15 +58,16 @@
       <xs:element minOccurs="0" name="Airplane" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ArrvDate" nillable="true" type="tns:ArrvDate" />
       <xs:element minOccurs="0" name="ArrvTime" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="tns:FlightClass" />
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeptDate" nillable="true" type="tns:DeptDate" />
       <xs:element minOccurs="0" name="DeptTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Destination" nillable="true" type="tns:Destination" />
+      <xs:element minOccurs="0" name="FlightTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Original" nillable="true" type="tns:Origin" />
       <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ArrayOfPrice" />
-      <xs:element minOccurs="0" name="SubClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubClass" nillable="true" type="tns:FlightSubClass" />
       <xs:element minOccurs="0" name="iSegmentDest" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="iSegmentNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="iSegmentOrig" nillable="true" type="xs:string" />
@@ -82,6 +83,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrvDate" nillable="true" type="tns:ArrvDate" />
+  <xs:complexType name="FlightClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Baseclass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightClass" nillable="true" type="tns:FlightClass" />
   <xs:complexType name="DeptDate">
     <xs:sequence>
       <xs:element minOccurs="0" name="Delay" nillable="true" type="xs:string" />
@@ -153,6 +161,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Vat" nillable="true" type="tns:Vat" />
+  <xs:complexType name="FlightSubClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cabin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightSubClass" nillable="true" type="tns:FlightSubClass" />
   <xs:complexType name="SegmentTransferTime">
     <xs:sequence>
       <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />

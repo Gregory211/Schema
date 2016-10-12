@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SirenaSoapClient.SirenaGateServiceReference;
 using Sirena.Helpers;
+using Sirena.Dto.Requests;
+using Sirena;
 
 namespace SirenaSoapClient
 {
