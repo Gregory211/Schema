@@ -125,6 +125,9 @@ namespace Sirena.Tests
                 <answer_params>
                 <show_tts>true</show_tts>
                 </answer_params>
+                <agent_comission type='percent'>
+                3
+                </agent_comission>
                 </booking>
                 </query>
                 </sirena>";

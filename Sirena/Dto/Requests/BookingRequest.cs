@@ -74,6 +74,10 @@ namespace Sirena
         [DataMember]
         [XmlElement("request_params")]
         public BookingRequestParams RequestParams { get; set; }
+
+        [DataMember]
+        [XmlElement("agent_comission")]
+        public BookingAgentComission AgentComission { get; set; }
     }
 
     [DataContract, Serializable]
@@ -512,6 +516,75 @@ namespace Sirena
         public string Value { get; set; }
     }
 
+    [DataContract, Serializable]
+    public sealed class BookingAgentComission
+    {
+        public BookingAgentComission() { }
+
+        /// <summary>
+        /// Defines type of agent comission
+        /// </summary>
+        /// <remarks>
+        /// Possible values:
+        /// "sum" - a fixed amount will be added to the price
+        /// "percent" - a price will be increaced by specified amount of percents
+        /// </remarks>
+        [DataMember]
+        [XmlIgnore]
+        public AgentComissionType AgentComissionType { get; set; }
+
+        /// <summary>
+        /// USE AgentComissionType instead
+        /// </summary>
+        [DataMember]
+        [XmlAttribute("type")]
+        public string ProxyAgentComissionType
+        {
+            get
+            {
+                return EnumHelper.GetXmlEnumName(AgentComissionType);
+            }
+            set
+            {
+                AgentComissionType = (AgentComissionType)EnumHelper.ParseXmlEnumName(typeof(AgentComissionType), value.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Specifies the amount of agent comission
+        /// </summary>
+        [DataMember]
+        [XmlIgnore]
+        public float? Amount { get; set; }
+
+        /// <summary>
+        /// USE Amount instead
+        /// </summary>
+        [DataMember]
+        [XmlText]
+        public string ProxyAmount
+        {
+            get
+            {
+                return (Amount.HasValue) ? Amount.Value.ToString().ToLower() : null;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    Amount = float.Parse(value);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Defines currency, if AgentComissionType is set to .Sum
+        /// </summary>
+        [DataMember]
+        [XmlAttribute("curr")]
+        public string Currency { get; set; }
+    }
+
     /// <summary>
     /// ReguestPassenger genders.
     /// </summary>
@@ -560,5 +633,19 @@ namespace Sirena
         [EnumMember]
         [XmlEnum("email")]
         Email,
+    }
+
+    /// <summary>
+    /// Contains agent comission types
+    /// </summary>
+    [DataContract]
+    public enum AgentComissionType
+    {
+        [EnumMember]
+        [XmlEnum("sum")]
+        Sum,
+        [EnumMember]
+        [XmlEnum("percent")]
+        Percentage,
     }
 }
