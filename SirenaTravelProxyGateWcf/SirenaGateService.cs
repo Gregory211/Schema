@@ -245,7 +245,7 @@ namespace SirenaTravelProxyGateWcf
                 _client.Close();
                 return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 _client.Close();
                 return null;
