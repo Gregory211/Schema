@@ -27,7 +27,7 @@ namespace SirenaSoapClient
                             new AvailabilityQueryParamas()
                             {
                                 Departure = "MOW",
-                                Arrival = "RIX",
+                                Arrival = "LED",
                                 AnswerParams = new AvailabilityAnswerParams { ShowFlightTime = true },
                                 Connections = "only ",
                                 ProxyDate = DateTime.Now.ToString("dd.MM.yy")
@@ -66,7 +66,7 @@ namespace SirenaSoapClient
                             new PricingRequestPassenger
                             {
                                 Code = "ADT",
-                                Count = "2"
+                                Count = "1"
                             },
                         },
                         AnswerParams = new PricingAnswerParams
@@ -76,14 +76,17 @@ namespace SirenaSoapClient
                             ShowAvailable = true,
                             ShowIoMatching = true,
                             ShowVariantTotal = true,
-                            ShowBaseClass = true
+                            ShowBaseClass = true,
+                            ShowUptRec = true
                         },
                         RequestParams = new PricingRequestParams
                         {
                             FormPay = new FormPay()
                             {
                                 Value = "IN"
-                            }
+                            },
+                            EtIfPossible = "true"
+                            
                         }
                     }
                 }

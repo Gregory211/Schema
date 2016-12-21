@@ -393,6 +393,10 @@ namespace Sirena.Dto.Requests
         [DataMember]
         [XmlElement("formpay")]
         public FormPay FormPay { get; set; }
+
+        [DataMember]
+        [XmlElement("et_if_possible")]
+        public string EtIfPossible { get; set; }
     }
 
     [DataContract, Serializable]

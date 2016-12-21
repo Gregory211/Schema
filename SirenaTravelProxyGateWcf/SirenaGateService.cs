@@ -18,8 +18,8 @@ namespace SirenaTravelProxyGateWcf
             var settings = new SirenaClientSettings
             {
                 Host = "193.104.87.251",
-                Port = 34323,
-                UserId = 922,
+                Port = 34321,
+                UserId = 1541,
                 PublicRsaKey = new RSAParameters()
             };
 
