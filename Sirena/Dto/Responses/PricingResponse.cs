@@ -412,6 +412,10 @@ namespace Sirena.Dto.Responses
         public Fare Fare { get; set; }
 
         [DataMember]
+        [XmlElement("upt")]
+        public Upt Upt { get; set; }
+
+        [DataMember]
         [XmlElement("tax ")]
         public Tax Tax { get; set; }
 
@@ -455,6 +459,112 @@ namespace Sirena.Dto.Responses
         [XmlText]
         public string Value { get; set; }
     }
+
+    public sealed class Upt
+    {
+        [DataMember]
+        [XmlElement("idar1")]
+        public string IdarOne { get; set; }
+
+        [DataMember]
+        [XmlElement("addon_ida")]
+        public string AddonIda { get; set; }
+
+        [DataMember]
+        [XmlElement("ntrip")]
+        public string Ntrip { get; set; }
+
+        [DataMember]
+        [XmlElement("nvr")]
+        public string Nvr { get; set; }
+
+        [DataMember]
+        [XmlElement("ftnt")]
+        public string Ftnt { get; set; }
+
+        [DataMember]
+        [XmlElement("code_upt")]
+        public string CodeUpt { get; set; }
+
+        [DataMember]
+        [XmlElement("tariff")]
+        public string Tariff { get; set; }
+
+        [DataMember]
+        [XmlElement("main_awk")]
+        public string MainAwk { get; set; }
+
+        [DataMember]
+        [XmlElement("cat")]
+        public string Cat { get; set; }
+
+        [DataMember]
+        [XmlElement("vcat")]
+        public string Vcat { get; set; }
+
+        [DataMember]
+        [XmlElement("city1")]
+        public string CityOne { get; set; }
+
+        [DataMember]
+        [XmlElement("city2")]
+        public string CityTwo { get; set; }
+
+        [DataMember]
+        [XmlElement("dport")]
+        public string Dport { get; set; }
+
+        [DataMember]
+        [XmlElement("aport")]
+        public string Aport { get; set; }
+
+        [DataMember]
+        [XmlElement("base_fare")]
+        public string BaseFare { get; set; }
+
+        [DataMember]
+        [XmlElement("iit")]
+        public string Iit { get; set; }
+
+        [DataMember]
+        [XmlElement("owrt")]
+        public string Owrt { get; set; }
+
+        [DataMember]
+        [XmlElement("ddate")]
+        public string Ddate { get; set; }
+
+        [DataMember]
+        [XmlElement("fdate")]
+        public string Fdate { get; set; }
+
+        [DataMember]
+        [XmlElement("delive_type")]
+        public string DeliveType { get; set; }
+
+        [DataMember]
+        [XmlElement("f0")]
+        public string FZero { get; set; }
+
+        [DataMember]
+        [XmlElement("f1")]
+        public string FOne { get; set; }
+
+        [DataMember]
+        [XmlElement("f2")]
+        public string FTwo { get; set; }
+
+        [DataMember]
+        [XmlElement("f3")]
+        public string FThree { get; set; }
+
+        [DataMember]
+        [XmlElement("fl_awk")]
+        public string FlAwk { get; set; }
+
+    }
+
+
 
     [DataContract, Serializable]
     public sealed class Tax
