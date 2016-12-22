@@ -10,18 +10,18 @@ namespace Sirena.Dto.Responses
 {
     [DataContract, Serializable]
     [XmlRoot("sirena")]
-    public class GetItinReceiptsResponse : DtoResponse
+    public class GetInitReceiptsDataResponse : DtoResponse
     {
-        public GetItinReceiptsResponse() : base() { }
+        public GetInitReceiptsDataResponse() : base() { }
         [DataMember]
         [XmlElement("answer")]
-        public GetItinReceiptsAnswer Answer { get; set; }
+        public GetInitReceiptsDataAnswer Answer { get; set; }
     }
 
     [DataContract, Serializable]
-    public sealed class GetItinReceiptsAnswer
+    public sealed class GetInitReceiptsDataAnswer
     {
-        public GetItinReceiptsAnswer() : base() { }
+        public GetInitReceiptsDataAnswer() : base() { }
 
         [DataMember]
         [XmlAttribute("pult")]
@@ -64,10 +64,10 @@ namespace Sirena.Dto.Responses
     }
 
     [DataContract, Serializable]
-    public sealed class GetItinReceiptsAnswerBody
+    public sealed class GetItinReceiptsDataAnswerBody
     {
-        public GetItinReceiptsAnswerBody() { }
-       
+        public GetItinReceiptsDataAnswerBody() { }
+
         [DataMember]
         [XmlElement("error")]
         public Error Error { get; set; }
