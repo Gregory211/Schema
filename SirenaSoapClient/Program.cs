@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SirenaSoapClient.SirenaGateServiceReference;
 using Sirena.Helpers;
+using System.Xml;
+using System.Xml.Linq;
 using Sirena.Dto.Requests;
 using Sirena;
 
@@ -36,57 +38,46 @@ namespace SirenaSoapClient
             };
             #endregion
             #region PricingRequest
-            var pricingRequest = new PricingRequest()
+            var pricingRequest = new FareremarkRequest()
             {
-                Query = new PricingQuery()
+                Query = new FareremarkQuery()
                 {
-                    Params = new PricingQueryParamas()
+                    Params = new FareremarkQueryParams()
                     {
-                        Segments = new[]
+                        Company = "SU",
+                        Code = "C",
+                        AnswerParams = new FareremarkAnswerParams()
                         {
-                            new PricingRequestSegment
+                            Language = "ru"
+                        },
+                        RequestParams = new FareremarkRequestParams()
+                        {
+                            Upt = new FaresUpt()
                             {
-                                Company = "UT",
-                                Departure = "MOW",
-                                Arrival = "LED",
-                                ProxyDate = DateTime.Now.AddDays(7).ToString("dd.MM.yy"),
-                                Direct = false
-                            },
-                            new PricingRequestSegment
-                            {
-                                Company = "UT",
-                                Departure = "LED",
-                                Arrival = "MOW",
-                                ProxyDate = DateTime.Now.AddDays(9).ToString("dd.MM.yy"),
-                                Direct = true
+                                //Value = "Some content as an exact copy from the previous pricing or booking answer"
+                                CustomElements = new XElement[]
+                                {
+                                    new XElement("idar1") {Value = "64245"},
+                                    new XElement("addon_ida") {Value = "-1"},
+                                    new XElement("ntrip") {Value = "0"},
+                                    new XElement("nvr") {Value = "-1"},
+                                    new XElement("code_upt") {Value = "2000"},
+                                    new XElement("tariff") {Value = "0"},
+                                    new XElement("deliv_type") {Value = "4"},
+                                    new XElement("main_awk") {Value = "119"},
+                                    new XElement("cat") {Value = "-1"},
+                                    new XElement("vcat"),
+                                    new XElement("city1"){Value = "28"},
+                                    new XElement("city2") {Value = "26"},
+                                    new XElement("dport") {Value = "28"},
+                                    new XElement("aport") {Value = "26"},
+                                    new XElement("base_fare") {Value = "C"},
+                                    new XElement("iit") {Value = "3"},
+                                    new XElement("owrt") {Value = "OW"},
+                                    new XElement("ddate") {Value = "20161226160431"},
+                                    new XElement("fdate") {Value = "20170104200000"},
+                                }
                             }
-                        },
-                        Passengers = new[]
-                        {
-                            new PricingRequestPassenger
-                            {
-                                Code = "ADT",
-                                Count = "1"
-                            },
-                        },
-                        AnswerParams = new PricingAnswerParams
-                        {
-                            //Lang = "en",
-                            ShowFlightTime = true,
-                            ShowAvailable = true,
-                            ShowIoMatching = true,
-                            ShowVariantTotal = true,
-                            ShowBaseClass = true,
-                            ShowUptRec = true
-                        },
-                        RequestParams = new PricingRequestParams
-                        {
-                            FormPay = new FormPay()
-                            {
-                                Value = "IN"
-                            },
-                            EtIfPossible = "true"
-                            
                         }
                     }
                 }
@@ -101,7 +92,7 @@ namespace SirenaSoapClient
                 {
                     Console.Write("Send request -> ");
                     //var response = sirenaGateServiceClient.SendAvailabilityRequest(availabilityRequest);
-                    var response = sirenaGateServiceClient.SendPricingRequest(pricingRequest);
+                    var response = sirenaGateServiceClient.SendFareremarkRequest(pricingRequest);
                     Console.WriteLine("Success");
                     Console.WriteLine("Response: ");
                     var xmlView2 = SerializationHelper.Serialize(response);

@@ -383,6 +383,10 @@ namespace Sirena.Dto.Responses
         public string Ticket { get; set; }
 
         [DataMember]
+        [XmlAttribute("baggage")]
+        public string Baggage { get; set; }
+
+        [DataMember]
         [XmlAttribute("fc")]
         public string Fc { get; set; }
 
