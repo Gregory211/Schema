@@ -273,8 +273,43 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlElement("flightTime")]
         public string FlightTime { get; set; }
+
+        [DataMember]
+        [XmlElement("n_landings")]
+        public string LandingNumber { get; set; }
+
+        [DataMember]
+        [XmlElement("legs")]
+        public Leg[] Legs { get; set; }
     }
 
+    [DataContract, Serializable]
+    public sealed class Leg
+    {
+        [DataMember]
+        [XmlAttribute("airplane")]
+        public string Airplane { get; set; }
+
+        [DataMember]
+        [XmlElement("dep")]
+        public DepArrElement Dep { get; set; }
+
+        [DataMember]
+        [XmlElement("arr")]
+        public DepArrElement Arr { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class DepArrElement
+    {
+        [DataMember]
+        [XmlAttribute("time_local")]
+        public string TimeLocal { get; set; }
+
+        [DataMember]
+        [XmlAttribute("time_utc")]
+        public string TimeUtc { get; set; }
+    }
 
     [DataContract, Serializable]
     public sealed class FlightClass
