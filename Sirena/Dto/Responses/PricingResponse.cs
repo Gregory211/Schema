@@ -273,14 +273,6 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlElement("flightTime")]
         public string FlightTime { get; set; }
-
-        [DataMember]
-        [XmlElement("n_landings")]
-        public string LandingNumber { get; set; }
-
-        [DataMember]
-        [XmlElement("legs")]
-        public Leg[] Legs { get; set; }
     }
 
     [DataContract, Serializable]
@@ -347,6 +339,10 @@ namespace Sirena.Dto.Responses
         public string Terminal { get; set; }
 
         [DataMember]
+        [XmlAttribute("city")]
+        public string City { get; set; }
+
+        [DataMember]
         [XmlText]
         public string Value { get; set; }
     }
@@ -357,6 +353,10 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlAttribute("terminal")]
         public string Terminal { get; set; }
+
+        [DataMember]
+        [XmlAttribute("city")]
+        public string City { get; set; }
 
         [DataMember]
         [XmlText]
