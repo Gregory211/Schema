@@ -130,7 +130,7 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("segmentTransferTime")]
-        public SegmentTransferTime SegmentTransferTime { get; set; }
+        public SegmentTransferTime[] SegmentTransferTimes { get; set; }
 
         [DataMember]
         [XmlElement("variant_total")]
