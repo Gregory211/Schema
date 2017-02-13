@@ -96,6 +96,7 @@ namespace Sirena.Dto.Requests
         }
 
         /// <summary>
+        ////
         /// Gets or sets the departure city or airport.
         /// </summary>
         /// <remarks>
