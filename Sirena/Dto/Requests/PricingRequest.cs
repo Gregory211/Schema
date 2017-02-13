@@ -307,7 +307,7 @@ namespace Sirena.Dto.Requests
         {
 
         }
-
+        //
         [DataMember]
         [XmlElement("lang")]
         public string Lang { get; set; }
