@@ -309,7 +309,7 @@ namespace Sirena.Dto.Requests
         }
 
         [DataMember]
-        [XmlAttribute("lang")]
+        [XmlElement("lang")]
         public string Lang { get; set; }
 
         [DataMember]
