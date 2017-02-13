@@ -294,6 +294,7 @@ namespace Sirena.Dto.Requests
 
         /// <summary>
         /// Возраст пассажиров категории
+        /// /
         /// </summary>
         [DataMember]
         [XmlElement("age")]
