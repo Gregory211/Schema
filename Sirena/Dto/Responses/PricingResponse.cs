@@ -130,7 +130,7 @@ namespace Sirena.Dto.Responses
 
         [DataMember]
         [XmlElement("segmentTransferTime")]
-        public SegmentTransferTime SegmentTransferTime { get; set; }
+        public SegmentTransferTime[] SegmentTransferTimes { get; set; }
 
         [DataMember]
         [XmlElement("variant_total")]
@@ -275,6 +275,33 @@ namespace Sirena.Dto.Responses
         public string FlightTime { get; set; }
     }
 
+    [DataContract, Serializable]
+    public sealed class Leg
+    {
+        [DataMember]
+        [XmlAttribute("airplane")]
+        public string Airplane { get; set; }
+
+        [DataMember]
+        [XmlElement("dep")]
+        public DepArrElement Dep { get; set; }
+
+        [DataMember]
+        [XmlElement("arr")]
+        public DepArrElement Arr { get; set; }
+    }
+
+    [DataContract, Serializable]
+    public sealed class DepArrElement
+    {
+        [DataMember]
+        [XmlAttribute("time_local")]
+        public string TimeLocal { get; set; }
+
+        [DataMember]
+        [XmlAttribute("time_utc")]
+        public string TimeUtc { get; set; }
+    }
 
     [DataContract, Serializable]
     public sealed class FlightClass
@@ -312,6 +339,10 @@ namespace Sirena.Dto.Responses
         public string Terminal { get; set; }
 
         [DataMember]
+        [XmlAttribute("city")]
+        public string City { get; set; }
+
+        [DataMember]
         [XmlText]
         public string Value { get; set; }
     }
@@ -322,6 +353,10 @@ namespace Sirena.Dto.Responses
         [DataMember]
         [XmlAttribute("terminal")]
         public string Terminal { get; set; }
+
+        [DataMember]
+        [XmlAttribute("city")]
+        public string City { get; set; }
 
         [DataMember]
         [XmlText]
