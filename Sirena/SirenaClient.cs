@@ -279,6 +279,26 @@ namespace Sirena
         }
 
         /// <summary>
+        /// Asynchronously sends a DescribeRequest object to the Sirena server.
+        /// </summary>
+        /// <param name="describeRequest"></param>
+        /// <returns>Returns the task object representing the asynchronous operation.</returns>
+        public async Task<DescribeResponse> SendRequestAsync(DescribeRequest describeRequest)
+        {
+            return await SendRequestAsync<DescribeRequest, DescribeResponse>(describeRequest);
+        }
+
+        /// <summary>
+        /// Sends a DescribeRequest object to the Sirena server.
+        /// </summary>
+        /// <returns>Returns a DescribeResponse object contains the response.</returns>
+        public DescribeResponse SendRequest(DescribeRequest describeRequest)
+        {
+            return SendRequest<DescribeRequest, DescribeResponse>(describeRequest);
+        }
+
+
+        /// <summary>
         /// Asynchronously sends a PricingRequest object to the Sirena server.
         /// </summary>
         /// <param name="pricingRequest"></param>

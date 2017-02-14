@@ -252,6 +252,37 @@ namespace SirenaTravelProxyGateWcf
             }
         }
 
+        public async Task<DescribeResponse> DescribeRequestAsync(DescribeRequest describeRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = await _client.SendRequestAsync(describeRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+        public DescribeResponse SendDescribeRequest(DescribeRequest describeRequest)
+        {
+            try
+            {
+                _client.Connect();
+                var result = _client.SendRequest(describeRequest);
+                _client.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _client.Close();
+                return null;
+            }
+        }
+
         public async Task<BookingResponse> BookingRequestAsync(BookingRequest bookingRequest)
         {
             try

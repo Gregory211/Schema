@@ -56,6 +56,13 @@ namespace SirenaTravelProxyGateWcf
         PricingResponse SendPricingRequest(PricingRequest pricingRequest);
 
         [OperationContract]
+        Task<DescribeResponse> DescribeRequestAsync(DescribeRequest describeRequest);
+
+        [OperationContract]
+        DescribeResponse SendDescribeRequest(DescribeRequest describeRequest);
+
+
+        [OperationContract]
         Task<BookingResponse> BookingRequestAsync(BookingRequest bookingRequest);
 
         [OperationContract]
