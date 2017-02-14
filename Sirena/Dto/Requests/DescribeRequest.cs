@@ -71,8 +71,18 @@ namespace Sirena.Dto.Requests
         public string Code { get; set; }
 
         [DataMember]
-        [XmlElement("show_all")]
-        public bool ShowAll { get; set; }
+        [XmlElement("request_params")]
+        public DescribeRequestParams RequestParams { get; set; }
+
+        [DataContract, Serializable]
+        public sealed class DescribeRequestParams
+        {
+
+            [DataMember]
+            [XmlElement("show_all")]
+            public bool ShowAll { get; set; }
+        }
+        
     }
  
 }

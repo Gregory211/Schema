@@ -1,13 +1,24 @@
 <publishData>
-  <publishTarget publishUrl="C:\Users\marki\Desktop\WCF\">
-    <file relUrl="bin/SirenaTravelProxyGateWcf.pdb" publishTime="02/14/2017 19:16:38" />
-    <file relUrl="SirenaTravelProxyGateWcf.SirenaGateService.svc" publishTime="02/14/2017 19:19:18" />
+  <publishTarget publishUrl="http://localhost:5030/sirena_wcf">
+    <file relUrl="bin/SirenaTravelProxyGateWcf.pdb" publishTime="02/14/2017 19:24:09" />
+    <file relUrl="SirenaTravelProxyGateWcf.SirenaGateService.svc" publishTime="02/14/2017 19:27:34" />
     <file relUrl="bin/log4net.dll" publishTime="11/22/2016 14:43:47" />
+    <file relUrl="bin/SirenaTravelProxyGateWcf.dll" publishTime="02/14/2017 19:24:09" />
     <file relUrl="Web.config" publishTime="11/22/2016 14:43:48" />
     <file relUrl="bin/log4net.xml" publishTime="11/22/2016 14:43:47" />
     <file relUrl="bin/SirenaTravelProxyGateWcf.dll.config" publishTime="11/22/2016 14:43:48" />
     <file relUrl="bin/Sirena.pdb" publishTime="02/14/2017 19:16:38" />
     <file relUrl="bin/Sirena.dll" publishTime="02/14/2017 19:16:38" />
-    <file relUrl="bin/SirenaTravelProxyGateWcf.dll" publishTime="02/14/2017 19:16:38" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Users\marki\Desktop\WCF\">
+    <file relUrl="bin/SirenaTravelProxyGateWcf.pdb" publishTime="02/14/2017 19:24:03" />
+    <file relUrl="SirenaTravelProxyGateWcf.SirenaGateService.svc" publishTime="02/14/2017 19:24:04" />
+    <file relUrl="bin/log4net.dll" publishTime="11/22/2016 14:43:47" />
+    <file relUrl="bin/SirenaTravelProxyGateWcf.dll" publishTime="02/14/2017 19:24:03" />
+    <file relUrl="Web.config" publishTime="11/22/2016 14:43:48" />
+    <file relUrl="bin/log4net.xml" publishTime="11/22/2016 14:43:47" />
+    <file relUrl="bin/SirenaTravelProxyGateWcf.dll.config" publishTime="11/22/2016 14:43:48" />
+    <file relUrl="bin/Sirena.pdb" publishTime="02/14/2017 19:16:38" />
+    <file relUrl="bin/Sirena.dll" publishTime="02/14/2017 19:16:38" />
   </publishTarget>
 </publishData>

@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenaServiceSelfhost", "SirenaServiceSelfhost\SirenaServiceSelfhost.csproj", "{CE91DC7F-3E66-45C1-8BAC-8EEE36DFB486}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenaSoapClient", "SirenaSoapClient\SirenaSoapClient.csproj", "{5246DC80-1568-4C08-9E4B-7E752422F8D7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F2BC84DE-ACAA-4501-ABB5-A4185D6249C3} = {F2BC84DE-ACAA-4501-ABB5-A4185D6249C3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

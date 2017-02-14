@@ -5,7 +5,7 @@
       <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
         <WcfProjectProperties>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>C:\Users\marki\Desktop\WCF\</PublishTargetLocation>
+          <PublishTargetLocation>http://localhost:5030/sirena_wcf</PublishTargetLocation>
           <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
         </WcfProjectProperties>
       </FlavorProperties>

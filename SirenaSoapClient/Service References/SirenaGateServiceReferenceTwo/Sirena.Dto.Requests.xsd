@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Sirena" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" />
+  <xs:complexType name="PricingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Sirena" base="q1:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:PricingQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricingRequest" nillable="true" type="tns:PricingRequest" />
+  <xs:complexType name="PricingQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:PricingQueryParamas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingQuery" nillable="true" type="tns:PricingQuery" />
+  <xs:complexType name="PricingQueryParamas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:PricingAnswerParams" />
+      <xs:element minOccurs="0" name="Passengers" nillable="true" type="tns:ArrayOfPricingRequestPassenger" />
+      <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:PricingRequestParams" />
+      <xs:element minOccurs="0" name="Segments" nillable="true" type="tns:ArrayOfPricingRequestSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingQueryParamas" nillable="true" type="tns:PricingQueryParamas" />
+  <xs:complexType name="PricingAnswerParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkCityPort" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferenceStyleCodes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowBaseClass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowEt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowFareExpDate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowFlightTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowIoMatching" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowNBlanks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowRegLatin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowUptRec" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowVariantTotal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SplitCompanies" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingAnswerParams" nillable="true" type="tns:PricingAnswerParams" />
+  <xs:complexType name="ArrayOfPricingRequestPassenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingRequestPassenger" nillable="true" type="tns:PricingRequestPassenger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricingRequestPassenger" nillable="true" type="tns:ArrayOfPricingRequestPassenger" />
+  <xs:complexType name="PricingRequestPassenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingRequestPassenger" nillable="true" type="tns:PricingRequestPassenger" />
+  <xs:complexType name="PricingRequestParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CombRules" nillable="true" type="tns:ArrayOfPricingCombRule" />
+      <xs:element minOccurs="0" name="FormPay" nillable="true" type="tns:FormPay" />
+      <xs:element minOccurs="0" name="MaxResults" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinResults" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timeout" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingRequestParams" nillable="true" type="tns:PricingRequestParams" />
+  <xs:complexType name="ArrayOfPricingCombRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingCombRule" nillable="true" type="tns:PricingCombRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricingCombRule" nillable="true" type="tns:ArrayOfPricingCombRule" />
+  <xs:complexType name="PricingCombRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acomp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comb" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingCombRule" nillable="true" type="tns:PricingCombRule" />
+  <xs:complexType name="FormPay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormPay" nillable="true" type="tns:FormPay" />
+  <xs:complexType name="ArrayOfPricingRequestSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingRequestSegment" nillable="true" type="tns:PricingRequestSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricingRequestSegment" nillable="true" type="tns:ArrayOfPricingRequestSegment" />
+  <xs:complexType name="PricingRequestSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connections" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direct" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyTimeFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyTimeTill" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubClasses" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PricingRequestSegment" nillable="true" type="tns:PricingRequestSegment" />
+  <xs:complexType name="DescribeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Sirena" base="q3:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:DescribeQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DescribeRequest" nillable="true" type="tns:DescribeRequest" />
+  <xs:complexType name="DescribeQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:DescribeQueryParamas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescribeQuery" nillable="true" type="tns:DescribeQuery" />
+  <xs:complexType name="DescribeQueryParamas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowAll" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescribeQueryParamas" nillable="true" type="tns:DescribeQueryParamas" />
+  <xs:complexType name="BookingCancelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Sirena" base="q4:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:BookingCancelQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookingCancelRequest" nillable="true" type="tns:BookingCancelRequest" />
+  <xs:complexType name="BookingCancelQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:BookingCancelQueryParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookingCancelQuery" nillable="true" type="tns:BookingCancelQuery" />
+  <xs:complexType name="BookingCancelQueryParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Regnum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookingCancelQueryParams" nillable="true" type="tns:BookingCancelQueryParams" />
+  <xs:complexType name="SellingQueryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Sirena" base="q5:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:SellingQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SellingQueryRequest" nillable="true" type="tns:SellingQueryRequest" />
+  <xs:complexType name="SellingQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:SellingQueryParamas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SellingQuery" nillable="true" type="tns:SellingQuery" />
+  <xs:complexType name="SellingQueryParamas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:ArrayOfPhone" />
+      <xs:element minOccurs="0" name="Paydoc" nillable="true" type="tns:PayDoc" />
+      <xs:element minOccurs="0" name="ReguestPassenger" nillable="true" type="tns:SellingQueryReguestPassenger" />
+      <xs:element minOccurs="0" name="ReguestSegment" nillable="true" type="tns:SellingQueryReguestSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SellingQueryParamas" nillable="true" type="tns:SellingQueryParamas" />
+  <xs:complexType name="ArrayOfPhone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Phone" nillable="true" type="tns:Phone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhone" nillable="true" type="tns:ArrayOfPhone" />
+  <xs:complexType name="Phone">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Phone" nillable="true" type="tns:Phone" />
+  <xs:complexType name="PayDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Formpay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayDoc" nillable="true" type="tns:PayDoc" />
+  <xs:complexType name="SellingQueryReguestPassenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Doc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SellingQueryReguestPassenger" nillable="true" type="tns:SellingQueryReguestPassenger" />
+  <xs:complexType name="SellingQueryReguestSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Arrival" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyDate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubClasses" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SellingQueryReguestSegment" nillable="true" type="tns:SellingQueryReguestSegment" />
+  <xs:complexType name="PaymentExtAuthConfirmRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Sirena" base="q7:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:PaymentExtAuthConfirmQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthConfirmRequest" nillable="true" type="tns:PaymentExtAuthConfirmRequest" />
+  <xs:complexType name="PaymentExtAuthConfirmQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConfirmParams" nillable="true" type="tns:PaymentExtAuthConfirmParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthConfirmQuery" nillable="true" type="tns:PaymentExtAuthConfirmQuery" />
+  <xs:complexType name="PaymentExtAuthConfirmParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:PaymentExtAuthAnswerParams" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="Cost" nillable="true" type="q8:Cost" />
+      <xs:element minOccurs="0" name="PayDoc" nillable="true" type="tns:PaymentExtAuthPayDoc" />
+      <xs:element minOccurs="0" name="Regnum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:PaymentExtAuthRequestParams" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthConfirmParams" nillable="true" type="tns:PaymentExtAuthConfirmParams" />
+  <xs:complexType name="PaymentExtAuthAnswerParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnReceipt" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthAnswerParams" nillable="true" type="tns:PaymentExtAuthAnswerParams" />
+  <xs:complexType name="PaymentExtAuthPayDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Formpay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Holder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthPayDoc" nillable="true" type="tns:PaymentExtAuthPayDoc" />
+  <xs:complexType name="PaymentExtAuthRequestParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TickSer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthRequestParams" nillable="true" type="tns:PaymentExtAuthRequestParams" />
+  <xs:complexType name="PaymentExtAuthQueryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Sirena" base="q9:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfirmQuery" nillable="true" type="tns:PaymentExtAuthQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthQueryRequest" nillable="true" type="tns:PaymentExtAuthQueryRequest" />
+  <xs:complexType name="PaymentExtAuthQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:PaymentExtAuthQueryParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthQuery" nillable="true" type="tns:PaymentExtAuthQuery" />
+  <xs:complexType name="PaymentExtAuthQueryParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayDoc" nillable="true" type="tns:PaymentExtAuthQueryPayDoc" />
+      <xs:element minOccurs="0" name="Regnum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:PaymentExtAuthQueryRequestParams" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthQueryParams" nillable="true" type="tns:PaymentExtAuthQueryParams" />
+  <xs:complexType name="PaymentExtAuthQueryPayDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Formpay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthQueryPayDoc" nillable="true" type="tns:PaymentExtAuthQueryPayDoc" />
+  <xs:complexType name="PaymentExtAuthQueryRequestParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaymentTimeout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TickSer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExtAuthQueryRequestParams" nillable="true" type="tns:PaymentExtAuthQueryRequestParams" />
+  <xs:complexType name="GetInitReceiptsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Sirena" base="q10:DtoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Query" nillable="true" type="tns:GetInitReceiptsQuery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInitReceiptsRequest" nillable="true" type="tns:GetInitReceiptsRequest" />
+  <xs:complexType name="GetInitReceiptsQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Params" nillable="true" type="tns:GetInitReceiptsParamas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetInitReceiptsQuery" nillable="true" type="tns:GetInitReceiptsQuery" />
+  <xs:complexType name="GetInitReceiptsParamas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Regnum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetInitReceiptsParamas" nillable="true" type="tns:GetInitReceiptsParamas" />
+</xs:schema>

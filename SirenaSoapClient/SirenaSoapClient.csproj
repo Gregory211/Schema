@@ -47,6 +47,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SirenaGateServiceReferenceTwo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SirenaGateServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -58,6 +63,7 @@
     <None Include="Properties\DataSources\Sirena.AvailabilityResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.BookingResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.Dto.Responses.BookingCancelResponse.datasource" />
+    <None Include="Properties\DataSources\Sirena.Dto.Responses.DescribeResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.Dto.Responses.GetItinReceiptsResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.Dto.Responses.PaymentExtAuthConfirmResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.Dto.Responses.PaymentExtAuthQueryResponse.datasource" />
@@ -67,6 +73,28 @@
     <None Include="Properties\DataSources\Sirena.FaresResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.KeyInfoResponse.datasource" />
     <None Include="Properties\DataSources\Sirena.ScheduleResponse.datasource" />
+    <None Include="Service References\SirenaGateServiceReferenceTwo\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\service.wsdl" />
+    <None Include="Service References\SirenaGateServiceReferenceTwo\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\Sirena.Dto.Requests.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\Sirena.Dto.Responses.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\Sirena.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\System.Xml.Linq.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SirenaGateServiceReference\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -94,6 +122,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SirenaGateServiceReferenceTwo\" />
     <WCFMetadataStorage Include="Service References\SirenaGateServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +145,18 @@
       <Project>{f65fd165-4a19-4679-ab4b-8e9742c27a1e}</Project>
       <Name>Sirena</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SirenaGateServiceReferenceTwo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SirenaSoapClient.SirenaGateServiceReference;
+//using SirenaSoapClient.SirenaGateServiceReference;
+using SirenaSoapClient.SirenaGateServiceReferenceTwo;
 using Sirena.Helpers;
 using System.Xml;
 using System.Xml.Linq;
@@ -42,8 +43,16 @@ namespace SirenaSoapClient
             {
                 Query = new DescribeQuery()
                 {
-                    
-                   
+                    Params = new DescribeQueryParamas()
+                    {
+                        
+                        RequestParams = new DescribeQueryParamas.DescribeRequestParams()
+                        {
+                            ShowAll = true
+                        },
+                        Data = "airport"
+                       
+                    }
                 }
             };
             #endregion
@@ -57,6 +66,7 @@ namespace SirenaSoapClient
                     Console.Write("Send request -> ");
                     //var response = sirenaGateServiceClient.SendAvailabilityRequest(availabilityRequest);
                     var response = sirenaGateServiceClient.SendDescribeRequest(pricingRequest);
+                    
                     Console.WriteLine("Success");
                     Console.WriteLine("Response: ");
                     var xmlView2 = SerializationHelper.Serialize(response);
