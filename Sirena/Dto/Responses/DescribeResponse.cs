@@ -94,6 +94,10 @@ namespace Sirena.Dto.Responses
         [XmlElement("code")]
         public Code[] Code { get; set; }
 
+        [DataMember]
+        [XmlElement("city")]
+        public City[] City { get; set; }
+
         /// <summary>
         /// Gets the response error.
         /// </summary>
@@ -119,6 +123,14 @@ namespace Sirena.Dto.Responses
         [XmlAttribute("lang")]
         public string Lang { get; set; }
     }
+
+    public sealed class City
+    {
+        [DataMember]
+        [XmlAttribute("lang")]
+        public string Lang { get; set; }
+    }
+
 
     public sealed class Name
     {
