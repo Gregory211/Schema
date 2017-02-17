@@ -314,6 +314,10 @@ namespace Sirena.Dto.Requests
         public string Lang { get; set; }
 
         [DataMember]
+        [XmlElement("curr")]
+        public string Currency { get; set; }
+
+        [DataMember]
         [XmlElement("show_flighttime")]
         public bool ShowFlightTime { get; set; }
 

@@ -248,6 +248,7 @@
   <xs:element name="DescribeAnswer" nillable="true" type="tns:DescribeAnswer" />
   <xs:complexType name="DescribeAnswerBody">
     <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="tns:ArrayOfCity" />
       <xs:element minOccurs="0" name="Code" nillable="true" type="tns:ArrayOfCode" />
       <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="Error" nillable="true" type="q5:Error" />
       <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="Info" nillable="true" type="q6:Info" />
@@ -256,6 +257,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DescribeAnswerBody" nillable="true" type="tns:DescribeAnswerBody" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="City">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
   <xs:complexType name="ArrayOfCode">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Code" nillable="true" type="tns:Code" />

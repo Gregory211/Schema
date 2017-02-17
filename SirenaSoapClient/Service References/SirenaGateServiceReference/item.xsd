@@ -617,6 +617,7 @@
   <xs:element name="BookingQuery" nillable="true" type="tns:BookingQuery" />
   <xs:complexType name="BookingQueryParams">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AgentComission" nillable="true" type="tns:BookingAgentComission" />
       <xs:element minOccurs="0" name="AnswerParams" nillable="true" type="tns:BookingAnswerParams" />
       <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:BookingRequestContacts" />
       <xs:element minOccurs="0" name="Passengers" nillable="true" type="tns:ArrayOfBookingRequestPassenger" />
@@ -625,6 +626,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BookingQueryParams" nillable="true" type="tns:BookingQueryParams" />
+  <xs:complexType name="BookingAgentComission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentComissionType" type="tns:AgentComissionType" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyAgentComissionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyAmount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookingAgentComission" nillable="true" type="tns:BookingAgentComission" />
+  <xs:simpleType name="AgentComissionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sum" />
+      <xs:enumeration value="Percentage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgentComissionType" nillable="true" type="tns:AgentComissionType" />
   <xs:complexType name="BookingAnswerParams">
     <xs:sequence>
       <xs:element minOccurs="0" name="AddRemarks" type="xs:boolean" />

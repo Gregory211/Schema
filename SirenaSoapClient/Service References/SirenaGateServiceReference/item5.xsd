@@ -199,171 +199,199 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DescribeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="describeRequest" nillable="true" type="q25:DescribeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DescribeRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="DescribeRequestResult" nillable="true" type="q26:DescribeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDescribeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="describeRequest" nillable="true" type="q27:DescribeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDescribeRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendDescribeRequestResult" nillable="true" type="q28:DescribeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BookingRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="bookingRequest" nillable="true" type="q25:BookingRequest" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="bookingRequest" nillable="true" type="q29:BookingRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BookingRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="BookingRequestResult" nillable="true" type="q26:BookingResponse" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="BookingRequestResult" nillable="true" type="q30:BookingResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendBookingRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="bookingRequest" nillable="true" type="q27:BookingRequest" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="bookingRequest" nillable="true" type="q31:BookingRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendBookingRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="SendBookingRequestResult" nillable="true" type="q28:BookingResponse" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Sirena" minOccurs="0" name="SendBookingRequestResult" nillable="true" type="q32:BookingResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BookingCancelRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q29:BookingCancelRequest" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q33:BookingCancelRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BookingCancelRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="BookingCancelRequestResult" nillable="true" type="q30:BookingCancelResponse" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="BookingCancelRequestResult" nillable="true" type="q34:BookingCancelResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendBookingCancelRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q31:BookingCancelRequest" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q35:BookingCancelRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendBookingCancelRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendBookingCancelRequestResult" nillable="true" type="q32:BookingCancelResponse" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendBookingCancelRequestResult" nillable="true" type="q36:BookingCancelResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SellingQueryRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="sellingQueryRequest" nillable="true" type="q33:SellingQueryRequest" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="sellingQueryRequest" nillable="true" type="q37:SellingQueryRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SellingQueryRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SellingQueryRequestResult" nillable="true" type="q34:SellingQueryResponse" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SellingQueryRequestResult" nillable="true" type="q38:SellingQueryResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendSellingQueryRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q35:SellingQueryRequest" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="bookingCancelRequest" nillable="true" type="q39:SellingQueryRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendSellingQueryRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendSellingQueryRequestResult" nillable="true" type="q36:SellingQueryResponse" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendSellingQueryRequestResult" nillable="true" type="q40:SellingQueryResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PaymentExtAuthConfirmRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthConfirmRequest" nillable="true" type="q37:PaymentExtAuthConfirmRequest" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthConfirmRequest" nillable="true" type="q41:PaymentExtAuthConfirmRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PaymentExtAuthConfirmRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="PaymentExtAuthConfirmRequestResult" nillable="true" type="q38:PaymentExtAuthConfirmResponse" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="PaymentExtAuthConfirmRequestResult" nillable="true" type="q42:PaymentExtAuthConfirmResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendPaymentExtAuthConfirmRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthConfirmRequest" nillable="true" type="q39:PaymentExtAuthConfirmRequest" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthConfirmRequest" nillable="true" type="q43:PaymentExtAuthConfirmRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendPaymentExtAuthConfirmRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendPaymentExtAuthConfirmRequestResult" nillable="true" type="q40:PaymentExtAuthConfirmResponse" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendPaymentExtAuthConfirmRequestResult" nillable="true" type="q44:PaymentExtAuthConfirmResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PaymentExtAuthQueryRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthQueryRequest" nillable="true" type="q41:PaymentExtAuthQueryRequest" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthQueryRequest" nillable="true" type="q45:PaymentExtAuthQueryRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PaymentExtAuthQueryRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="PaymentExtAuthQueryRequestResult" nillable="true" type="q42:PaymentExtAuthQueryResponse" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="PaymentExtAuthQueryRequestResult" nillable="true" type="q46:PaymentExtAuthQueryResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendPaymentExtAuthQueryRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthQueryRequest" nillable="true" type="q43:PaymentExtAuthQueryRequest" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="paymentExtAuthQueryRequest" nillable="true" type="q47:PaymentExtAuthQueryRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendPaymentExtAuthQueryRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendPaymentExtAuthQueryRequestResult" nillable="true" type="q44:PaymentExtAuthQueryResponse" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendPaymentExtAuthQueryRequestResult" nillable="true" type="q48:PaymentExtAuthQueryResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetInitReceiptsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="getInitReceiptsRequest" nillable="true" type="q45:GetInitReceiptsRequest" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="getInitReceiptsRequest" nillable="true" type="q49:GetInitReceiptsRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetInitReceiptsRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="GetInitReceiptsRequestResult" nillable="true" type="q46:GetItinReceiptsResponse" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="GetInitReceiptsRequestResult" nillable="true" type="q50:GetItinReceiptsResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendGetInitReceiptsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="getInitReceiptsRequest" nillable="true" type="q47:GetInitReceiptsRequest" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Sirena.Dto.Requests" minOccurs="0" name="getInitReceiptsRequest" nillable="true" type="q51:GetInitReceiptsRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendGetInitReceiptsRequestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendGetInitReceiptsRequestResult" nillable="true" type="q48:GetItinReceiptsResponse" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Sirena.Dto.Responses" minOccurs="0" name="SendGetInitReceiptsRequestResult" nillable="true" type="q52:GetItinReceiptsResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

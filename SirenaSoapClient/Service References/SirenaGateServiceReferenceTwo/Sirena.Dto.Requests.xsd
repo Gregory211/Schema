@@ -135,10 +135,17 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ShowAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequestParams" nillable="true" type="tns:DescribeQueryParamas.DescribeRequestParams" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DescribeQueryParamas" nillable="true" type="tns:DescribeQueryParamas" />
+  <xs:complexType name="DescribeQueryParamas.DescribeRequestParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShowAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowRealCodes" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescribeQueryParamas.DescribeRequestParams" nillable="true" type="tns:DescribeQueryParamas.DescribeRequestParams" />
   <xs:complexType name="BookingCancelRequest">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Sirena" base="q4:DtoRequest">

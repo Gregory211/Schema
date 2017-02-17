@@ -48,7 +48,9 @@ namespace SirenaSoapClient
                         
                         RequestParams = new DescribeQueryParamas.DescribeRequestParams()
                         {
+                            ShowRealCodes = true,
                             ShowAll = true
+                            
                         },
                         Data = "airport"
                        

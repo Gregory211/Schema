@@ -99,6 +99,18 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendPricingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse")]
         System.Threading.Tasks.Task<Sirena.Dto.Responses.PricingResponse> SendPricingRequestAsync(Sirena.Dto.Requests.PricingRequest pricingRequest);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/DescribeRequest", ReplyAction="http://tempuri.org/ISirenaGateService/DescribeRequestResponse")]
+        Sirena.Dto.Responses.DescribeResponse DescribeRequest([System.ServiceModel.MessageParameterAttribute(Name="describeRequest")] Sirena.Dto.Requests.DescribeRequest describeRequest1);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/DescribeRequest", ReplyAction="http://tempuri.org/ISirenaGateService/DescribeRequestResponse")]
+        System.Threading.Tasks.Task<Sirena.Dto.Responses.DescribeResponse> DescribeRequestAsync(Sirena.Dto.Requests.DescribeRequest describeRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendDescribeRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendDescribeRequestResponse")]
+        Sirena.Dto.Responses.DescribeResponse SendDescribeRequest(Sirena.Dto.Requests.DescribeRequest describeRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/SendDescribeRequest", ReplyAction="http://tempuri.org/ISirenaGateService/SendDescribeRequestResponse")]
+        System.Threading.Tasks.Task<Sirena.Dto.Responses.DescribeResponse> SendDescribeRequestAsync(Sirena.Dto.Requests.DescribeRequest describeRequest);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISirenaGateService/BookingRequest", ReplyAction="http://tempuri.org/ISirenaGateService/BookingRequestResponse")]
         Sirena.BookingResponse BookingRequest([System.ServiceModel.MessageParameterAttribute(Name="bookingRequest")] Sirena.BookingRequest bookingRequest1);
         
@@ -309,6 +321,22 @@ namespace SirenaSoapClient.SirenaGateServiceReference {
         
         public System.Threading.Tasks.Task<Sirena.Dto.Responses.PricingResponse> SendPricingRequestAsync(Sirena.Dto.Requests.PricingRequest pricingRequest) {
             return base.Channel.SendPricingRequestAsync(pricingRequest);
+        }
+        
+        public Sirena.Dto.Responses.DescribeResponse DescribeRequest(Sirena.Dto.Requests.DescribeRequest describeRequest1) {
+            return base.Channel.DescribeRequest(describeRequest1);
+        }
+        
+        public System.Threading.Tasks.Task<Sirena.Dto.Responses.DescribeResponse> DescribeRequestAsync(Sirena.Dto.Requests.DescribeRequest describeRequest) {
+            return base.Channel.DescribeRequestAsync(describeRequest);
+        }
+        
+        public Sirena.Dto.Responses.DescribeResponse SendDescribeRequest(Sirena.Dto.Requests.DescribeRequest describeRequest) {
+            return base.Channel.SendDescribeRequest(describeRequest);
+        }
+        
+        public System.Threading.Tasks.Task<Sirena.Dto.Responses.DescribeResponse> SendDescribeRequestAsync(Sirena.Dto.Requests.DescribeRequest describeRequest) {
+            return base.Channel.SendDescribeRequestAsync(describeRequest);
         }
         
         public Sirena.BookingResponse BookingRequest(Sirena.BookingRequest bookingRequest1) {

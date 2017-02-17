@@ -81,6 +81,11 @@ namespace Sirena.Dto.Requests
             [DataMember]
             [XmlElement("show_all")]
             public bool ShowAll { get; set; }
+
+            [DataMember]
+            [XmlElement("show_real_codes")]
+            public bool ShowRealCodes { get; set; }
+            
         }
         
     }

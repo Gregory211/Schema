@@ -95,6 +95,18 @@
   <wsdl:message name="ISirenaGateService_SendPricingRequest_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendPricingRequestResponse" />
   </wsdl:message>
+  <wsdl:message name="ISirenaGateService_DescribeRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DescribeRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_DescribeRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DescribeRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendDescribeRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDescribeRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISirenaGateService_SendDescribeRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDescribeRequestResponse" />
+  </wsdl:message>
   <wsdl:message name="ISirenaGateService_BookingRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:BookingRequest" />
   </wsdl:message>
@@ -223,6 +235,14 @@
     <wsdl:operation name="SendPricingRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequest" message="tns:ISirenaGateService_SendPricingRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendPricingRequestResponse" message="tns:ISirenaGateService_SendPricingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DescribeRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/DescribeRequest" message="tns:ISirenaGateService_DescribeRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/DescribeRequestResponse" message="tns:ISirenaGateService_DescribeRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDescribeRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/SendDescribeRequest" message="tns:ISirenaGateService_SendDescribeRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISirenaGateService/SendDescribeRequestResponse" message="tns:ISirenaGateService_SendDescribeRequest_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="BookingRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISirenaGateService/BookingRequest" message="tns:ISirenaGateService_BookingRequest_InputMessage" />
@@ -394,6 +414,24 @@
     </wsdl:operation>
     <wsdl:operation name="SendPricingRequest">
       <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendPricingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/DescribeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDescribeRequest">
+      <soap:operation soapAction="http://tempuri.org/ISirenaGateService/SendDescribeRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
