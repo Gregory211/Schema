@@ -10,6 +10,8 @@ using System.Xml;
 using System.Xml.Linq;
 using Sirena.Dto.Requests;
 using Sirena;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace SirenaSoapClient
 {
@@ -52,7 +54,7 @@ namespace SirenaSoapClient
                             ShowAll = true
                             
                         },
-                        Data = "airport"
+                        Data = "country"
                        
                     }
                 }
@@ -61,10 +63,94 @@ namespace SirenaSoapClient
             var xmlView1 = SerializationHelper.Serialize(pricingRequest);
             Console.WriteLine(xmlView1);
 
+            var segment = new List<BookingRequestSegment>();
+
+            segment.Add(new BookingRequestSegment()
+            {
+                Airplane = "TU5",
+                Arrival = "SVX",
+                Class = "Y",
+                Company = "UT",
+                Departure = "DME",
+                Num = "784",
+                ProxyDate = "23.03.17"
+            });
+
+            segment.Add(new BookingRequestSegment()
+            {
+                Airplane = "TU5",
+                Arrival = "OVB",
+                Class = "Y",
+                Company = "YQ",
+                Departure = "SVX",
+                Num = "541",
+                ProxyDate = "23.03.17"
+            });
+
+            segment.Add(new BookingRequestSegment()
+            {
+                Airplane = "TU5",
+                Arrival = "VVO",
+                Class = "Y",
+                Company = "7R",
+                Departure = "OVB",
+                Num = "145",
+                ProxyDate = "23.03.17"
+            });
+
+            var passengers = new List<BookingRequestPassenger>();
+            var contacts = new List<BookingContact>();
+
+            contacts.Add(new BookingContact() { ContactType = ContactType.Email, ProxyContactType = "email", Value = "P.M@BFMELE.COM" });
+
+            passengers.Add(new BookingRequestPassenger()
+            {
+                Category = "ADT",
+                Contacts = contacts,
+                Doc = "N5026629",
+                DocCode = "OTHER",
+                Name = "TestName",
+                Surname = "TestSurname",
+                ProxyBirthDate = "19.02.96",
+                ProxySexType = "male",
+                Phones = new BookingContact[] { new BookingContact() {  ContactType = ContactType.Work, ProxyContactType = "work", Value = "+74996088905" } }
+            });
+
+            var request = new BookingRequest()
+            {
+                Query = new BookingQuery()
+                {
+                    Params = new BookingQueryParams()
+                    {
+                        Contacts = new BookingRequestContacts()
+                        {
+                            Phone = new BookingContact()
+                            {
+                                ContactType = ContactType.Agency,
+                                ProxyContactType = nameof(ContactType.Agency).ToLower(),
+                                Comment = "credentials",
+                                Value = "+74996088905"
+                            }
+                        },
+                        
+                        Passengers = passengers,
+                        Segments = segment,
+
+                        AnswerParams = new BookingAnswerParams()
+                        {
+                            ShowTts = true
+                        }
+                    }
+                }
+            };
+
             try
             {
                 while (true)
                 {
+                    //var resp = sirenaGateServiceClient.SendBookingRequest(request);
+
+
                     Console.Write("Send request -> ");
                     //var response = sirenaGateServiceClient.SendAvailabilityRequest(availabilityRequest);
                     var response = sirenaGateServiceClient.SendDescribeRequest(pricingRequest);

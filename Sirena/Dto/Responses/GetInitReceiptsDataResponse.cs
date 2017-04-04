@@ -59,7 +59,7 @@ namespace Sirena.Dto.Responses
         /// Gets the answer body.
         /// </summary>
         [DataMember]
-        [XmlElement("get_itin_receipts")]
+        [XmlElement("get_itin_receipts_data")]
         public GetItinReceiptsAnswerBody Body { get; set; }
     }
 
@@ -93,7 +93,7 @@ namespace Sirena.Dto.Responses
         }
 
         [DataMember]
-        [XmlElement("receipts")]
-        public Receipts Value { get; set; }
+        [XmlElement("ticket_form")]
+        public string Value { get; set; }
     }
 }
