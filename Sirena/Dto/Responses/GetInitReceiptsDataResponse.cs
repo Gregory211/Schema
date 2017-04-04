@@ -91,7 +91,7 @@ namespace Sirena.Dto.Responses
                 }
             }
         }
-
+        
         [DataMember]
         [XmlElement("ticket_form")]
         public string Value { get; set; }
