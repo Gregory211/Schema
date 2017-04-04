@@ -50,7 +50,6 @@ namespace Sirena.Dto.Responses
                 }
             }
         }
-
         [DataMember]
         [XmlAttribute("instance")]
         public string Instance { get; set; }
